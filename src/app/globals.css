@@ -116,3 +116,64 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1536px;
   }
 }
+
+/* Add to globals.css */
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* For the moving gold shade effect */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-move {
+  background-size: 200% 200%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* For the sliding logos - improved for continuous scrolling */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logos-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: slide 30s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* Ensure the animation doesn't stop on hover for continuous scrolling */
+.logos-slide:hover {
+  animation-play-state: running;
+}

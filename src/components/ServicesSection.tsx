@@ -1,0 +1,167 @@
+// src/components/ServicesSection.tsx
+"use client";
+import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { FaBullhorn, FaNewspaper, FaCalendarAlt, FaCamera, FaComments, FaWifi, FaGlobe, FaPencilAlt } from 'react-icons/fa';
+
+interface Service {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  link: string;
+}
+
+const services: Service[] = [
+  {
+    id: 'experiential-marketing',
+    title: 'Experiential Marketing',
+    description: 'Interactive pop-up experiences and brand activations.',
+    icon: <FaBullhorn className="text-white text-3xl" />,
+    link: '/services/experiential-marketing',
+  },
+  {
+    id: 'print-advertising',
+    title: 'Print Advertising & Branding',
+    description: 'In-house production for promotional items, banners & displays.',
+    icon: <FaNewspaper className="text-white text-3xl" />,
+    link: '/services/print-advertising',
+  },
+  {
+    id: 'events-management',
+    title: 'PR & Events Management',
+    description: 'Corporate conferences, product launches, galas, parties & themed events.',
+    icon: <FaCalendarAlt className="text-white text-3xl" />,
+    link: '/services/events-management',
+  },
+  {
+    id: 'media-strategy',
+    title: 'Media Strategy, Production & Buying',
+    description: 'We purchase media slots in TV, radio & print.',
+    icon: <FaCamera className="text-white text-3xl" />,
+    link: '/services/media-strategy',
+  },
+  {
+    id: 'brand-communication',
+    title: 'Brand & Communication Strategy',
+    description: 'Your Brand. Your Story. Our Strategy.',
+    icon: <FaComments className="text-white text-3xl" />,
+    link: '/services/brand-communication',
+  },
+  {
+    id: 'digital-marketing',
+    title: 'Digital Marketing',
+    description: 'From search results, programmatic ads to social media.',
+    icon: <FaWifi className="text-white text-3xl" />,
+    link: '/services/digital-marketing',
+  },
+  {
+    id: 'website-design',
+    title: 'Website Design & Development',
+    description: 'Websites that work as hard as you do.',
+    icon: <FaGlobe className="text-white text-3xl" />,
+    link: '/services/website-design',
+  },
+  {
+    id: 'brand-identity',
+    title: 'Brand Identity & Packaging',
+    description: 'We go beyond surface-level design.',
+    icon: <FaPencilAlt className="text-white text-3xl" />,
+    link: '/services/brand-identity',
+  },
+];
+
+const ServicesSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // When section becomes visible
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <section 
+      ref={sectionRef}
+      className="py-20 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #000000 0%, #D4AF34 100%)',
+      }}
+    >
+      {/* Background overlay pattern */}
+      <div 
+        className="absolute inset-0 z-0 opacity-10" 
+        style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/svg%3E")',
+        }}
+      ></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">What We Do</h2>
+          <div className="w-20 h-1 bg-white mx-auto"></div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className={`
+                bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-6 
+                transform transition-all duration-700 hover:scale-105 hover:bg-black/40
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
+              `}
+              style={{
+                transitionDelay: `${100 * index}ms`,
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+              }}
+            >
+              <div className="w-12 h-12 rounded-full bg-[#D4AF34] flex items-center justify-center mb-4">
+                {service.icon}
+              </div>
+              
+              <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+              
+              <p className="text-white/80 mb-4 min-h-[60px]">
+                {service.description}
+              </p>
+              
+              <Link 
+                href={service.link}
+                className="inline-block text-[#D4AF34] hover:text-white transition-colors duration-300"
+              >
+                Learn More
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ServicesSection;

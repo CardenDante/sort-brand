@@ -2,6 +2,9 @@
 
 import Hero from '@/components/Hero';
 import IntroSection from '@/components/IntroSection';
+import ServicesSection from '@/components/ServicesSection';
+import TrustedBySection from '@/components/TrustedBySection';
+import PortfolioSection from '@/components/PortfolioSection';
 
 export default function HomePage() {
   return (
@@ -14,6 +17,9 @@ export default function HomePage() {
         backgroundImage="/images/hero-bg.jpeg"
       />
        <IntroSection />
+       <ServicesSection />
+       <TrustedBySection />
+       <PortfolioSection />
       {/* Other home page sections will be added here */}
     </>
   );
