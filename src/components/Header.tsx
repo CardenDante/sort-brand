@@ -41,7 +41,7 @@ const Header = () => {
             <Link href="/">
               <div className="relative h-14 w-40">
                 <Image
-                  src="/images/ccLogo.png"
+                  src="/images/logo/sb.png"
                   alt="Sort Brands Logo"
                   fill
                   style={{ objectFit: 'contain', objectPosition: 'left' }}
