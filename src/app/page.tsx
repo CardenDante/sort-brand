@@ -7,6 +7,7 @@ import TrustedBySection from '@/components/TrustedBySection';
 import PortfolioSection from '@/components/PortfolioSection';
 import CTASection from '@/components/CTASection'
 import FAQSection from '@/components/FAQSection';
+import TeamSection from '@/components/TeamSection';
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
        <PortfolioSection />
        <CTASection />
        <FAQSection />
+      <TeamSection />
       {/* Other home page sections will be added here */}
     </>
   );
