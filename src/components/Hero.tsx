@@ -1,5 +1,4 @@
 // src/components/Hero.tsx
-
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,8 +18,8 @@ const Hero = ({
   backgroundImage = "/images/hero-bg.jpg"
 }: HeroProps) => {
   return (
-    <section className="relative h-[70vh] bg-[#000033]">
-      {/* Background image with blue overlay effect */}
+    <section className="relative h-[70vh] bg-black">
+      {/* Background image with black overlay effect */}
       <div className="absolute inset-0 z-0">
         <Image
           src={backgroundImage}
@@ -30,8 +29,10 @@ const Hero = ({
           style={{ objectFit: 'cover', objectPosition: 'center' }}
           className="opacity-40 mix-blend-soft-light"
         />
+        {/* Additional black overlay for darker effect */}
+        <div className="absolute inset-0 bg-black opacity-60"></div>
       </div>
-
+      
       {/* Content container */}
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
         <div className="max-w-4xl">

@@ -16,35 +16,35 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 'pernod-ricard',
     title: 'Pernod Ricard',
-    image: '/images/portfolio/pernod-ricard.jpg',
+    image: '/images/portfolio/programmer-home-office-concentrating-finding-bugs-while-he-codes.jpg',
     size: 'wide',
     link: '/work/pernod-ricard',
   },
   {
     id: 'airasia',
     title: 'AirAsia',
-    image: '/images/portfolio/airasia.jpg',
+    image: '/images/portfolio/programmer-home-office-concentrating-finding-bugs-while-he-codes.jpg',
     size: 'normal',
     link: '/work/airasia',
   },
   {
     id: 'pearson',
     title: 'Pearson Test of English PTE',
-    image: '/images/portfolio/pearson.jpg',
+    image: '/images/portfolio/Branding-bg.png',
     size: 'normal',
     link: '/work/pearson',
   },
   {
     id: 'avpa',
     title: 'African Venture Philanthropy Alliance',
-    image: '/images/portfolio/avpa.jpg',
+    image: '/images/portfolio/programmer-home-office-concentrating-finding-bugs-while-he-codes.jpg',
     size: 'normal',
     link: '/work/avpa',
   },
   {
     id: 'uber',
     title: 'UBER',
-    image: '/images/portfolio/uber.jpg',
+    image: '/images/portfolio/programmer-home-office-concentrating-finding-bugs-while-he-codes.jpg',
     size: 'normal',
     link: '/work/uber',
   },
@@ -139,27 +139,16 @@ const PortfolioSection = () => {
               }}
             >
               {/* Placeholder for image - in production, use actual Image component */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-70 z-0">
-                {/* This would be replaced with actual Image in production */}
-                <div className="w-full h-full relative">
-                  {/* If using Next.js Image component: */}
-                  {/* <Image 
+              <div className="absolute inset-0 z-0">
+                <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
-                  /> */}
-                  
-                  {/* For demo purposes, we'll use a colored div */}
-                  <div 
-                    className="w-full h-full absolute" 
-                    style={{ 
-                      background: `linear-gradient(45deg, #111 0%, #222 100%)`,
-                      opacity: 0.8
-                    }}
-                  ></div>
+                    className="object-cover rounded-lg"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    priority={index === 0} // optional: prioritize first image
+                />
                 </div>
-              </div>
 
               {/* Content Overlay */}
               <Link href={item.link}>
