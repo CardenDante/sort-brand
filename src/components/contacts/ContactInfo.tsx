@@ -1,0 +1,123 @@
+// src/components/ContactInfo.tsx
+import { 
+  FaMapMarkerAlt, 
+  FaPhone, 
+  FaEnvelope, 
+  FaClock,
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn
+} from 'react-icons/fa';
+
+const ContactInfo = () => {
+  return (
+    <div className="bg-black text-white rounded-lg overflow-hidden shadow-xl">
+      {/* Header */}
+      <div className="bg-[#D4AF34] py-6 px-8">
+        <h2 className="text-2xl font-bold text-black">Contact Information</h2>
+      </div>
+      
+      {/* Contact Details */}
+      <div className="p-8">
+        <div className="space-y-6">
+          {/* Address */}
+          <div className="flex items-start">
+            <div className="mt-1 mr-4 text-[#D4AF34]">
+              <FaMapMarkerAlt size={20} />
+            </div>
+            <div>
+              <h3 className="font-bold text-white mb-1">Office Location</h3>
+              <p className="text-white/70">
+                Off thika Road, behind safari park hotel next to USIU<br />
+                Nairobi, Kenya
+              </p>
+            </div>
+          </div>
+          
+          {/* Phone */}
+          <div className="flex items-start">
+            <div className="mt-1 mr-4 text-[#D4AF34]">
+              <FaPhone size={20} />
+            </div>
+            <div>
+              <h3 className="font-bold text-white mb-1">Phone Number</h3>
+              <p className="text-white/70">
+                <a href="tel:+254742906505" className="hover:text-[#D4AF34] transition-colors">
+                  +254 742 906 505
+                </a>
+              </p>
+            </div>
+          </div>
+          
+          {/* Email */}
+          <div className="flex items-start">
+            <div className="mt-1 mr-4 text-[#D4AF34]">
+              <FaEnvelope size={20} />
+            </div>
+            <div>
+              <h3 className="font-bold text-white mb-1">Email Address</h3>
+              <p className="text-white/70">
+                <a href="mailto:sortbrandske@gmail.com" className="hover:text-[#D4AF34] transition-colors">
+                  sortbrandske@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
+          
+          {/* Office Hours */}
+          <div className="flex items-start">
+            <div className="mt-1 mr-4 text-[#D4AF34]">
+              <FaClock size={20} />
+            </div>
+            <div>
+              <h3 className="font-bold text-white mb-1">Office Hours</h3>
+              <p className="text-white/70">
+                Monday - Friday: 8:00 AM - 6:00 PM<br />
+                Saturday: 9:00 AM - 1:00 PM<br />
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Social Media */}
+        <div className="mt-8">
+          <h3 className="font-bold text-white mb-3">Follow Us</h3>
+          <div className="flex space-x-3">
+            <a 
+              href="#" 
+              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
+            <a 
+              href="#" 
+              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
+              aria-label="Twitter"
+            >
+              <FaTwitter />
+            </a>
+            <a 
+              href="#" 
+              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
+            <a 
+              href="#" 
+              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ContactInfo;
