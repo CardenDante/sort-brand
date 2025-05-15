@@ -69,7 +69,7 @@ const TeamSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 relative overflow-hidden"
+      className="py-12 md:py-16 relative overflow-hidden"
       style={{
         backgroundColor: '#f9f9f9',
         backgroundImage: 'linear-gradient(315deg, #f9f9f9 0%, #eeeeee 74%)',
@@ -80,16 +80,16 @@ const TeamSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Our Leadership Team</h2>
-          <div className="w-20 h-1 bg-[#D4AF34] mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">Our Leadership Team</h2>
+          <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-3"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
             Meet the exceptional team driving our mission to sort your brand through innovative marketing and advertising solutions.
           </p>
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {teamMembers.map((member, index) => (
             <div
               key={member.id}
@@ -103,7 +103,7 @@ const TeamSection = () => {
             >
               <div className="bg-white rounded-lg overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300">
                 {/* Image Container */}
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-60 md:h-70 overflow-hidden">
                   {/* Use Next.js Image component with actual image path */}
                   <Image
                     src={member.image}
@@ -114,24 +114,15 @@ const TeamSection = () => {
                     className="group-hover:scale-105 transition-transform duration-500"
                   />
                   
-                  {/* Fallback for image loading or error */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black opacity-0">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="w-32 h-32 rounded-full bg-[#D4AF34] flex items-center justify-center text-3xl font-bold text-white">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                    </div>
-                  </div>
-                  
                   {/* Gold overlay on hover */}
                   <div className="absolute inset-0 bg-[#D4AF34] mix-blend-overlay opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                 </div>
                 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-[#D4AF34] font-medium mb-4">{member.role}</p>
-                  <p className="text-gray-600">{member.bio}</p>
+                <div className="p-4 md:p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
+                  <p className="text-[#D4AF34] font-medium mb-2 text-sm">{member.role}</p>
+                  <p className="text-gray-600 text-sm">{member.bio}</p>
                 </div>
               </div>
             </div>
@@ -141,21 +132,21 @@ const TeamSection = () => {
         {/* Join the team CTA */}
         <div 
           className={`
-            bg-black rounded-lg p-8 md:p-10 shadow-xl max-w-4xl mx-auto
+            bg-black rounded-lg p-6 md:p-8 shadow-xl max-w-4xl mx-auto
             transform transition-all duration-1000 delay-500
             ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
           `}
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0 md:mr-10">
-              <h3 className="text-2xl font-bold text-white mb-2">Join Our Team</h3>
-              <p className="text-white/70">
+            <div className="mb-4 md:mb-0 md:mr-8">
+              <h3 className="text-xl font-bold text-white mb-2">Join Our Team</h3>
+              <p className="text-white/70 text-sm">
                 Are you passionate about branding and marketing? We're always looking for talented individuals to join our growing team.
               </p>
             </div>
             <a 
               href="/careers" 
-              className="inline-block bg-[#D4AF34] hover:bg-[#c9a52f] text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg text-center whitespace-nowrap"
+              className="inline-block bg-[#D4AF34] hover:bg-[#c9a52f] text-black font-bold py-2 px-6 rounded-lg transition-all duration-300 shadow-lg text-center whitespace-nowrap"
             >
               View Careers
             </a>

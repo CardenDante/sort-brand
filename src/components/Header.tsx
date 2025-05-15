@@ -56,42 +56,10 @@ const Header = () => {
               Home
             </Link>
             
-            <div className="relative group">
-              <button 
-                onClick={() => toggleDropdown('about')}
-                className="flex items-center text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300"
-                aria-expanded={activeDropdown === 'about'}
-              >
-                About
-                <FaChevronDown className="ml-1 h-3 w-3" />
-              </button>
-              
-              {activeDropdown === 'about' && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
-                  <Link
-                    href="/about/company"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34]"
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    Company
-                  </Link>
-                  <Link
-                    href="/about/mission"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34]"
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    Mission & Vision
-                  </Link>
-                  <Link
-                    href="/about/team"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34]"
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    Our Team
-                  </Link>
-                </div>
-              )}
-            </div>
+            {/* About link - No dropdown */}
+            <Link href="/about" className="text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300">
+              About
+            </Link>
             
             <Link href="/case-studies" className="text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300">
               Case Studies
@@ -214,43 +182,14 @@ const Header = () => {
               Home
             </Link>
             
-            <div>
-              <button
-                onClick={() => toggleDropdown('mobile-about')}
-                className="flex items-center justify-between w-full text-gray-900 font-medium hover:text-[#D4AF34]"
-              >
-                <span>About</span>
-                <FaChevronDown className={`transition-transform duration-200 ${
-                  activeDropdown === 'mobile-about' ? 'transform rotate-180' : ''
-                }`} />
-              </button>
-              
-              {activeDropdown === 'mobile-about' && (
-                <div className="mt-2 pl-4 space-y-2">
-                  <Link
-                    href="/about/company"
-                    className="block text-gray-900 hover:text-[#D4AF34]"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Company
-                  </Link>
-                  <Link
-                    href="/about/mission"
-                    className="block text-gray-900 hover:text-[#D4AF34]"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Mission & Vision
-                  </Link>
-                  <Link
-                    href="/about/team"
-                    className="block text-gray-900 hover:text-[#D4AF34]"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Our Team
-                  </Link>
-                </div>
-              )}
-            </div>
+            {/* Simple About link for mobile - no dropdown */}
+            <Link 
+              href="/about"
+              className="block text-gray-900 font-medium hover:text-[#D4AF34]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
             
             <Link 
               href="/case-studies"

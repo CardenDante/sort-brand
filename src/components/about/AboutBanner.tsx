@@ -1,0 +1,89 @@
+// src/components/AboutBanner.tsx
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaHome, FaChevronRight } from 'react-icons/fa';
+
+interface AboutBannerProps {
+  title: string;
+  subtitle?: string;
+  backgroundImage?: string;
+  breadcrumbs?: {
+    label: string;
+    url?: string;
+  }[];
+}
+
+const AboutBanner = ({
+  title,
+  subtitle,
+  backgroundImage = "/images/about/about-banner.jpg",
+  breadcrumbs = [
+    { label: "Home", url: "/" },
+    { label: "About" }
+  ]
+}: AboutBannerProps) => {
+  return (
+    <section className="relative">
+      {/* Background Image with Black Overlay */}
+      <div className="relative h-[281px] overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src={backgroundImage}
+          alt={title}
+          fill
+          priority
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
+        
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black opacity-70"></div>
+        
+        {/* Content Container */}
+        <div className="container mx-auto px-4 relative h-full z-10 flex flex-col justify-center items-center text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            {title}
+          </h1>
+          
+          {subtitle && (
+            <p className="text-white/80 max-w-2xl mx-auto text-lg">{subtitle}</p>
+          )}
+        </div>
+      </div>
+      
+      {/* Breadcrumbs Section */}
+      <div className="bg-[#f5f5f5] border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <nav className="py-4">
+            <ol className="flex items-center flex-wrap">
+              {breadcrumbs.map((crumb, index) => (
+                <li 
+                  key={index} 
+                  className="flex items-center"
+                >
+                  {index === 0 ? (
+                    <FaHome className="mr-1 text-gray-500" />
+                  ) : (
+                    <FaChevronRight className="mx-2 text-xs text-gray-400" />
+                  )}
+                  
+                  {crumb.url ? (
+                    <Link 
+                      href={crumb.url} 
+                      className="text-gray-500 hover:text-[#D4AF34] transition-colors duration-300"
+                    >
+                      {crumb.label}
+                    </Link>
+                  ) : (
+                    <span className="text-[#D4AF34] font-medium">{crumb.label}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutBanner;
