@@ -293,7 +293,7 @@ const Contact = () => {
                 allowFullScreen 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Sort Brands Office Location"
+                title="Sortbrands Office Location"
               ></iframe>
             </div>
           </div>

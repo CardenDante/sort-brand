@@ -51,7 +51,7 @@ const Team = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Leadership Team</h2>
           <div className="w-20 h-1 bg-brand-gold mx-auto mb-8"></div>
           <p className="max-w-3xl mx-auto text-lg text-gray-600">
-            Meet the experts behind Sort Brands who are dedicated to helping your business succeed.
+            Meet the experts behind Sortbrands who are dedicated to helping your business succeed.
           </p>
         </div>
 

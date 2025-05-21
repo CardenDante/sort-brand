@@ -64,7 +64,7 @@ const Header = () => {
               <div className="relative h-14 w-40">
                 <Image
                   src="/images/logo/sb.png"
-                  alt="Sort Brands Logo"
+                  alt="Sortbrands Logo"
                   fill
                   style={{ objectFit: 'contain', objectPosition: 'left' }}
                 />

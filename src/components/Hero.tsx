@@ -11,7 +11,7 @@ interface HeroProps {
 }
 
 const Hero = ({
-  title = "Sort Brands helps top businesses thrive in Africa.",
+  title = "Sortbrands helps top businesses thrive in Africa.",
   subtitle = "We are the leading digital creative agency dedicated to helping brands grow through innovative marketing solutions.",
   buttonText = "Our Solutions",
   buttonLink = "/solutions",
@@ -38,7 +38,7 @@ const Hero = ({
         <div className="max-w-4xl">
           {/* Two-line title styling like in the reference */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight">
-            Sort Brands helps top
+            Sortbrands helps top
             <br />
             businesses thrive in Africa.
           </h1>

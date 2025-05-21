@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'Sort Brands - Digital Creative Agency',
+  title: 'Sortbrands - Digital Creative Agency',
   description: 'We help top brands thrive with creative marketing solutions.',
 };
 

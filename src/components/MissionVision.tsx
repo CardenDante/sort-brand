@@ -56,7 +56,7 @@ const MissionVision = () => {
               <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src="/images/about/mission-vision.jpg"
-                  alt="Sort Brands Mission and Vision"
+                  alt="Sortbrands Mission and Vision"
                   fill
                   style={{ objectFit: 'cover' }}
                 />
@@ -66,7 +66,7 @@ const MissionVision = () => {
               <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-lg overflow-hidden shadow-xl border-4 border-white hidden md:block">
                 <Image
                   src="/images/about/accent-image.jpg"
-                  alt="Sort Brands Accent"
+                  alt="Sortbrands Accent"
                   fill
                   style={{ objectFit: 'cover' }}
                 />

@@ -51,14 +51,14 @@ const IntroSection = () => {
         {/* Heading with proper wrapping */}
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mx-auto max-w-4xl">
-            Sort Brands is Africa's top marketing agency.
+            Sortbrands is Africa's top marketing agency.
           </h2>
         </div>
 
         {/* Main text content */}
         <div className="max-w-4xl mx-auto text-center mb-8">
           <p className="text-lg">
-            Global brands often miss the mark in Africa. Generic marketing campaigns fail to resonate with African consumers, leading to wasted resources and missed opportunities. At SORT BRANDS, we bridge this gap. As a passionate team of African storytellers, we possess a deep understanding of the continent's diverse cultures, languages, and consumer preferences. We leverage our expertise across Print Advertising, Experiential Marketing, Events Management, Digital Marketing, and Media Relations to craft campaigns that resonate on a deeper emotional level, helping your brand thrive in the dynamic African market.
+            Global brands often miss the mark in Africa. Generic marketing campaigns fail to resonate with African consumers, leading to wasted resources and missed opportunities. At Sortbrands, we bridge this gap. As a passionate team of African storytellers, we possess a deep understanding of the continent's diverse cultures, languages, and consumer preferences. We leverage our expertise across Print Advertising, Experiential Marketing, Events Management, Digital Marketing, and Media Relations to craft campaigns that resonate on a deeper emotional level, helping your brand thrive in the dynamic African market.
           </p>
         </div>
 

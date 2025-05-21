@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     position: 'Marketing Director',
     company: 'ABC Corporation',
     image: '/images/testimonials/client1.jpg',
-    testimonial: 'Sort Brands transformed our digital presence completely. Their strategic approach to social media marketing increased our engagement by 200% and drove significant traffic to our website. Their team is professional, responsive, and delivers results beyond expectations.',
+    testimonial: 'Sortbrands transformed our digital presence completely. Their strategic approach to social media marketing increased our engagement by 200% and drove significant traffic to our website. Their team is professional, responsive, and delivers results beyond expectations.',
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     position: 'CEO',
     company: 'XYZ Enterprises',
     image: '/images/testimonials/client2.jpg',
-    testimonial: 'We hired Sort Brands for a complete rebranding exercise and they exceeded our expectations. Their creativity and understanding of our vision were impressive. The new brand identity has been well-received by our customers and has given us a fresh, modern look.',
+    testimonial: 'We hired Sortbrands for a complete rebranding exercise and they exceeded our expectations. Their creativity and understanding of our vision were impressive. The new brand identity has been well-received by our customers and has given us a fresh, modern look.',
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const testimonials: Testimonial[] = [
     position: 'Brand Manager',
     company: 'Global Solutions',
     image: '/images/testimonials/client3.jpg',
-    testimonial: 'Working with Sort Brands on our influencer marketing campaign was a game-changer. They connected us with the perfect influencers for our target audience and managed the entire process seamlessly. The campaign reached over 1 million people and significantly boosted our sales.',
+    testimonial: 'Working with Sortbrands on our influencer marketing campaign was a game-changer. They connected us with the perfect influencers for our target audience and managed the entire process seamlessly. The campaign reached over 1 million people and significantly boosted our sales.',
   },
 ];
 
