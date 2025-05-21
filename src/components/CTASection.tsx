@@ -113,7 +113,7 @@ const CTASection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <Link 
-                href="/contact" 
+                href="/contacts" 
                 className="inline-flex items-center justify-center gap-2 bg-[#000000] hover:bg-[#222222] text-white font-bold py-4 px-8 rounded-md text-center transition-all duration-300 shadow-lg"
               >
                 <span>Sort My Business</span>

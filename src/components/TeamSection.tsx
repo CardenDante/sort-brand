@@ -16,28 +16,27 @@ const teamMembers: TeamMember[] = [
     id: 'kelvin-mosioma',
     name: 'Kelvin Mosioma',
     role: 'Chairman',
-    image: '/images/team/Kelvin.jpg',
+    image: '/images/team/EddieVoke254.jpg',
     bio: 'Visionary leader with extensive experience in branding and marketing strategy. Kelvin drives our company vision and ensures we deliver exceptional value to every client.'
   },
   {
     id: 'yohan-kim',
     name: 'Yohan Kim',
     role: 'Chief Advisor',
-    image: '/images/team/yohan-kim.jpg',
+    image: '/images/team/placeholder.png',
     bio: 'With a rich international background, Yohan brings global perspective and strategic insight to our operations, helping clients navigate complex marketing challenges.'
   },
   {
     id: 'evans-mutiga',
     name: 'Evans Mutiga',
     role: 'Business Development Officer',
-    image: '/images/team/Evans.jpg',
+    image: '/images/team/Evans.png',
     bio: 'Driving growth and fostering key partnerships, Evans excels at identifying opportunities and creating tailored solutions that exceed client expectations.'
   }
 ];
 
 const TeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeTeamMember, setActiveTeamMember] = useState<string | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -79,74 +78,83 @@ const TeamSection = () => {
       <div className="absolute top-0 left-0 right-0 h-1 bg-[#D4AF34]"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
+        {/* Section Header - Styling consistent with FAQ section */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">Our Leadership Team</h2>
-          <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-3"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+          <div className="inline-block mb-4 bg-[#D4AF34]/10 px-3 py-1 rounded">
+            <span className="text-[#D4AF34] text-sm uppercase tracking-widest font-semibold">Our Team</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+            Leadership <span className="text-[#D4AF34]">Team</span>
+          </h2>
+          <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-4"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Meet the exceptional team driving our mission to sort your brand through innovative marketing and advertising solutions.
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          {teamMembers.map((member, index) => (
-            <div
-              key={member.id}
-              className={`
-                transform transition-all duration-700
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
-              `}
-              style={{ transitionDelay: `${index * 200}ms` }}
-              onMouseEnter={() => setActiveTeamMember(member.id)}
-              onMouseLeave={() => setActiveTeamMember(null)}
-            >
-              <div className="bg-white rounded-lg overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300">
-                {/* Image Container */}
-                <div className="relative h-60 md:h-70 overflow-hidden">
-                  {/* Use Next.js Image component with actual image path */}
-                  <Image
-                    src={member.image}
-                    alt={`${member.name} - ${member.role}`}
-                    fill
-                    style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                    priority={index === 0}
-                    className="group-hover:scale-105 transition-transform duration-500"
-                  />
+        {/* Team Grid - with improved layout and image handling */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {teamMembers.map((member, index) => (
+              <div
+                key={member.id}
+                className={`
+                  transform transition-all duration-700
+                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
+                `}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                {/* Card with better proportions - similar styling to FAQ */}
+                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col border border-gray-100">
+                  {/* Image Container with fixed aspect ratio and better handling */}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                    <Image
+                      src={member.image}
+                      alt={`${member.name} - ${member.role}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      priority={index === 0}
+                      style={{ 
+                        objectFit: 'cover', 
+                        objectPosition: 'center 20%' 
+                      }}
+                      className="hover:scale-105 transition-transform duration-500"
+                    />
+                    
+                    {/* Gold accent bar at the bottom of image */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4AF34]"></div>
+                  </div>
                   
-                  {/* Gold overlay on hover */}
-                  <div className="absolute inset-0 bg-[#D4AF34] mix-blend-overlay opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                </div>
-                
-                {/* Content */}
-                <div className="p-4 md:p-5">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-[#D4AF34] font-medium mb-2 text-sm">{member.role}</p>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
+                  {/* Content */}
+                  <div className="p-6 flex-grow flex flex-col">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                    <p className="text-[#D4AF34] font-medium mb-3">{member.role}</p>
+                    <p className="text-gray-600 leading-relaxed flex-grow">{member.bio}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         
-        {/* Join the team CTA */}
+        {/* Join the team CTA - Styled more like FAQ section */}
         <div 
           className={`
-            bg-black rounded-lg p-6 md:p-8 shadow-xl max-w-4xl mx-auto
+            bg-black rounded-lg p-8 md:p-10 shadow-md max-w-4xl mx-auto mt-12
             transform transition-all duration-1000 delay-500
             ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
           `}
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-4 md:mb-0 md:mr-8">
-              <h3 className="text-xl font-bold text-white mb-2">Join Our Team</h3>
-              <p className="text-white/70 text-sm">
-                Are you passionate about branding and marketing? We're always looking for talented individuals to join our growing team.
+            <div className="mb-6 md:mb-0 md:mr-8">
+              <h3 className="text-2xl font-bold text-white mb-3">Join Our Team</h3>
+              <p className="text-white/80 leading-relaxed">
+                Are you passionate about branding and marketing? We're always looking for talented individuals with the right mindset to join our growing team.
               </p>
             </div>
             <a 
               href="/careers" 
-              className="inline-block bg-[#D4AF34] hover:bg-[#c9a52f] text-black font-bold py-2 px-6 rounded-lg transition-all duration-300 shadow-lg text-center whitespace-nowrap"
+              className="inline-block bg-[#D4AF34] hover:bg-white hover:text-black text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 text-center whitespace-nowrap"
             >
               View Careers
             </a>

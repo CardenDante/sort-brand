@@ -97,7 +97,7 @@ const IntroSection = () => {
         {/* CTA Button */}
         <div className="text-center">
           <Link 
-            href="/portfolio"
+            href="/case-studies"
             className="inline-block bg-[#D4AF34] hover:bg-[#000000] hover:text-white text-black font-bold py-4 px-10 rounded-full transition duration-300"
           >
             Our Work

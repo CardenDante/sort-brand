@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaWhatsapp,
   FaEnvelope,
+  FaLinkedin,
 } from 'react-icons/fa';
 
 const TopBanner = () => {
@@ -13,13 +14,13 @@ const TopBanner = () => {
       <div className="container mx-auto px-4 flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
         {/* Row 1: Social Icons (centered on mobile, left on desktop) */}
         <div className="flex justify-center md:justify-start space-x-4">
-          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF34] transition-colors duration-300">
-            <FaTwitter />
+          <Link href="https://www.linkedin.com/company/sortbrands-group/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF34] transition-colors duration-300">
+            <FaLinkedin />
           </Link>
-          <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF34] transition-colors duration-300">
+          <Link href="https://www.facebook.com/Sortbrands/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF34] transition-colors duration-300">
             <FaFacebook />
           </Link>
-          <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF34] transition-colors duration-300">
+          <Link href="https://www.instagram.com/sortbrandsgroup/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF34] transition-colors duration-300">
             <FaInstagram />
           </Link>
           <Link href="https://wa.me/+254742906505" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF34] transition-colors duration-300">

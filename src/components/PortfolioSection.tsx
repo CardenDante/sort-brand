@@ -14,39 +14,39 @@ interface PortfolioItem {
 
 const portfolioItems: PortfolioItem[] = [
   {
-    id: 'pernod-ricard',
-    title: 'Pernod Ricard',
-    image: '/images/portfolio/programmer-home-office-concentrating-finding-bugs-while-he-codes.jpg',
+    id: 'MCL',
+    title: 'Billboard & Signage',
+    image: '/images/Mockp2.jpg',
     size: 'wide',
-    link: '/work/pernod-ricard',
+    link: '/case-studies',
   },
   {
-    id: 'airasia',
-    title: 'AirAsia',
-    image: '/images/portfolio/programmer-home-office-concentrating-finding-bugs-while-he-codes.jpg',
+    id: 'MCL',
+    title: 'Branding & Marketing',
+    image: '/images/Branding_m.jpg',
     size: 'normal',
-    link: '/work/airasia',
+    link: '/case-studies',
   },
   {
-    id: 'pearson',
-    title: 'Pearson Test of English PTE',
-    image: '/images/portfolio/Branding-bg.png',
+    id: 'Shamin',
+    title: 'Tents & Tarpaulins',
+    image: '/images/shamin.jpg',
     size: 'normal',
-    link: '/work/pearson',
+    link: '/case-studies',
   },
   {
     id: 'avpa',
-    title: 'African Venture Philanthropy Alliance',
-    image: '/images/portfolio/programmer-home-office-concentrating-finding-bugs-while-he-codes.jpg',
+    title: 'Banners',
+    image: '/images/banners.jpg',
     size: 'normal',
-    link: '/work/avpa',
+    link: '/case-studies',
   },
   {
     id: 'uber',
-    title: 'UBER',
-    image: '/images/portfolio/programmer-home-office-concentrating-finding-bugs-while-he-codes.jpg',
+    title: 'Awards & Recognition',
+    image: '/images/Awards.jpeg',
     size: 'normal',
-    link: '/work/uber',
+    link: '/case-studies',
   },
 ];
 
@@ -106,7 +106,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Filter Navigation */}
-        <div className="flex justify-center space-x-8 mb-12">
+        {/* <div className="flex justify-center space-x-8 mb-12">
           {['Main', 'Projects', 'Clients', 'Contact'].map((filter) => (
             <button
               key={filter}
@@ -119,7 +119,7 @@ const PortfolioSection = () => {
               {filter}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-12 gap-4 md:gap-6">

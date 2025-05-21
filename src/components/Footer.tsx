@@ -142,7 +142,7 @@ const MobileOptimizedFooter = () => {
                 {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
                   <a
                     key={idx}
-                    href="#"
+                    href="https://www.linkedin.com/company/sortbrands-group/about/?viewAsMember=true"
                     className="w-9 h-9 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all"
                   >
                     <Icon />
