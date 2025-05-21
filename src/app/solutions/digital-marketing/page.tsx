@@ -18,7 +18,7 @@ const digitalMarketingServices: ServiceItem[] = [
     id: 'social-media-marketing',
     title: 'Social Media Marketing',
     description: 'We assist individuals and businesses in setting up and optimizing social media accounts across platforms such as Facebook, Instagram, X (formerly Twitter), LinkedIn, TikTok, and YouTube. We create and refine social media profiles to ensure they are fully optimized for visibility and engagement. This includes crafting compelling bios, selecting the perfect profile and cover photos, and making platform-specific adjustments to maximize each network\'s potential. Additionally, we create engaging content that resonates with your audience, respond to inquiries in real-time, and run Facebook and Google Ads to drive the growth of your social media presence—ultimately generating quality leads that contribute to business growth.',
-    image: '/images/solutions/social-media-marketing.jpg',
+    image: '/images/solutions/social-media-marketing.jpeg',
     benefits: [
       'Brand Awareness: Reach a large audience and boost visibility',
       'Targeted Advertising: Tailor campaigns to specific demographics',
@@ -32,7 +32,7 @@ const digitalMarketingServices: ServiceItem[] = [
     id: 'content-creation',
     title: 'Content Creation and Marketing Strategy',
     description: 'We assist businesses in designing eye-catching social media posters, creating engaging visual content, crafting compelling copy, and producing dynamic videos. Our content resonates with your audience and reflects your brand\'s unique voice and values. We also plan and manage content calendars to ensure a consistent, strategic posting schedule. From captivating graphics to thought-provoking articles and videos, we handle every aspect of content creation and management, keeping your social media channels vibrant, active, and aligned with your brand.',
-    image: '/images/solutions/content-creation.jpg',
+    image: '/images/case-studies/boomplay-case-study.jpeg',
     benefits: [
       'Brand Awareness: Boosts visibility with consistent messaging',
       'Audience Engagement: Drives interaction and connection',
@@ -60,7 +60,7 @@ const digitalMarketingServices: ServiceItem[] = [
     id: 'email-marketing',
     title: 'Email Marketing',
     description: 'We help businesses and individuals design and send newsletters, promotions, offers, and updates on products, services, or holidays to both existing and potential clients.',
-    image: '/images/solutions/email-marketing.jpg',
+    image: '/images/solutions/email-marketing.jpeg',
     benefits: [
       'Direct Communication: Reach your audience directly in their inbox',
       'High ROI: Email marketing offers excellent return on investment',
@@ -79,7 +79,7 @@ export default function DigitalMarketingPage() {
       <AboutBanner
         title="Digital Marketing"
         subtitle="Tailored digital marketing campaigns that enhance brand awareness, drive traffic, generate leads, and increase conversions."
-        backgroundImage="/images/solutions/digital-marketing-banner.jpg"
+        backgroundImage="/images/solutions/solutions-banner.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },

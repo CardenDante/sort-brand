@@ -68,7 +68,7 @@ export default function BrandingPage() {
       <AboutBanner
         title="Branding"
         subtitle="Comprehensive branding services to help businesses create a strong identity and connect with their audience."
-        backgroundImage="/images/solutions/branding-banner.jpg"
+        backgroundImage="/images/solutions/solutions-banner.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },
@@ -130,7 +130,7 @@ export default function BrandingPage() {
             <div className="relative">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/solutions/branding-main.jpg"
+                  src="/images/solutions/branding-main.png"
                   alt="Branding Services"
                   fill
                   style={{ objectFit: 'cover' }}

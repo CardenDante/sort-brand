@@ -24,7 +24,7 @@ const solutions: SolutionCard[] = [
     id: 'graphic-design',
     title: 'Graphic Design',
     description: 'High-quality, eye-catching, and simple customized designs to help you stand out, create a positive impression, and effectively promote your products and services.',
-    image: '/images/solutions/graphic-design.jpg',
+    image: '/images/solutions/graphic-design.png',
     link: '/solutions/graphic-design'
   },
   {
@@ -38,14 +38,14 @@ const solutions: SolutionCard[] = [
     id: 'photography',
     title: 'Photography & Videography',
     description: 'Professional photography and videography services to capture beautiful shots and amazing footage at various events, along with eye-catching promotional videos.',
-    image: '/images/solutions/photography.jpg',
+    image: '/images/case-studies/ssr.jpeg',
     link: '/solutions/photography'
   },
   {
     id: 'influencer-marketing',
     title: 'Influencer Marketing',
     description: 'Strategic influencer marketing guidance, including selection of suitable brand ambassadors, management of influencers, and measurement of engagement and ROI.',
-    image: '/images/solutions/influencer-marketing.jpg',
+    image: '/images/solutions/influencer-marketing.jpeg',
     link: '/solutions/influencer-marketing'
   },
   {
@@ -64,7 +64,7 @@ export default function SolutionsPage() {
       <AboutBanner
         title="Our Solutions"
         subtitle="Comprehensive marketing and branding solutions to help your business thrive in the digital age."
-        backgroundImage="/images/solutions/solutions-banner.jpg"
+        backgroundImage="/images/solutions/solutions-banner.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions" }

@@ -1,25 +1,66 @@
 // src/app/solutions/graphic-design/page.tsx
 import AboutBanner from '@/components/about/AboutBanner';
-import { ArrowRight } from 'lucide-react';
+import { 
+  ArrowRight, 
+  Palette, 
+  Instagram, 
+  Printer, 
+  PenTool, 
+  BookOpen, 
+  FileType, 
+  Newspaper, 
+  Package
+} from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowRight } from 'react-icons/fa';
 
 interface DesignItem {
   id: string;
   title: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 const designTypes: DesignItem[] = [
-  { id: 'logos', title: 'Logos & Brand Identity', icon: '/images/icons/logo-design.svg' },
-  { id: 'social-media', title: 'Social Media Graphics', icon: '/images/icons/social-media.svg' },
-  { id: 'print', title: 'Print Materials', icon: '/images/icons/print.svg' },
-  { id: 'marketing', title: 'Marketing Collateral', icon: '/images/icons/marketing.svg' },
-  { id: 'stationery', title: 'Business Stationery', icon: '/images/icons/stationery.svg' },
-  { id: 'advertising', title: 'Advertising Materials', icon: '/images/icons/advertising.svg' },
-  { id: 'publications', title: 'Publications', icon: '/images/icons/publications.svg' },
-  { id: 'packaging', title: 'Packaging Design', icon: '/images/icons/packaging.svg' }
+  { 
+    id: 'logos', 
+    title: 'Logos & Brand Identity', 
+    icon: <Palette className="w-12 h-12 text-[#D4AF34]" />
+  },
+  { 
+    id: 'social-media', 
+    title: 'Social Media Graphics', 
+    icon: <Instagram className="w-12 h-12 text-[#D4AF34]" />
+  },
+  { 
+    id: 'print', 
+    title: 'Print Materials', 
+    icon: <Printer className="w-12 h-12 text-[#D4AF34]" />
+  },
+  { 
+    id: 'marketing', 
+    title: 'Marketing Collateral', 
+    icon: <PenTool className="w-12 h-12 text-[#D4AF34]" />
+  },
+  { 
+    id: 'stationery', 
+    title: 'Business Stationery', 
+    icon: <FileType className="w-12 h-12 text-[#D4AF34]" />
+  },
+  { 
+    id: 'advertising', 
+    title: 'Advertising Materials', 
+    icon: <BookOpen className="w-12 h-12 text-[#D4AF34]" />
+  },
+  { 
+    id: 'publications', 
+    title: 'Publications', 
+    icon: <Newspaper className="w-12 h-12 text-[#D4AF34]" />
+  },
+  { 
+    id: 'packaging', 
+    title: 'Packaging Design', 
+    icon: <Package className="w-12 h-12 text-[#D4AF34]" />
+  }
 ];
 
 export default function GraphicDesignPage() {
@@ -29,7 +70,7 @@ export default function GraphicDesignPage() {
       <AboutBanner
         title="Graphic Design"
         subtitle="High-quality, eye-catching, and customized designs to help you stand out and effectively promote your brand."
-        backgroundImage="/images/solutions/graphic-design-banner.jpg"
+        backgroundImage="/images/solutions/solutions-banner.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },
@@ -61,7 +102,7 @@ export default function GraphicDesignPage() {
             <div className="relative">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/solutions/graphic-design-main.jpg"
+                  src="/images/solutions/graphic-design-main.jpeg"
                   alt="Graphic Design Services"
                   fill
                   style={{ objectFit: 'cover' }}
@@ -93,7 +134,7 @@ export default function GraphicDesignPage() {
                 href="/contacts" 
                 className="inline-flex items-center bg-[#D4AF34] hover:bg-black text-black hover:text-white px-6 py-3 rounded-full font-bold transition-colors duration-300"
               >
-                Start Your Design Project <FaArrowRight className="ml-2" />
+                Start Your Design Project <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </div>
           </div>
@@ -119,12 +160,7 @@ export default function GraphicDesignPage() {
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl border border-gray-100 hover:border-[#D4AF34]/20 transition-all duration-300"
               >
                 <div className="mb-4 h-16 flex items-center justify-center">
-                  <Image
-                    src={item.icon}
-                    alt={item.title}
-                    width={48}
-                    height={48}
-                  />
+                  {item.icon}
                 </div>
                 <h3 className="text-lg font-bold text-center">{item.title}</h3>
               </div>
@@ -141,7 +177,7 @@ export default function GraphicDesignPage() {
               href="/contacts" 
               className="inline-flex items-center text-[#D4AF34] font-medium hover:underline transition-colors"
             >
-              Discuss Your Design Needs <FaArrowRight className="ml-2 text-sm" />
+              Discuss Your Design Needs <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -171,7 +207,7 @@ export default function GraphicDesignPage() {
                   </p>
                 </div>
                 <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 text-[#D4AF34]">
-                  <FaArrowRight className="text-2xl" />
+                  <ArrowRight className="w-6 h-6" />
                 </div>
               </div>
               
@@ -185,7 +221,7 @@ export default function GraphicDesignPage() {
                   </p>
                 </div>
                 <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 text-[#D4AF34]">
-                  <FaArrowRight className="text-2xl" />
+                  <ArrowRight className="w-6 h-6" />
                 </div>
               </div>
               
@@ -206,56 +242,56 @@ export default function GraphicDesignPage() {
       
       {/* CTA Section */}
       <section className="py-16 relative overflow-hidden bg-white">
-  {/* Subtle geometric pattern background */}
-  <div 
-    className="absolute inset-0 z-0 opacity-5" 
-    style={{
-      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0 h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/svg%3E")', 
-    }}
-  ></div>
-  
-  {/* Gold decorative elements */}
-  <div className="absolute inset-0 z-0">
-    {/* Top right gold circle */}
-    <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#D4AF34]/10"></div>
-    
-    {/* Bottom left gold circle */}
-    <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#D4AF34]/5"></div>
-    
-    {/* Gold accent lines */}
-    <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF34]/30 to-transparent"></div>
-    <div className="absolute bottom-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF34]/30 to-transparent"></div>
-  </div>
-  
-  {/* CTA Card with shadow */}
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-10 relative">
-      {/* Gold accent corners */}
-      <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-[#D4AF34] rounded-tl-2xl"></div>
-      <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-[#D4AF34] rounded-br-2xl"></div>
-      
-      <div className="text-center">
-        <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-6"></div>
+        {/* Subtle geometric pattern background */}
+        <div 
+          className="absolute inset-0 z-0 opacity-5" 
+          style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0 h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/svg%3E")', 
+          }}
+        ></div>
         
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Ready for Eye-Catching <span className="text-[#D4AF34]">Designs?</span>
-        </h2>
+        {/* Gold decorative elements */}
+        <div className="absolute inset-0 z-0">
+          {/* Top right gold circle */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#D4AF34]/10"></div>
+          
+          {/* Bottom left gold circle */}
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#D4AF34]/5"></div>
+          
+          {/* Gold accent lines */}
+          <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF34]/30 to-transparent"></div>
+          <div className="absolute bottom-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF34]/30 to-transparent"></div>
+        </div>
         
-        <p className="text-gray-600 text-lg mb-8">
-          Let our design experts create visuals that capture attention and elevate your brand.
-          Contact us today to discuss your project.
-        </p>
-        
-        <Link 
-          href="/contacts" 
-          className="inline-flex items-center bg-[#D4AF34] hover:bg-black text-black hover:text-white font-bold px-8 py-4 rounded-full transition-colors duration-300 transform hover:scale-105 shadow-md"
-        >
-          Start Your Project <ArrowRight className="ml-2 w-5 h-5" />
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+        {/* CTA Card with shadow */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-10 relative">
+            {/* Gold accent corners */}
+            <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-[#D4AF34] rounded-tl-2xl"></div>
+            <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-[#D4AF34] rounded-br-2xl"></div>
+            
+            <div className="text-center">
+              <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-6"></div>
+              
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Ready for Eye-Catching <span className="text-[#D4AF34]">Designs?</span>
+              </h2>
+              
+              <p className="text-gray-600 text-lg mb-8">
+                Let our design experts create visuals that capture attention and elevate your brand.
+                Contact us today to discuss your project.
+              </p>
+              
+              <Link 
+                href="/contacts" 
+                className="inline-flex items-center bg-[#D4AF34] hover:bg-black text-black hover:text-white font-bold px-8 py-4 rounded-full transition-colors duration-300 transform hover:scale-105 shadow-md"
+              >
+                Start Your Project <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

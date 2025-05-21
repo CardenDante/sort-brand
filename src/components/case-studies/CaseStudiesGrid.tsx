@@ -55,7 +55,7 @@ const allCaseStudies: CaseStudy[] = [
     title: 'Financial Services Digital Transformation',
     clientName: 'Mwananchi Credit Limited',
     clientLogo: '/images/logo/mcl.jpg',
-    image: '/images/case-studies/mwananchi-case-study1.jpeg',
+    image: '/images/case-studies/ssr.jpeg',
     category: 'web-development',
     industry: 'finance',
     result: 'Increase in Online Loan Applications',

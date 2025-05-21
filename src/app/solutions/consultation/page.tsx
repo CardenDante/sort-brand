@@ -58,7 +58,7 @@ export default function ConsultationPage() {
       <AboutBanner
         title="Digital Marketing Consultation"
         subtitle="Expert guidance to help your business leverage digital marketing effectively for maximum ROI."
-        backgroundImage="/images/solutions/consultation-banner.jpg"
+        backgroundImage="/images/solutions/solutions-banner.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },
@@ -90,7 +90,7 @@ export default function ConsultationPage() {
             <div className="relative">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/solutions/consultation-main.jpg"
+                  src="/images/solutions/consultation.jpg"
                   alt="Digital Marketing Consultation"
                   fill
                   style={{ objectFit: 'cover' }}

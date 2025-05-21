@@ -84,7 +84,7 @@ export default function InfluencerMarketingPage() {
       <AboutBanner
         title="Influencer Marketing"
         subtitle="Strategic partnerships with relevant influencers to amplify your brand message and reach new audiences."
-        backgroundImage="/images/solutions/influencer-marketing-banner.jpg"
+        backgroundImage="/images/solutions/solutions-banner.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },

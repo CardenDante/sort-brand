@@ -40,12 +40,12 @@ const photoServices: PhotoService[] = [
 ];
 
 const eventTypes: EventType[] = [
-  { id: 'corporate', name: 'Corporate Events', imageUrl: '/images/events/corporate.jpg' },
-  { id: 'weddings', name: 'Weddings', imageUrl: '/images/events/wedding.jpg' },
-  { id: 'birthdays', name: 'Birthdays', imageUrl: '/images/events/birthday.jpg' },
-  { id: 'church', name: 'Church Events', imageUrl: '/images/events/church.jpg' },
-  { id: 'roadshows', name: 'Roadshows', imageUrl: '/images/events/roadshow.jpg' },
-  { id: 'team-building', name: 'Team Building', imageUrl: '/images/events/team-building.jpg' },
+  { id: 'corporate', name: 'Corporate Events', imageUrl: '/images/solutions/corporate.jpg' },
+  { id: 'weddings', name: 'Weddings', imageUrl: '/images/solutions/wedding.jpg' },
+  { id: 'birthdays', name: 'Birthdays', imageUrl: '/images/solutions/birthday.jpg' },
+  { id: 'church', name: 'Church Events', imageUrl: '/images/solutions/church.jpg' },
+  { id: 'roadshows', name: 'Roadshows', imageUrl: '/images/solutions/roadshow.avif' },
+  { id: 'team-building', name: 'Team Building', imageUrl: '/images/solutions/team-building.jpg' },
 ];
 
 export default function PhotographyPage() {
@@ -55,7 +55,7 @@ export default function PhotographyPage() {
       <AboutBanner
         title="Photography & Videography"
         subtitle="Professional visual content to capture your important moments and promote your brand."
-        backgroundImage="/images/solutions/photography-banner.jpg"
+        backgroundImage="/images/solutions/solutions-banner.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },
@@ -115,7 +115,7 @@ export default function PhotographyPage() {
             <div className="relative">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/solutions/photography-main.jpg"
+                  src="/images/solutions/photography-main.jpeg"
                   alt="Photography Services"
                   fill
                   style={{ objectFit: 'cover' }}
@@ -273,7 +273,7 @@ export default function PhotographyPage() {
             <div className="relative order-1 lg:order-2">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/solutions/video-production.jpg"
+                  src="/images/solutions/video-production.jpeg"
                   alt="Video Production Services"
                   fill
                   style={{ objectFit: 'cover' }}
