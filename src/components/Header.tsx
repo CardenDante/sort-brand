@@ -168,6 +168,13 @@ const Header = () => {
             >
               News & Insights
             </Link>
+
+            <Link 
+              href="/careers" 
+              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 ${isActive('/news') ? 'text-[#D4AF34]' : ''}`}
+            >
+              Careers
+            </Link>
             
             <Link 
               href="/contacts" 
@@ -326,6 +333,14 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               News & Insights
+            </Link>
+
+            <Link 
+              href="/careers"
+              className={`block font-medium hover:text-[#D4AF34] ${isActive('/news') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Careers
             </Link>
             
             <Link 
