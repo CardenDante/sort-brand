@@ -70,12 +70,12 @@ const WhoWeWorkWith = () => {
               <p className="text-gray-600 mb-4 flex-grow">{category.description}</p>
               
               {/* Learn More Link */}
-              <Link 
+              {/* <Link 
                 href={category.learnMoreLink}
                 className="text-[#D4AF34] font-medium hover:underline transition-colors"
               >
                 Learn More
-              </Link>
+              </Link> */}
             </div>
           ))}
         </div>
