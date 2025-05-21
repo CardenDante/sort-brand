@@ -1,14 +1,18 @@
 // src/components/Header.tsx
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaPhone, FaChevronDown } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+  
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Handle scroll event to change header style when scrolled
   useEffect(() => {
@@ -20,16 +24,34 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const toggleDropdown = (dropdown: string) => {
-    if (activeDropdown === dropdown) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(dropdown);
-    }
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
+
+  const isActive = (path: string) => {
+    return pathname === path;
+  };
+
+  const isActiveSolution = () => {
+    return pathname.startsWith('/solutions');
   };
 
   return (
@@ -52,75 +74,105 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300">
+            <Link 
+              href="/" 
+              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 ${isActive('/') ? 'text-[#D4AF34]' : ''}`}
+            >
               Home
             </Link>
             
-            {/* About link - No dropdown */}
-            <Link href="/about" className="text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300">
+            <Link 
+              href="/about" 
+              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 ${isActive('/about') ? 'text-[#D4AF34]' : ''}`}
+            >
               About
             </Link>
             
-            <Link href="/case-studies" className="text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300">
+            <Link 
+              href="/case-studies" 
+              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 ${isActive('/case-studies') ? 'text-[#D4AF34]' : ''}`}
+            >
               Case Studies
             </Link>
             
-            <div className="relative group">
-              <button 
-                onClick={() => toggleDropdown('solutions')}
-                className="flex items-center text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300"
-                aria-expanded={activeDropdown === 'solutions'}
-              >
-                Solutions
-                <FaChevronDown className="ml-1 h-3 w-3" />
-              </button>
+            <div className="relative" ref={dropdownRef}>
+              <div className="flex items-center space-x-1 cursor-pointer" onClick={() => toggleDropdown('solutions')}>
+                <Link 
+                  href="/solutions" 
+                  className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 ${isActiveSolution() ? 'text-[#D4AF34]' : ''}`}
+                  onClick={(e) => {
+                    // Prevent toggling the dropdown when clicking the Solutions link directly
+                    e.stopPropagation();
+                  }}
+                >
+                  Solutions
+                </Link>
+                <FaChevronDown 
+                  className={`h-3 w-3 transition-transform duration-300 ${
+                    activeDropdown === 'solutions' ? 'transform rotate-180' : ''
+                  } ${isActiveSolution() ? 'text-[#D4AF34]' : 'text-gray-900'}`} 
+                />
+              </div>
               
               {activeDropdown === 'solutions' && (
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-50">
+                <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-50 animate-fadeIn">
                   <Link
                     href="/solutions/digital-marketing"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34]"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] ${isActive('/solutions/digital-marketing') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
                     onClick={() => setActiveDropdown(null)}
                   >
                     Digital Marketing
                   </Link>
                   <Link
                     href="/solutions/graphic-design"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34]"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] ${isActive('/solutions/graphic-design') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
                     onClick={() => setActiveDropdown(null)}
                   >
                     Graphic Design
                   </Link>
                   <Link
                     href="/solutions/branding"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34]"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] ${isActive('/solutions/branding') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
                     onClick={() => setActiveDropdown(null)}
                   >
                     Branding
                   </Link>
                   <Link
                     href="/solutions/photography"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34]"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] ${isActive('/solutions/photography') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
                     onClick={() => setActiveDropdown(null)}
                   >
                     Photography & Videography
                   </Link>
                   <Link
                     href="/solutions/influencer-marketing"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34]"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] ${isActive('/solutions/influencer-marketing') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
                     onClick={() => setActiveDropdown(null)}
                   >
                     Influencer Marketing
+                  </Link>
+                  <Link
+                    href="/solutions/consultation"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] ${isActive('/solutions/consultation') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    Digital Marketing Consultation
                   </Link>
                 </div>
               )}
             </div>
             
-            <Link href="/news" className="text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300">
+            <Link 
+              href="/news" 
+              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 ${isActive('/news') ? 'text-[#D4AF34]' : ''}`}
+            >
               News & Insights
             </Link>
             
-            <Link href="/contacts" className="text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300">
+            <Link 
+              href="/contacts" 
+              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 ${isActive('/contacts') ? 'text-[#D4AF34]' : ''}`}
+            >
               Contacts
             </Link>
           </nav>
@@ -176,16 +228,15 @@ const Header = () => {
           <div className="container mx-auto px-4 py-4 space-y-4 border-t">
             <Link 
               href="/"
-              className="block text-gray-900 font-medium hover:text-[#D4AF34]"
+              className={`block font-medium hover:text-[#D4AF34] ${isActive('/') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </Link>
             
-            {/* Simple About link for mobile - no dropdown */}
             <Link 
               href="/about"
-              className="block text-gray-900 font-medium hover:text-[#D4AF34]"
+              className={`block font-medium hover:text-[#D4AF34] ${isActive('/about') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
@@ -193,59 +244,77 @@ const Header = () => {
             
             <Link 
               href="/case-studies"
-              className="block text-gray-900 font-medium hover:text-[#D4AF34]"
+              className={`block font-medium hover:text-[#D4AF34] ${isActive('/case-studies') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Case Studies
             </Link>
             
             <div>
-              <button
-                onClick={() => toggleDropdown('mobile-solutions')}
-                className="flex items-center justify-between w-full text-gray-900 font-medium hover:text-[#D4AF34]"
-              >
-                <span>Solutions</span>
-                <FaChevronDown className={`transition-transform duration-200 ${
-                  activeDropdown === 'mobile-solutions' ? 'transform rotate-180' : ''
-                }`} />
-              </button>
+              <div className="flex items-center justify-between">
+                <Link
+                  href="/solutions"
+                  className={`font-medium hover:text-[#D4AF34] ${isActiveSolution() ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  Solutions
+                </Link>
+                <button
+                  onClick={() => toggleDropdown('mobile-solutions')}
+                  className="text-gray-900 focus:outline-none p-1"
+                >
+                  <FaChevronDown className={`transition-transform duration-300 ${
+                    activeDropdown === 'mobile-solutions' ? 'transform rotate-180' : ''
+                  } ${isActiveSolution() ? 'text-[#D4AF34]' : ''}`} />
+                </button>
+              </div>
               
               {activeDropdown === 'mobile-solutions' && (
-                <div className="mt-2 pl-4 space-y-2">
+                <div className="mt-2 pl-4 space-y-2 animate-fadeIn">
                   <Link
                     href="/solutions/digital-marketing"
-                    className="block text-gray-900 hover:text-[#D4AF34]"
+                    className={`block py-1 hover:text-[#D4AF34] ${isActive('/solutions/digital-marketing') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Digital Marketing
                   </Link>
                   <Link
                     href="/solutions/graphic-design"
-                    className="block text-gray-900 hover:text-[#D4AF34]"
+                    className={`block py-1 hover:text-[#D4AF34] ${isActive('/solutions/graphic-design') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Graphic Design
                   </Link>
                   <Link
                     href="/solutions/branding"
-                    className="block text-gray-900 hover:text-[#D4AF34]"
+                    className={`block py-1 hover:text-[#D4AF34] ${isActive('/solutions/branding') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Branding
                   </Link>
                   <Link
                     href="/solutions/photography"
-                    className="block text-gray-900 hover:text-[#D4AF34]"
+                    className={`block py-1 hover:text-[#D4AF34] ${isActive('/solutions/photography') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Photography & Videography
                   </Link>
                   <Link
                     href="/solutions/influencer-marketing"
-                    className="block text-gray-900 hover:text-[#D4AF34]"
+                    className={`block py-1 hover:text-[#D4AF34] ${isActive('/solutions/influencer-marketing') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Influencer Marketing
+                  </Link>
+                  <Link
+                    href="/solutions/consultation"
+                    className={`block py-1 hover:text-[#D4AF34] ${isActive('/solutions/consultation') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Digital Marketing Consultation
                   </Link>
                 </div>
               )}
@@ -253,7 +322,7 @@ const Header = () => {
             
             <Link 
               href="/news"
-              className="block text-gray-900 font-medium hover:text-[#D4AF34]"
+              className={`block font-medium hover:text-[#D4AF34] ${isActive('/news') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               News & Insights
@@ -261,7 +330,7 @@ const Header = () => {
             
             <Link 
               href="/contacts"
-              className="block text-gray-900 font-medium hover:text-[#D4AF34]"
+              className={`block font-medium hover:text-[#D4AF34] ${isActive('/contacts') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contacts
@@ -269,7 +338,7 @@ const Header = () => {
             
             <Link 
               href="tel:+254742906505" 
-              className="flex items-center bg-[#D4AF34] text-black hover:bg-[#000000] hover:text-white px-4 py-2 rounded-full w-full justify-center shadow-md"
+              className="flex items-center bg-[#D4AF34] text-black hover:bg-[#000000] hover:text-white px-4 py-2 rounded-full w-full justify-center shadow-md transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <FaPhone className="mr-2" />

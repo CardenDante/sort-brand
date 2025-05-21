@@ -132,7 +132,20 @@ h1, h2, h3, h4, h5, h6 {
 .animate-blink {
   animation: blink 1s step-end infinite;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
 /* For the moving gold shade effect */
 @keyframes gradientMove {
   0% {
