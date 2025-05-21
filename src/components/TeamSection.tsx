@@ -13,19 +13,20 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    id: 'kelvin-mosioma',
-    name: 'Kelvin Mosioma',
-    role: 'Chairman',
-    image: '/images/team/EddieVoke254.jpg',
-    bio: 'Visionary leader with extensive experience in branding and marketing strategy. Kelvin drives our company vision and ensures we deliver exceptional value to every client.'
-  },
-  {
     id: 'yohan-kim',
     name: 'Yohan Kim',
     role: 'Chief Advisor',
     image: '/images/team/placeholder.png',
     bio: 'With a rich international background, Yohan brings global perspective and strategic insight to our operations, helping clients navigate complex marketing challenges.'
   },
+  {
+    id: 'kelvin-mosioma',
+    name: 'Kelvin Mosioma',
+    role: 'Chairman',
+    image: '/images/team/EddieVoke254.jpg',
+    bio: 'Visionary leader with extensive experience in branding and marketing strategy. Kelvin drives our company vision and ensures we deliver exceptional value to every client.'
+  },
+
   {
     id: 'evans-mutiga',
     name: 'Evans Mutiga',
