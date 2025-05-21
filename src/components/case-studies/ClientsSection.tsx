@@ -11,18 +11,18 @@ interface Client {
 }
 
 const clients: Client[] = [
-  { id: 1, name: 'International Youth Fellowship', logo: '/images/clients/iyf-logo.png' },
-  { id: 2, name: 'Weekend Academy', logo: '/images/clients/weekend-academy-logo.png' },
-  { id: 3, name: 'Mahanaim International School', logo: '/images/clients/mahanaim-logo.png' },
-  { id: 4, name: 'GBS TV Africa', logo: '/images/clients/gbs-tv-logo.png' },
-  { id: 5, name: 'Talanta Hela', logo: '/images/clients/talanta-hela-logo.png' },
-  { id: 6, name: 'Ministry of Youth Affairs', logo: '/images/clients/youth-affairs-logo.png' },
-  { id: 7, name: 'Zinco Mabati Factory Limited', logo: '/images/clients/zinco-logo.png' },
-  { id: 8, name: 'Mwananchi Credit Limited', logo: '/images/clients/mwananchi-logo.png' },
-  { id: 9, name: 'Boomplay Music', logo: '/images/clients/boomplay-logo.png' },
-  { id: 10, name: 'Kazicloud Careers', logo: '/images/clients/kazicloud-logo.png' },
-  { id: 11, name: 'Derine Marketing', logo: '/images/clients/derine-logo.png' },
-  { id: 12, name: 'Catholic University', logo: '/images/clients/catholic-logo.png' },
+  { id: 1, name: 'International Youth Fellowship', logo: '/images/logo/IYFKenya.jpg' },
+  { id: 2, name: 'Weekend Academy', logo: '/images/logo/Weekend-Academy.jpg' },
+  { id: 3, name: 'Mahanaim International School', logo: '/images/logo/MIHS.jpg' },
+  { id: 4, name: 'GBS TV Africa', logo: '/images/logo/GBS.jpg' },
+  { id: 5, name: 'Talanta Hela', logo: '/images/logo/TalantaHela.jpg' },
+  { id: 6, name: 'Ministry of Youth Affairs', logo: '/images/logo/MinistryofYouth.jpg' },
+  { id: 7, name: 'Zinco Mabati Factory Limited', logo: '/images/logo/ZINCO.jpg' },
+  { id: 8, name: 'Mwananchi Credit Limited', logo: '/images/logo/mcl.jpg' },
+  { id: 9, name: 'Boomplay Music', logo: '/images/logo/Boomplay.jpg' },
+  { id: 10, name: 'Kazicloud Careers', logo: '/images/logo/KaziCloud.jpg' },
+  { id: 11, name: 'Derine Marketing', logo: '/images/logo/DerineMarketingAgency.jpg' },
+  { id: 12, name: 'Catholic University', logo: '/images/logo/cuea.jpg' },
 ];
 
 const ClientsSection = () => {
