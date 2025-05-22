@@ -50,9 +50,9 @@ const getArticleBySlug = (slug: string) => {
     image: "/images/news/branding-trends.jpg",
     category: "Branding",
     date: "May 18, 2025",
-    author: "Sarah Johnson",
-    authorTitle: "Senior Brand Strategist",
-    authorImage: "/images/team/sarah-johnson.jpg"
+    author: "Kelvin Musioma",
+    authorTitle: "Chairman & CEO",
+    authorImage: "/images/team/kelvin.jpg"
   };
 };
 
@@ -188,55 +188,59 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       </article>
       
       {/* Related articles section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="mb-10 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Related Articles</h2>
-            <div className="w-16 h-1 bg-[#D4AF34] mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Sample related articles - would come from actual related content */}
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                {/* Image container */}
-                <div className="relative pt-[60%] overflow-hidden">
-                  <Image
-                    src={`/images/news/related-${i}.jpg`}
-                    alt="Related article"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                
-                {/* Content */}
-                <div className="p-5">
-                  <div className="mb-2">
-                    <span className="text-xs font-medium text-[#D4AF34]">
-                      {["Branding", "Design", "Digital Marketing"][i-1]}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    {[
-                      "How to Build a Memorable Brand Identity",
-                      "Designing for Accessibility: Best Practices",
-                      "Digital Marketing Metrics That Actually Matter"
-                    ][i-1]}
-                  </h3>
-                  
-                  <Link 
-                    href={`/news/related-article-${i}`}
-                    className="inline-flex items-center text-[#D4AF34] text-sm font-medium hover:text-black transition-colors"
-                  >
-                    Read Article <ArrowRight className="ml-1 w-3 h-3" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
+
+
+{/* <section className="py-16 relative overflow-hidden bg-white">
+ 
+  <div 
+    className="absolute inset-0 z-0 opacity-5" 
+    style={{
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0 h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/svg%3E")', 
+    }}
+  ></div>
+  
+ 
+  <div className="absolute inset-0 z-0">
+    
+    <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#D4AF34]/10"></div>
+    
+   
+    <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#D4AF34]/5"></div>
+    
+
+    <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF34]/30 to-transparent"></div>
+    <div className="absolute bottom-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF34]/30 to-transparent"></div>
+  </div>
+  
+
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-10 relative">
+    
+      <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-[#D4AF34] rounded-tl-2xl"></div>
+      <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-[#D4AF34] rounded-br-2xl"></div>
+      
+      <div className="text-center">
+        <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-6"></div>
+        
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          Ready to Take Your Brand to the <span className="text-[#D4AF34]">Next Level?</span>
+        </h2>
+        
+        <p className="text-gray-600 text-lg mb-8">
+          Our team of experts is ready to help you achieve your marketing and branding goals.
+          Let's create something amazing together.
+        </p>
+        
+        <Link 
+          href="/contacts" 
+          className="inline-flex items-center bg-[#D4AF34] hover:bg-black text-black hover:text-white font-bold px-8 py-4 rounded-full transition-colors duration-300 transform hover:scale-105 shadow-md"
+        >
+          Get in Touch <ArrowRight className="ml-2 w-5 h-5" />
+        </Link>
+      </div>
+    </div>
+  </div>
+</section> */}
