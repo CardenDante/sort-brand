@@ -24,7 +24,7 @@ const solutions: SolutionCard[] = [
     id: 'graphic-design',
     title: 'Graphic Design',
     description: 'High-quality, eye-catching, and simple customized designs to help you stand out, create a positive impression, and effectively promote your products and services.',
-    image: '/images/solutions/graphic-design.png',
+    image: '/images/solutions/graphic-design.jpg',
     link: '/solutions/graphic-design'
   },
   {
