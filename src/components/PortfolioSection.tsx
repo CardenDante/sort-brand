@@ -21,7 +21,7 @@ const portfolioItems: PortfolioItem[] = [
     link: '/case-studies',
   },
   {
-    id: 'MCL',
+    id: 'MCL2',
     title: 'Branding & Marketing',
     image: '/images/Branding_m.jpg',
     size: 'normal',
