@@ -12,7 +12,7 @@ interface HeroProps {
 
 const Hero = ({
   title = "We sort businesses of every size to thrive globally.",
-  subtitle = "We are the leading digital creative agency dedicated to helping brands grow through innovative marketing solutions.",
+  subtitle = "We are the world’s best digital creative agency, dedicated to sorting brands grow, adapt, and lead in the modern market through innovative marketing solutions.",
   buttonText = "Our Solutions",
   buttonLink = "/solutions",
   backgroundImage = "/images/hero-bg.jpg"
