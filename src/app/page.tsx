@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       <Hero 
-        title="Sortbrands helps top businesses thrive in Africa."
+        title="We sort businesses of every size to thrive globally."
         subtitle="We are the leading digital creative agency dedicated to helping brands grow through innovative marketing solutions."
         buttonText="Our Solutions"
         buttonLink="/solutions"
