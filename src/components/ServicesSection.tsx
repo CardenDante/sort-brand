@@ -2,7 +2,7 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { FaBullhorn, FaNewspaper, FaCalendarAlt, FaCamera, FaComments, FaWifi, FaGlobe, FaPencilAlt } from 'react-icons/fa';
+import { FaBullhorn, FaNewspaper, FaCalendarAlt, FaCamera, FaComments, FaWifi, FaGlobe, FaPencilAlt, FaChartLine, FaPalette, FaCrown, FaUsers, FaGraduationCap } from 'react-icons/fa';
 
 interface Service {
   id: string;
@@ -14,60 +14,60 @@ interface Service {
 
 const services: Service[] = [
   {
-    id: 'experiential-marketing',
-    title: 'Experiential Marketing',
-    description: 'Interactive pop-up experiences and brand activations.',
-    icon: <FaBullhorn className="text-white text-3xl" />,
-    link: '/solutions',
-  },
-  {
-    id: 'print-advertising',
-    title: 'Print Advertising & Branding',
-    description: 'In-house production for promotional items, banners & displays.',
-    icon: <FaNewspaper className="text-white text-3xl" />,
-    link: '/solutions',
-  },
-  {
-    id: 'events-management',
-    title: 'PR & Events Management',
-    description: 'Corporate conferences, product launches, galas, parties & themed events.',
-    icon: <FaCalendarAlt className="text-white text-3xl" />,
-    link: '/solutions',
-  },
-  {
-    id: 'media-strategy',
-    title: 'Media Strategy, Production & Buying',
-    description: 'We purchase media slots in TV, radio & print.',
-    icon: <FaCamera className="text-white text-3xl" />,
-    link: '/solutions',
-  },
-  {
-    id: 'brand-communication',
-    title: 'Brand & Communication Strategy',
-    description: 'Your Brand. Your Story. Our Strategy.',
-    icon: <FaComments className="text-white text-3xl" />,
-    link: '/solutions',
-  },
-  {
     id: 'digital-marketing',
     title: 'Digital Marketing',
-    description: 'From search results, programmatic ads to social media.',
-    icon: <FaWifi className="text-white text-3xl" />,
+    description: 'Tailored digital marketing campaigns that enhance brand awareness, drive traffic, generate leads, and increase conversions for a higher ROI.',
+    icon: <FaChartLine className="text-white text-3xl" />,
     link: '/solutions/digital-marketing',
+  },
+  {
+    id: 'graphic-design',
+    title: 'Graphic Design',
+    description: 'High-quality, eye-catching, and simple customized designs to help you stand out, create a positive impression, and effectively promote your products and services.',
+    icon: <FaPalette className="text-white text-3xl" />,
+    link: '/solutions/graphic-design',
+  },
+  {
+    id: 'branding',
+    title: 'Branding',
+    description: 'Comprehensive branding services to help businesses create a strong identity, boost customer loyalty, differentiate in the market, and clearly communicate values and purpose.',
+    icon: <FaCrown className="text-white text-3xl" />,
+    link: '/solutions/branding',
+  },
+  {
+    id: 'photography-videography',
+    title: 'Photography & Videography',
+    description: 'Professional photography and videography services to capture beautiful shots and amazing footage at various events, along with eye-catching promotional videos.',
+    icon: <FaCamera className="text-white text-3xl" />,
+    link: '/solutions/photography',
+  },
+  {
+    id: 'influencer-marketing',
+    title: 'Influencer Marketing',
+    description: 'Strategic influencer marketing guidance, including selection of suitable brand ambassadors, management of influencers, and measurement of engagement and ROI.',
+    icon: <FaUsers className="text-white text-3xl" />,
+    link: '/solutions/influencer-marketing',
+  },
+  {
+    id: 'digital-marketing-consultation',
+    title: 'Digital Marketing Consultation',
+    description: 'Comprehensive consultation services for businesses of all sizes, helping leverage available tools to generate high-quality leads and achieve strong ROI.',
+    icon: <FaComments className="text-white text-3xl" />,
+    link: '/solutions/consultation',
   },
   {
     id: 'website-design',
     title: 'Website Design & Development',
-    description: 'Websites that work as hard as you do.',
+    description: 'Custom websites that work as hard as you do. Responsive, user-friendly designs that convert visitors into customers and drive business growth.',
     icon: <FaGlobe className="text-white text-3xl" />,
-    link: '/solutions',
+    link: '/solutions/digital-marketing',
   },
   {
-    id: 'brand-identity',
-    title: 'Brand Identity & Packaging',
-    description: 'We go beyond surface-level design.',
-    icon: <FaPencilAlt className="text-white text-3xl" />,
-    link: '/solutions',
+    id: 'training',
+    title: 'Training & Workshops',
+    description: 'Professional training programs and workshops to upskill your team in digital marketing, branding strategies, and modern business practices.',
+    icon: <FaGraduationCap className="text-white text-3xl" />,
+    link: '/solutions/consultation',
   },
 ];
 
@@ -121,7 +121,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">What We Do</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How We Do It</h2>
           <div className="w-20 h-1 bg-white mx-auto"></div>
         </div>
 
