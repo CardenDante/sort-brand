@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 
-type Category = 'all' | 'digital-marketing' | 'branding' | 'web-development' | 'design' | 'social-media';
-type Industry = 'all' | 'education' | 'entertainment' | 'finance' | 'government' | 'manufacturing' | 'nonprofit';
+type Category = 'all' | 'digital-marketing' | 'branding' | 'web-development' | 'design' | 'social-media' | 'events';
+type Industry = 'all' | 'education' | 'entertainment' | 'finance' | 'government' | 'manufacturing' | 'nonprofit' | 'corporate';
 
 interface CaseStudy {
   id: string;
@@ -101,6 +101,19 @@ const allCaseStudies: CaseStudy[] = [
     resultNumber: '5,000+',
     description: 'Comprehensive event marketing campaign including print materials, digital advertising, and social media strategy.',
     size: 'wide'
+  },
+  {
+    id: 'corporate-product-launch',
+    title: 'Corporate Product Launch Event',
+    clientName: 'TechCorp Solutions',
+    clientLogo: '/images/logo/techcorp-logo.jpg',
+    image: '/images/case-studies/corporate-event-case-study.jpg',
+    category: 'events',
+    industry: 'corporate',
+    result: 'Media Coverage Reach',
+    resultNumber: '2M+',
+    description: 'End-to-end event management for a major product launch including venue coordination, media relations, brand activations, and post-event analytics.',
+    size: 'normal'
   }
 ];
 
