@@ -18,7 +18,7 @@ const solutions: SolutionCard[] = [
     id: 'digital-marketing',
     title: 'Digital Marketing',
     description: 'Tailored digital marketing campaigns that enhance brand awareness, drive traffic, generate leads, and increase conversions for a higher ROI.',
-    image: '/images/solutions/digital-marketing.jpg',
+    image: '/images/solutions/Digital Marketing  - Sortbrands Group.jpeg',
     link: '/solutions/digital-marketing'
   },
   {
@@ -32,28 +32,28 @@ const solutions: SolutionCard[] = [
     id: 'branding',
     title: 'Branding',
     description: 'Comprehensive branding services to help businesses create a strong identity, boost customer loyalty, differentiate in the market, and clearly communicate values and purpose.',
-    image: '/images/solutions/branding.jpg',
+    image: '/images/solutions/Branding  - Sortbrands Group.jpeg',
     link: '/solutions/branding'
   },
   {
     id: 'photography',
     title: 'Photography & Videography',
     description: 'Professional photography and videography services to capture beautiful shots and amazing footage at various events, along with eye-catching promotional videos.',
-    image: '/images/case-studies/ssr.jpeg',
+    image: '/images/solutions/Photography and Videography  - Sortbrands Group.jpg',
     link: '/solutions/photography'
   },
   {
     id: 'influencer-marketing',
     title: 'Influencer Marketing',
     description: 'Strategic influencer marketing guidance, including selection of suitable brand ambassadors, management of influencers, and measurement of engagement and ROI.',
-    image: '/images/solutions/influencer-marketing.jpeg',
+    image: '/images/solutions/Influencer Marketing - Sortbrands Group  - Sortbrands Group.jpg',
     link: '/solutions/influencer-marketing'
   },
   {
     id: 'consultation',
     title: 'Consultation',
     description: 'Comprehensive consultation services for businesses of all sizes, helping leverage available tools to generate high-quality leads and achieve strong ROI.',
-    image: '/images/solutions/consultation.jpg',
+    image: '/images/solutions/General Business Consultation  - Sortbrands Group.jpeg',
     link: '/solutions/consultation'
   }
 ];
@@ -65,7 +65,7 @@ export default function SolutionsPage() {
       <AboutBanner
         title="Our Solutions"
         subtitle="Comprehensive marketing and branding solutions to help your business thrive in the digital age."
-        backgroundImage="/images/solutions/solutions-banner.jpeg"
+        backgroundImage="/images/solutions/Solutions Background  - Sortbrands Group.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions" }

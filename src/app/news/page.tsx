@@ -15,7 +15,7 @@ export default function NewsPage() {
       <AboutBanner
         title="News & Insights"
         subtitle="Stay updated with the latest trends, insights, and news in the world of branding and marketing."
-        backgroundImage="/images/contact-us-banner.jpg"
+        backgroundImage="/images/Background image  - Sortbrands Group.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "News & Insights" }

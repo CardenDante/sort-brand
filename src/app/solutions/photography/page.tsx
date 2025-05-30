@@ -55,7 +55,7 @@ export default function PhotographyPage() {
       <AboutBanner
         title="Photography & Videography"
         subtitle="Professional visual content to capture your important moments and promote your brand."
-        backgroundImage="/images/solutions/solutions-banner.jpeg"
+        backgroundImage="/images/solutions/Photography & Videography background  - Sortbrands Group.png"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },
@@ -115,7 +115,7 @@ export default function PhotographyPage() {
             <div className="relative">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/solutions/photography-main.jpeg"
+                  src="/images/solutions/Professional Visual Content  - Sortbrands Group.jpeg"
                   alt="Photography Services"
                   fill
                   style={{ objectFit: 'cover' }}

@@ -70,7 +70,7 @@ export default function GraphicDesignPage() {
       <AboutBanner
         title="Graphic Design"
         subtitle="High-quality, eye-catching, and customized designs to help you stand out and effectively promote your brand."
-        backgroundImage="/images/solutions/solutions-banner.jpeg"
+        backgroundImage="/images/solutions/Graphic Design Background  - Sortbrands Group.jpg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },
@@ -102,7 +102,7 @@ export default function GraphicDesignPage() {
             <div className="relative">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/solutions/graphic-design-main.jpeg"
+                  src="/images/solutions/Graphic design - Sortbrands Group.png"
                   alt="Graphic Design Services"
                   fill
                   style={{ objectFit: 'cover' }}
