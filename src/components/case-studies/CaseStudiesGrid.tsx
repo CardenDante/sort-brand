@@ -106,7 +106,7 @@ const allCaseStudies: CaseStudy[] = [
     id: 'corporate-training-event',
     title: 'Corporate Training & Development Program',
     clientName: 'TechCorp Solutions',
-    clientLogo: '/images/logo/techcorp-logo.jpg',
+    clientLogo: '/images/logo/KaziCloud.jpg',
     image: '/images/case-studies/corporate-training-case-study.jpg',
     category: 'training',
     industry: 'corporate',
