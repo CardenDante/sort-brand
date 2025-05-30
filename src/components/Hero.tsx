@@ -15,7 +15,7 @@ const Hero = ({
   subtitle = "We are the world’s best digital creative agency, dedicated to sorting brands grow, adapt, and lead in the modern market through innovative marketing solutions.",
   buttonText = "Our Solutions",
   buttonLink = "/solutions",
-  backgroundImage = "/images/hero-bg.jpg"
+  backgroundImage = "/images/hero.jpeg"
 }: HeroProps) => {
   return (
     <section className="relative h-[60vh] sm:h-[70vh] bg-black">

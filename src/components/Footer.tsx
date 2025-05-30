@@ -46,7 +46,7 @@ const MobileOptimizedFooter = () => {
     <footer
       className="relative text-white"
       style={{
-        backgroundImage: "url('/images/hero-bg.jpeg')",
+        backgroundImage: "url('/images/footer.jpeg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

@@ -17,7 +17,7 @@ export default function HomePage() {
         subtitle="We are the world’s best digital creative agency, dedicated to sorting brands grow, adapt, and lead in the modern market through innovative marketing solutions."
         buttonText="Our Solutions"
         buttonLink="/solutions"
-        backgroundImage="/images/hero-bg.jpeg"
+        backgroundImage="/images/hero.jpeg"
       />
        <IntroSection />
        <ServicesSection />
