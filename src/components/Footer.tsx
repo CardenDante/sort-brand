@@ -203,3 +203,35 @@ const MobileOptimizedFooter = () => {
 };
 
 export default MobileOptimizedFooter;
+
+
+
+{/* <div className="border-t border-[#D4AF34]/20 py-4 text-white/60 text-center text-sm">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+              <p>© {currentYear} Sortbrands Group. All Rights Reserved.</p>
+              
+              //Powered by Chacha Technologies 
+              <div className="flex items-center gap-2 text-xs text-white/50">
+                <span>Powered by</span>
+                <Link 
+                  href="https://chach-a.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20"
+                >
+                  <Image 
+                    src="https://www.chach-a.com/logoMark.svg" 
+                    alt="Chacha Technologies Logo" 
+                    width={16}
+                    height={16}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-white/90 hover:text-[#D4AF34] transition-colors font-medium">
+                    Chacha Technologies
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div> */}
