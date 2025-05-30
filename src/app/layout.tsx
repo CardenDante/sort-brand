@@ -4,6 +4,7 @@ import './globals.css';
 import TopBanner from '@/components/TopBanner';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
 
 export const metadata = {
   title: 'Sortbrands - Digital Creative Agency',
@@ -26,6 +27,7 @@ export default function RootLayout({
         <TopBanner />
         <Header />
         <main>{children}</main>
+        <BackToTop />
         <Footer />
       </body>
     </html>

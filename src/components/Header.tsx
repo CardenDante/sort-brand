@@ -54,6 +54,10 @@ const Header = () => {
     return pathname.startsWith('/solutions');
   };
 
+  const isActiveOpportunity = () => {
+    return pathname.startsWith('/careers') || pathname.startsWith('/referral-program');
+  };
+
   return (
     <header className={`sticky top-0 z-40 bg-white ${isScrolled ? 'shadow-md' : ''}`}>
       <div className="max-w-7xl mx-auto px-4">
@@ -164,12 +168,33 @@ const Header = () => {
               News & Insights
             </Link>
             
-            <Link 
-              href="/careers" 
-              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActive('/careers') ? 'text-[#D4AF34]' : ''}`}
-            >
-              Careers
-            </Link>
+            <div className="relative">
+              <div className="flex items-center cursor-pointer" onClick={() => toggleDropdown('opportunities')}>
+                <span className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActiveOpportunity() ? 'text-[#D4AF34]' : ''}`}>
+                  Opportunities
+                </span>
+                <ChevronDown className={`h-3 w-3 ml-1 transition-transform duration-300 ${activeDropdown === 'opportunities' ? 'transform rotate-180' : ''} ${isActiveOpportunity() ? 'text-[#D4AF34]' : 'text-gray-900'}`} />
+              </div>
+              
+              {activeDropdown === 'opportunities' && (
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50 animate-fadeIn border border-gray-100">
+                  <Link
+                    href="/referral-program"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/referral-program') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    Referral Program
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/careers') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    Careers
+                  </Link>
+                </div>
+              )}
+            </div>
             
             <Link 
               href="/contacts" 
@@ -327,13 +352,40 @@ const Header = () => {
               News & Insights
             </Link>
             
-            <Link 
-              href="/careers"
-              className={`block font-medium hover:text-[#D4AF34] ${isActive('/careers') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Careers
-            </Link>
+            <div>
+              <div className="flex items-center justify-between">
+                <span className={`font-medium hover:text-[#D4AF34] ${isActiveOpportunity() ? 'text-[#D4AF34]' : 'text-gray-900'}`}>
+                  Opportunities
+                </span>
+                <button
+                  onClick={() => toggleDropdown('mobile-opportunities')}
+                  className="text-gray-900 hover:text-[#D4AF34] focus:outline-none p-1"
+                >
+                  <ChevronDown className={`transition-transform duration-300 ${
+                    activeDropdown === 'mobile-opportunities' ? 'transform rotate-180' : ''
+                  } ${isActiveOpportunity() ? 'text-[#D4AF34]' : ''}`} />
+                </button>
+              </div>
+              
+              {activeDropdown === 'mobile-opportunities' && (
+                <div className="mt-2 pl-4 space-y-2">
+                  <Link
+                    href="/referral-program"
+                    className={`block hover:text-[#D4AF34] ${isActive('/referral-program') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Referral Program
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className={`block hover:text-[#D4AF34] ${isActive('/careers') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Careers
+                  </Link>
+                </div>
+              )}
+            </div>
             
             <Link 
               href="/contacts"
