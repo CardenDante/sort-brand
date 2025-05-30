@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 
-type Category = 'all' | 'digital-marketing' | 'branding' | 'web-development' | 'design' | 'social-media' | 'events';
+type Category = 'all' | 'digital-marketing' | 'branding' | 'web-development' | 'design' | 'social-media' | 'training';
 type Industry = 'all' | 'education' | 'entertainment' | 'finance' | 'government' | 'manufacturing' | 'nonprofit' | 'corporate';
 
 interface CaseStudy {
@@ -42,7 +42,7 @@ const allCaseStudies: CaseStudy[] = [
     title: 'Educational Institution Rebrand',
     clientName: 'Mahanaim International School',
     clientLogo: '/images/logo/MIHS.jpg',
-    image: '/images/case-studies/mahanaim-case-study.jpeg',
+    image: '/images/case-studies/mahanaim-case-study1.jpeg',
     category: 'branding',
     industry: 'education',
     result: 'Increase in Student Applications',
@@ -55,7 +55,7 @@ const allCaseStudies: CaseStudy[] = [
     title: 'Financial Services Digital Transformation',
     clientName: 'Mwananchi Credit Limited',
     clientLogo: '/images/logo/mcl.jpg',
-    image: '/images/case-studies/ssr.jpeg',
+    image: '/images/case-studies/ssr1.jpg',
     category: 'web-development',
     industry: 'finance',
     result: 'Increase in Online Loan Applications',
@@ -81,7 +81,7 @@ const allCaseStudies: CaseStudy[] = [
     title: 'Manufacturing Brand Identity',
     clientName: 'Zinco Mabati Factory Limited',
     clientLogo: '/images/logo/ZINCO.jpg',
-    image: '/images/case-studies/zinco-case-study.jpg',
+    image: '/images/case-studies/zinco-case-study1.jpg',
     category: 'branding',
     industry: 'manufacturing',
     result: 'Increase in Brand Recognition',
@@ -94,7 +94,7 @@ const allCaseStudies: CaseStudy[] = [
     title: 'Global Non-Profit Event Campaign',
     clientName: 'International Youth Fellowship',
     clientLogo: '/images/logo/IYFKenya.jpg',
-    image: '/images/case-studies/iyf-case-study.jpeg',
+    image: '/images/case-studies/iyf-case-study1.jpg',
     category: 'design',
     industry: 'nonprofit',
     result: 'Event Participants',
@@ -103,16 +103,16 @@ const allCaseStudies: CaseStudy[] = [
     size: 'wide'
   },
   {
-    id: 'corporate-product-launch',
-    title: 'Corporate Product Launch Event',
+    id: 'corporate-training-event',
+    title: 'Corporate Training & Development Program',
     clientName: 'TechCorp Solutions',
     clientLogo: '/images/logo/techcorp-logo.jpg',
-    image: '/images/case-studies/corporate-event-case-study.jpg',
-    category: 'events',
+    image: '/images/case-studies/corporate-training-case-study.jpg',
+    category: 'training',
     industry: 'corporate',
-    result: 'Media Coverage Reach',
-    resultNumber: '2M+',
-    description: 'End-to-end event management for a major product launch including venue coordination, media relations, brand activations, and post-event analytics.',
+    result: 'Employee Skill Improvement',
+    resultNumber: '85%',
+    description: 'Comprehensive corporate training program including digital marketing workshops, brand strategy sessions, leadership development, and skill assessment tracking.',
     size: 'normal'
   }
 ];

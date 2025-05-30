@@ -26,7 +26,7 @@ export default function CaseStudiesPage() {
       <CaseStudiesBanner 
         title="Case Studies"
         subtitle="Explore how we've helped our clients achieve remarkable results through strategic branding and marketing."
-        backgroundImage="/images/case-studies-banner.jpg"
+        backgroundImage="/images/case-studies-banner1.jpg"
       />
       
       {/* Featured Case Study Section */}
