@@ -39,7 +39,7 @@ export default function AboutPage() {
             {/* Content Column */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                We Are <span className="text-[#D4AF34]">SortBrands</span>
+                We Are <span className="text-[#D4AF34]">Sortbrands</span>
               </h2>
               
               <p className="text-gray-700 mb-6">

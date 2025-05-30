@@ -136,7 +136,7 @@ const MobileOptimizedFooter = () => {
             <div className="md:hidden">
               {/* Logo and Socials */}
               <div className="flex justify-center mb-6">
-                <div className="text-2xl font-bold text-[#D4AF34]">SortBrands</div>
+                <div className="text-2xl font-bold text-[#D4AF34]">Sortbrands</div>
               </div>
               <div className="flex justify-center gap-4 mb-6">
                 {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
@@ -194,7 +194,7 @@ const MobileOptimizedFooter = () => {
         {/* Bottom Bar */}
         <div className="border-t border-[#D4AF34]/20 py-4 text-white/60 text-center text-sm">
           <div className="container mx-auto px-6">
-            <p>© {currentYear} SortBrands Group. All Rights Reserved.</p>
+            <p>© {currentYear} Sortbrands Group. All Rights Reserved.</p>
           </div>
         </div>
       </div>

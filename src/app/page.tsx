@@ -25,7 +25,7 @@ export default function HomePage() {
        <PortfolioSection />
        <CTASection />
        <FAQSection />
-      <TeamSection />
+
       {/* Other home page sections will be added here */}
     </>
   );

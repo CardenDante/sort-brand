@@ -22,7 +22,7 @@ const clientLogos = [
 
 // Phrases to animate in typewriter effect
 const phrases = [
-  "top brands across Africa",
+  "top brands Globally",
   "global industry leaders",
   "innovative businesses"
 ];

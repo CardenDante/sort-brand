@@ -10,7 +10,7 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "What services does SortBrands Group offer?",
+    question: "What services does Sortbrands Group offer?",
     answer: "We offer a comprehensive range of services including Digital Marketing, Social Media Marketing, Content Creation, Web Development, Email Marketing, Graphic Design, Branding, Photography & Videography, and Influencer Marketing. We provide tailored solutions to help businesses establish their brand identity and grow their digital presence."
   },
   {
@@ -22,7 +22,7 @@ const faqItems: FAQItem[] = [
     answer: "Yes, we work with startups, small businesses, medium-sized enterprises, and large corporations. Our solutions are scalable and can be customized to meet the specific needs and budget of any business size."
   },
   {
-    question: "What makes SortBrands Group different from other agencies?",
+    question: "What makes Sortbrands Group different from other agencies?",
     answer: "What sets us apart is our unique approach of not just solving business needs through advertising and marketing, but also mentoring business owners to develop the mindset to succeed both in business and in the spiritual realm. We're dedicated to sorting your brand through innovative solutions while helping you grow personally."
   },
   {
