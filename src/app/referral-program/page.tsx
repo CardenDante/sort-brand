@@ -17,7 +17,7 @@ export default function ReferralProgramPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/referral-hero-bg.jpg"
+            src="/images/careers/Careers Background photo  - Sortbrands Group.jpeg"
             alt="Referral Program"
             fill
             priority

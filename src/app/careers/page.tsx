@@ -17,7 +17,7 @@ export default function CareersPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/contact-us-banner.jpg" // Replace with your actual banner image
+            src="/images/careers/Careers Background photo  - Sortbrands Group.jpeg" // Replace with your actual banner image
             alt="Sortbrands Team"
             fill
             priority
@@ -133,7 +133,7 @@ export default function CareersPage() {
             <div className="relative">
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/careers/team-culture.jpg"
+                  src="/images/careers/Why join us  - Sortbrands Group.jpeg" // Replace with your actual team image
                   alt="Sortbrands Team Culture"
                   fill
                   style={{ objectFit: 'cover' }}

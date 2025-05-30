@@ -10,7 +10,7 @@ export default function ContactPage() {
       <ContactBanner
         title="Contact Us"
         subtitle="Get in touch with our team to discuss how we can help sort your brand."
-        backgroundImage="/images/contact-us-banner.jpg"
+        backgroundImage="/images/Contact background  - Sortbrands Group.jpeg"
       />
       
       {/* Contact Section */}
