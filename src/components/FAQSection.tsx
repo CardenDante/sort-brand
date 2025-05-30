@@ -27,11 +27,11 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "How do I get started with your services?",
-    answer: "Getting started is simple! You can contact us via phone at +254 742 906 505, WhatsApp, or email at sortbrandske@gmail.com. We'll schedule a consultation to understand your business needs and recommend the most suitable solutions for your brand."
+    answer: "Getting started is simple! You can contact us via phone at +254 742 906 505, WhatsApp, or email at Sortbrandske@gmail.com. We'll schedule a consultation to understand your business needs and recommend the most suitable solutions for your brand."
   },
   {
     question: "Do you offer consultation services?",
-    answer: "Yes, we offer comprehensive digital marketing consultation services to startups, medium-sized businesses, and large enterprises. We help you leverage all available tools to generate high-quality leads that translate into a strong return on investment."
+    answer: "Yes, we offer comprehensive Consultation services to startups, medium-sized businesses, and large enterprises. We help you leverage all available tools to generate high-quality leads that translate into a strong return on investment."
   }
 ];
 
@@ -115,13 +115,13 @@ const FAQSection = () => {
                     <span>+254 742 906 505</span>
                   </a>
                   
-                  <a href="mailto:sortbrandske@gmail.com" className="flex items-center space-x-3 text-white hover:text-[#D4AF34] transition-colors">
+                  <a href="mailto:Sortbrandske@gmail.com" className="flex items-center space-x-3 text-white hover:text-[#D4AF34] transition-colors">
                     <div className="w-8 h-8 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34]">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <span>sortbrandske@gmail.com</span>
+                    <span>Sortbrandske@gmail.com</span>
                   </a>
                 </div>
               </div>

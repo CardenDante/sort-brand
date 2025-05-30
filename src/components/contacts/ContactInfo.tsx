@@ -58,8 +58,8 @@ const ContactInfo = () => {
             <div>
               <h3 className="font-bold text-white mb-1">Email Address</h3>
               <p className="text-white/70">
-                <a href="mailto:sortbrandske@gmail.com" className="hover:text-[#D4AF34] transition-colors">
-                  sortbrandske@gmail.com
+                <a href="mailto:Sortbrandske@gmail.com" className="hover:text-[#D4AF34] transition-colors">
+                  Sortbrandske@gmail.com
                 </a>
               </p>
             </div>

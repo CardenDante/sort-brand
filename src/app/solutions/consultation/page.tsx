@@ -56,13 +56,13 @@ export default function ConsultationPage() {
     <main>
       {/* Banner */}
       <AboutBanner
-        title="Digital Marketing Consultation"
+        title="Consultation"
         subtitle="Expert guidance to help your business leverage digital marketing effectively for maximum ROI."
         backgroundImage="/images/solutions/solutions-banner.jpeg"
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "Solutions", url: "/solutions" },
-          { label: "Digital Marketing Consultation" }
+          { label: "Consultation" }
         ]}
       />
       
@@ -74,7 +74,7 @@ export default function ConsultationPage() {
               Expert Digital Marketing <span className="text-[#D4AF34]">Guidance</span>
             </h2>
             <p className="text-gray-700 text-lg">
-              We offer comprehensive digital marketing consultation to startups, medium-sized businesses, 
+              We offer comprehensive Consultation to startups, medium-sized businesses, 
               and large enterprises, helping them leverage all available tools to generate high-quality leads 
               that translate into a strong return on investment.
             </p>
@@ -91,7 +91,7 @@ export default function ConsultationPage() {
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src="/images/solutions/consultation.jpg"
-                  alt="Digital Marketing Consultation"
+                  alt="Consultation"
                   fill
                   style={{ objectFit: 'cover' }}
                   className="transition-transform duration-700 hover:scale-105"
@@ -109,7 +109,7 @@ export default function ConsultationPage() {
               
               <p className="text-gray-700 mb-6">
                 In today's rapidly evolving digital landscape, having expert guidance can make the difference between 
-                a marketing strategy that drives results and one that wastes resources. Our digital marketing consultation 
+                a marketing strategy that drives results and one that wastes resources. Our Consultation 
                 services provide you with strategic insights and tactical recommendations tailored to your specific business needs.
               </p>
               
@@ -128,7 +128,7 @@ export default function ConsultationPage() {
                 href="/contacts" 
                 className="inline-flex items-center bg-[#D4AF34] hover:bg-black text-black hover:text-white px-6 py-3 rounded-full font-bold transition-colors duration-300"
               >
-                Schedule a Consultation <FaArrowRight className="ml-2" />
+                Schedule a session <FaArrowRight className="ml-2" />
               </Link>
             </div>
           </div>
@@ -344,7 +344,7 @@ export default function ConsultationPage() {
               Who We <span className="text-[#D4AF34]">Work With</span>
             </h2>
             <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              Our digital marketing consultation services are tailored for businesses at various stages:
+              Our Consultation services are tailored for businesses at various stages:
             </p>
           </div>
           
@@ -481,7 +481,7 @@ export default function ConsultationPage() {
           </h2>
           
           <p className="text-white/80 text-lg mb-8">
-            Schedule a consultation with our digital marketing experts to discuss your business goals
+            Schedule a session with our digital marketing experts to discuss your business goals
             and how we can help you achieve them.
           </p>
           

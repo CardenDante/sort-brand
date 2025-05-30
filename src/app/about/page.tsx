@@ -26,7 +26,7 @@ export default function AboutPage() {
                 {/* Replace with actual image path */}
                 <Image
                   src="/images/about-company.jpg"
-                  alt="SortBrands Office"
+                  alt="Sortbrands Office"
                   fill
                   style={{ objectFit: 'cover' }}
                   className="transition-transform duration-700 hover:scale-105"

@@ -30,7 +30,7 @@ const digitalMarketingServices: ServiceItem[] = [
   },
   {
     id: 'content-creation',
-    title: 'Content Creation and Marketing Strategy',
+    title: 'Content Marketing',
     description: 'We assist businesses in designing eye-catching social media posters, creating engaging visual content, crafting compelling copy, and producing dynamic videos. Our content resonates with your audience and reflects your brand\'s unique voice and values. We also plan and manage content calendars to ensure a consistent, strategic posting schedule. From captivating graphics to thought-provoking articles and videos, we handle every aspect of content creation and management, keeping your social media channels vibrant, active, and aligned with your brand.',
     image: '/images/case-studies/boomplay-case-study.jpeg',
     benefits: [

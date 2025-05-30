@@ -4,8 +4,8 @@ import AboutBanner from "@/components/about/AboutBanner";
 import NewsGrid from "@/components/news/NewsGrid";
 
 export const metadata: Metadata = {
-  title: "News & Insights | SortBrands",
-  description: "Stay updated with the latest news, insights, and trends in marketing, design, and branding from SortBrands.",
+  title: "News & Insights | Sortbrands",
+  description: "Stay updated with the latest news, insights, and trends in marketing, design, and branding from Sortbrands.",
 };
 
 export default function NewsPage() {

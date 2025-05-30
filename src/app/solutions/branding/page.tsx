@@ -103,7 +103,7 @@ export default function BrandingPage() {
               
               <p className="text-gray-700 mb-6">
                 Your brand is more than just a logo—it's the complete experience customers have with your business.
-                At SortBrands, we take a holistic approach to branding, addressing every aspect of how your
+                At Sortbrands, we take a holistic approach to branding, addressing every aspect of how your
                 business is perceived in the market.
               </p>
               

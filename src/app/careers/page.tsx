@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Users, Zap, Star, HeartHandshake } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Careers | SortBrands",
+  title: "Careers | Sortbrands",
   description: "Join our team of passionate, creative professionals and help brands reach their full potential.",
 };
 
@@ -18,7 +18,7 @@ export default function CareersPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/contact-us-banner.jpg" // Replace with your actual banner image
-            alt="SortBrands Team"
+            alt="Sortbrands Team"
             fill
             priority
             style={{ objectFit: "cover" }}
@@ -50,7 +50,7 @@ export default function CareersPage() {
               Talent + Mindset = <span className="text-[#D4AF34]">Excellence</span>
             </h2>
             <p className="text-lg text-gray-700">
-              At SortBrands, we believe that exceptional results come from combining top talent with the right mindset. 
+              At Sortbrands, we believe that exceptional results come from combining top talent with the right mindset. 
               We're not just looking for skills on a resume—we're seeking individuals who bring passion, creativity, 
               and a growth-oriented attitude to everything they do.
             </p>
@@ -103,12 +103,12 @@ export default function CareersPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Why Join <span className="text-[#D4AF34]">SortBrands</span>?
+                Why Join <span className="text-[#D4AF34]">Sortbrands</span>?
               </h2>
               
               <p className="text-gray-700 mb-8">
                 We're building a team of exceptional individuals who are passionate about creating 
-                impactful brand experiences. When you join SortBrands, you become part of a 
+                impactful brand experiences. When you join Sortbrands, you become part of a 
                 collaborative, innovative environment where your talents are valued and your 
                 growth is prioritized.
               </p>
@@ -134,7 +134,7 @@ export default function CareersPage() {
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src="/images/careers/team-culture.jpg"
-                  alt="SortBrands Team Culture"
+                  alt="Sortbrands Team Culture"
                   fill
                   style={{ objectFit: 'cover' }}
                 />
@@ -166,7 +166,7 @@ export default function CareersPage() {
         While there are no current vacancies, feel free to introduce yourself — we’re always looking for great people to join the team when the time is right.
       </p>
       <Link
-            href="mailto:sortbrandske@gmail.com"
+            href="mailto:Sortbrandske@gmail.com"
             className="inline-flex items-center bg-[#D4AF34] hover:bg-white text-black px-8 py-4 rounded-full font-bold transition-colors duration-300 shadow-lg"
             >
         Send Your Resume <ArrowRight className="ml-2 w-5 h-5" />

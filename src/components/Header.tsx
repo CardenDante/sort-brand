@@ -151,7 +151,7 @@ const Header = () => {
                     className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/solutions/consultation') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
                     onClick={() => setActiveDropdown(null)}
                   >
-                    Digital Marketing Consultation
+                    Consultation
                   </Link>
                 </div>
               )}
@@ -313,7 +313,7 @@ const Header = () => {
                     className={`block hover:text-[#D4AF34] ${isActive('/solutions/consultation') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Digital Marketing Consultation
+                    Consultation
                   </Link>
                 </div>
               )}

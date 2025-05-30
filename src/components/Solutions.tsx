@@ -62,9 +62,9 @@ const solutionsData: Solution[] = [
   },
   {
     id: 'consultation',
-    title: 'Digital Marketing Consultation',
+    title: 'Consultation',
     shortDescription: 'Expert guidance to optimize your digital marketing strategy.',
-    fullDescription: 'We offer comprehensive digital marketing consultation to startups, medium-sized businesses, and large enterprises, helping them leverage all available tools to generate high-quality leads that translate into a strong return on investment.',
+    fullDescription: 'We offer comprehensive Consultation to startups, medium-sized businesses, and large enterprises, helping them leverage all available tools to generate high-quality leads that translate into a strong return on investment.',
     image: '/images/services/consultation.jpg',
     link: '/solutions/consultation'
   }

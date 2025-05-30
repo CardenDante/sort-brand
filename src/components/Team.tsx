@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
     image: '/images/team/kelvin-mosioma.jpg',
     linkedin: 'https://linkedin.com/',
     twitter: 'https://twitter.com/',
-    email: 'mailto:kelvin@sortbrands.com',
+    email: 'mailto:kelvin@Sortbrands.com',
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const teamMembers: TeamMember[] = [
     image: '/images/team/yohan-kim.jpg',
     linkedin: 'https://linkedin.com/',
     twitter: 'https://twitter.com/',
-    email: 'mailto:yohan@sortbrands.com',
+    email: 'mailto:yohan@Sortbrands.com',
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const teamMembers: TeamMember[] = [
     image: '/images/team/evans-mutiga.jpg',
     linkedin: 'https://linkedin.com/',
     twitter: 'https://twitter.com/',
-    email: 'mailto:evans@sortbrands.com',
+    email: 'mailto:evans@Sortbrands.com',
   },
 ];
 

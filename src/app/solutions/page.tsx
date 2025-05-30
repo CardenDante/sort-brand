@@ -51,7 +51,7 @@ const solutions: SolutionCard[] = [
   },
   {
     id: 'consultation',
-    title: 'Digital Marketing Consultation',
+    title: 'Consultation',
     description: 'Comprehensive consultation services for businesses of all sizes, helping leverage available tools to generate high-quality leads and achieve strong ROI.',
     image: '/images/solutions/consultation.jpg',
     link: '/solutions/consultation'
@@ -80,9 +80,7 @@ export default function SolutionsPage() {
               Driving Growth Through <span className="text-[#D4AF34]">Strategic Solutions</span>
             </h2>
             <p className="text-gray-700 text-lg">
-              At SortBrands, we offer a comprehensive suite of services designed to boost your brand's visibility, 
-              engage your audience, and drive measurable results. Our team of experts combines creativity with 
-              strategic thinking to deliver tailored solutions for businesses of all sizes.
+              At Sortbrands, we offer a comprehensive suite of services designed not only to boost your brand's visibility, engage your audience, and drive measurable results, but also to generate quality leads and conversions — ultimately contributing to your business growth. Our team of experts combines creativity with strategic thinking to deliver tailored solutions for businesses of all sizes.
             </p>
           </div>
           

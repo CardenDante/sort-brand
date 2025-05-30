@@ -50,7 +50,7 @@ const services: Service[] = [
   },
   {
     id: 'digital-marketing-consultation',
-    title: 'Digital Marketing Consultation',
+    title: 'Consultation',
     description: 'Comprehensive consultation services for businesses of all sizes, helping leverage available tools to generate high-quality leads and achieve strong ROI.',
     icon: <FaComments className="text-white text-3xl" />,
     link: '/solutions/consultation',

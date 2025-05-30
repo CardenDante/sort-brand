@@ -133,7 +133,7 @@ export default function InfluencerMarketingPage() {
               </h2>
               
               <p className="text-gray-700 mb-6">
-                At SortBrands, we specialize in connecting businesses with the right influencers who can authentically 
+                At Sortbrands, we specialize in connecting businesses with the right influencers who can authentically 
                 represent your brand and effectively engage with your target audience. Our comprehensive influencer 
                 marketing services help you navigate this dynamic landscape to achieve measurable results.
               </p>
@@ -145,7 +145,7 @@ export default function InfluencerMarketingPage() {
                 real business results.
               </p>
               
-              <div className="flex flex-wrap gap-4 mb-8">
+              {/* <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                   <FaInstagram className="text-[#D4AF34] mr-2" />
                   <span className="font-medium">Instagram</span>
@@ -162,7 +162,7 @@ export default function InfluencerMarketingPage() {
                   <FaTiktok className="text-[#D4AF34] mr-2" />
                   <span className="font-medium">TikTok</span>
                 </div>
-              </div>
+              </div> */}
               
               <Link 
                 href="/contacts" 

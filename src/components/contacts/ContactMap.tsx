@@ -49,7 +49,7 @@ const ContactMap = () => {
             allowFullScreen 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="SortBrands Office Location"
+            title="Sortbrands Office Location"
             className="w-full h-full"
           />
         )}

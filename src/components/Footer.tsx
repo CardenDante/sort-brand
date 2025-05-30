@@ -80,7 +80,7 @@ const MobileOptimizedFooter = () => {
             <div className="hidden md:grid grid-cols-12 gap-8">
               {/* About */}
               <div className="col-span-4">
-                <div className="text-2xl font-bold text-[#D4AF34] mb-4">SortBrands</div>
+                <div className="text-2xl font-bold text-[#D4AF34] mb-4">Sortbrands</div>
                 <p className="text-white/70 mb-6">
                   We sort your brand through innovation in advertising, design, and digital marketing.
                 </p>
@@ -127,7 +127,7 @@ const MobileOptimizedFooter = () => {
                 <div className="space-y-4 text-white/80">
                   <div className="flex items-start"><FaMapMarkerAlt className="text-[#D4AF34] mr-2 mt-1" /><span>Off Thika Road, behind Safari Park Hotel next to USIU</span></div>
                   <div className="flex items-start"><FaPhone className="text-[#D4AF34] mr-2 mt-1" /><span>+254 742 906 505</span></div>
-                  <div className="flex items-start"><FaEnvelope className="text-[#D4AF34] mr-2 mt-1" /><span>sortbrandske@gmail.com</span></div>
+                  <div className="flex items-start"><FaEnvelope className="text-[#D4AF34] mr-2 mt-1" /><span>Sortbrandske@gmail.com</span></div>
                 </div>
               </div>
             </div>
@@ -142,7 +142,7 @@ const MobileOptimizedFooter = () => {
                 {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
                   <a
                     key={idx}
-                    href="https://www.linkedin.com/company/sortbrands-group/about/?viewAsMember=true"
+                    href="https://www.linkedin.com/company/Sortbrands-group/about/?viewAsMember=true"
                     className="w-9 h-9 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all"
                   >
                     <Icon />
@@ -184,7 +184,7 @@ const MobileOptimizedFooter = () => {
               <FooterAccordion title="Contact">
                 <div className="space-y-3 text-sm text-white/80">
                   <div className="flex items-start"><FaPhone className="text-[#D4AF34] mr-2 mt-1" /><span>+254 742 906 505</span></div>
-                  <div className="flex items-start"><FaEnvelope className="text-[#D4AF34] mr-2 mt-1" /><span>sortbrandske@gmail.com</span></div>
+                  <div className="flex items-start"><FaEnvelope className="text-[#D4AF34] mr-2 mt-1" /><span>Sortbrandske@gmail.com</span></div>
                 </div>
               </FooterAccordion>
             </div>

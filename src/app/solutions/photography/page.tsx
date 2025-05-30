@@ -133,7 +133,7 @@ export default function PhotographyPage() {
               </h2>
               
               <p className="text-gray-700 mb-6">
-                At SortBrands, we specialize in creating high-quality visual content that tells your story and showcases 
+                At Sortbrands, we specialize in creating high-quality visual content that tells your story and showcases 
                 your brand in the best light. Our team of experienced photographers and videographers combines technical 
                 expertise with creative vision to deliver stunning results.
               </p>

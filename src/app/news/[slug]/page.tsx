@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const article = getArticleBySlug(params.slug);
   
   return {
-    title: `${article.title} | SortBrands News`,
+    title: `${article.title} | Sortbrands News`,
     description: article.excerpt,
   };
 }

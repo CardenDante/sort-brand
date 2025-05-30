@@ -43,7 +43,7 @@ const getCaseStudy = (id: string) => {
       { metric: 'Social Media Growth', value: '150%', description: 'Increase in social media followers and engagement' }
     ],
     testimonial: {
-      quote: "SortBrands transformed our digital marketing approach. Their strategic insights and execution capabilities helped us significantly increase our user engagement and app downloads. They truly understood our market and delivered exceptional results.",
+      quote: "Sortbrands transformed our digital marketing approach. Their strategic insights and execution capabilities helped us significantly increase our user engagement and app downloads. They truly understood our market and delivered exceptional results.",
       author: "Marketing Director",
       company: "Boomplay Music"
     },
