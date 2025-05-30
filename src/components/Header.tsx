@@ -12,7 +12,8 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const solutionsDropdownRef = useRef<HTMLDivElement>(null);
+  const opportunitiesDropdownRef = useRef<HTMLDivElement>(null);
 
   // Handle scroll event to change header style when scrolled
   useEffect(() => {
@@ -27,7 +28,13 @@ const Header = () => {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      
+      // Check if click is outside both dropdowns
+      const clickedOutsideSolutions = solutionsDropdownRef.current && !solutionsDropdownRef.current.contains(target);
+      const clickedOutsideOpportunities = opportunitiesDropdownRef.current && !opportunitiesDropdownRef.current.contains(target);
+      
+      if (clickedOutsideSolutions && clickedOutsideOpportunities) {
         setActiveDropdown(null);
       }
     };
@@ -99,7 +106,7 @@ const Header = () => {
               Case Studies
             </Link>
             
-            <div className="relative" ref={dropdownRef}>
+            <div className="relative" ref={solutionsDropdownRef}>
               <div className="flex items-center cursor-pointer" onClick={() => toggleDropdown('solutions')}>
                 <Link 
                   href="/solutions" 
@@ -168,7 +175,7 @@ const Header = () => {
               News & Insights
             </Link>
             
-            <div className="relative">
+            <div className="relative" ref={opportunitiesDropdownRef}>
               <div className="flex items-center cursor-pointer" onClick={() => toggleDropdown('opportunities')}>
                 <span className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActiveOpportunity() ? 'text-[#D4AF34]' : ''}`}>
                   Opportunities
@@ -181,14 +188,22 @@ const Header = () => {
                   <Link
                     href="/referral-program"
                     className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/referral-program') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveDropdown(null);
+                      window.location.href = '/referral-program';
+                    }}
                   >
                     Referral Program
                   </Link>
                   <Link
                     href="/careers"
                     className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/careers') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveDropdown(null);
+                      window.location.href = '/careers';
+                    }}
                   >
                     Careers
                   </Link>
@@ -354,9 +369,12 @@ const Header = () => {
             
             <div>
               <div className="flex items-center justify-between">
-                <span className={`font-medium hover:text-[#D4AF34] ${isActiveOpportunity() ? 'text-[#D4AF34]' : 'text-gray-900'}`}>
+                <button
+                  onClick={() => toggleDropdown('mobile-opportunities')}
+                  className={`font-medium hover:text-[#D4AF34] focus:outline-none text-left ${isActiveOpportunity() ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+                >
                   Opportunities
-                </span>
+                </button>
                 <button
                   onClick={() => toggleDropdown('mobile-opportunities')}
                   className="text-gray-900 hover:text-[#D4AF34] focus:outline-none p-1"
@@ -372,14 +390,24 @@ const Header = () => {
                   <Link
                     href="/referral-program"
                     className={`block hover:text-[#D4AF34] ${isActive('/referral-program') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMobileMenuOpen(false);
+                      setActiveDropdown(null);
+                      window.location.href = '/referral-program';
+                    }}
                   >
                     Referral Program
                   </Link>
                   <Link
                     href="/careers"
                     className={`block hover:text-[#D4AF34] ${isActive('/careers') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMobileMenuOpen(false);
+                      setActiveDropdown(null);
+                      window.location.href = '/careers';
+                    }}
                   >
                     Careers
                   </Link>

@@ -61,7 +61,7 @@ const MobileOptimizedFooter = () => {
         <div className="container mx-auto px-6 py-12 md:py-20">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-6 md:mb-0">
-              Let’s create your next <span className="text-[#D4AF34]">success story.</span>
+              We Are <span className="text-[#D4AF34]">Social.</span>
             </h2>
             <Link
               href="/contacts"
@@ -80,16 +80,16 @@ const MobileOptimizedFooter = () => {
             <div className="hidden md:grid grid-cols-12 gap-8">
               {/* About */}
               <div className="col-span-4">
-                <div className="text-2xl font-bold text-[#D4AF34] mb-4">Sortbrands</div>
                 <p className="text-white/70 mb-6">
-                  We sort your brand through innovation in advertising, design, and digital marketing.
+                 Slogan - Sort. Grow. Lead.
+                 Sorting your brand for success
                 </p>
                 <div className="flex gap-3">
                   {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
                     <a
                       key={idx}
                       href="#"
-                      className="w-10 h-10 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all"
+                      className="w-20 h-20 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all"
                     >
                       <Icon />
                     </a>
