@@ -71,13 +71,14 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/">
-              <div className="relative h-12 w-32">
-                <Image
-                  src="/images/logo/sb.png"
-                  alt="Sort Brands Logo"
+
+            <Link href="/" className="flex items-center flex-shrink-0">
+              <div className="relative w-22 h-12 sm:w-22 sm:h-16 lg:w-26 lg:h-20">
+                <Image 
+                  src="/images/logo/sb.png" 
+                  alt="Fancy Name Logo" 
                   fill
-                  style={{ objectFit: 'contain', objectPosition: 'left' }}
+                  className="object-contain"
                 />
               </div>
             </Link>
