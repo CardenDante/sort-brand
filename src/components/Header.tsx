@@ -76,7 +76,7 @@ const Header = () => {
               <div className="relative w-22 h-12 sm:w-22 sm:h-16 lg:w-26 lg:h-20">
                 <Image 
                   src="/images/logo/sb.png" 
-                  alt="Fancy Name Logo" 
+                  alt="SB" 
                   fill
                   className="object-contain"
                 />
