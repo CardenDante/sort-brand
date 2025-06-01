@@ -58,7 +58,7 @@ const MobileOptimizedFooter = () => {
       {/* Main Content */}
       <div className="relative z-10">
         {/* CTA */}
-        <div className="container mx-auto px-6 py-12 md:py-20">
+        {/* <div className="container mx-auto px-6 py-12 md:py-20">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-6 md:mb-0">
               We Are <span className="text-[#D4AF34]">Social.</span>
@@ -71,7 +71,7 @@ const MobileOptimizedFooter = () => {
               <span>Contact Us</span>
             </Link>
           </div>
-        </div>
+        </div> */}
 
         {/* Footer Main Sections */}
         <div className="border-t border-[#D4AF34]/20">
@@ -80,16 +80,15 @@ const MobileOptimizedFooter = () => {
             <div className="hidden md:grid grid-cols-12 gap-8">
               {/* About */}
               <div className="col-span-4">
-                <p className="text-white/70 mb-6">
-                 Slogan - Sort. Grow. Lead.
-                 Sorting your brand for success
-                </p>
-                <div className="flex gap-3">
+                <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-6 md:mb-0">
+              We Are <span className="text-[#D4AF34]">Social.</span>
+            </h2>
+                <div className="flex gap-3 pt-4">
                   {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
                     <a
                       key={idx}
                       href="#"
-                      className="w-20 h-20 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all"
+                      className="w-15 h-15 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all"
                     >
                       <Icon />
                     </a>
