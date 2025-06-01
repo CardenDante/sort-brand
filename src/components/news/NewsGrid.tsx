@@ -20,17 +20,17 @@ interface Article {
 
 // Sample articles data
 const allArticles: Article[] = [
-  {
-    id: '1',
-    slug: 'top-branding-trends-2025',
-    title: 'Top 10 Branding Trends to Watch in 2025',
-    excerpt: 'Discover the emerging branding trends that will shape how businesses connect with their audiences in 2025.',
-    image: '/images/news/branding-trends.jpg',
-    category: 'Branding',
-    date: 'May 18, 2025',
-    author: 'Kelvin Musioma',
-    featured: true
-  },
+  // {
+  //   id: '1',
+  //   slug: 'top-branding-trends-2025',
+  //   title: 'Top 10 Branding Trends to Watch in 2025',
+  //   excerpt: 'Discover the emerging branding trends that will shape how businesses connect with their audiences in 2025.',
+  //   image: '/images/news/branding-trends.jpg',
+  //   category: 'Branding',
+  //   date: 'May 18, 2025',
+  //   author: 'Kelvin Musioma',
+  //   featured: true
+  // },
   {
     id: '2',
     slug: 'social-media-strategy-guide',
@@ -42,50 +42,50 @@ const allArticles: Article[] = [
     author: 'Kelvin Musioma',
     featured: false
   },
-  {
-    id: '3',
-    slug: 'psychology-of-color-design',
-    title: 'The Psychology of Color in Design: How to Choose the Right Colors for Your Brand',
-    excerpt: 'Explore how color affects customer perception and how to select the perfect color palette for your brand.',
-    image: '/images/news/color-psychology.jpg',
-    category: 'Design',
-    date: 'May 10, 2025',
-    author: 'Kelvin Musioma',
-    featured: false
-  },
-  {
-    id: '4',
-    slug: 'video-marketing-strategies',
-    title: 'Video Marketing Strategies That Drive Results',
-    excerpt: 'Discover proven video marketing tactics that can boost engagement, conversions, and brand awareness.',
-    image: '/images/news/video-marketing.jpg',
-    category: 'Digital Marketing',
-    date: 'May 5, 2025',
-    author: 'Kelvin Musioma',
-    featured: false
-  },
-  {
-    id: '5',
-    slug: 'sustainable-packaging-design',
-    title: 'Sustainable Packaging Design: Balancing Aesthetics and Environmental Responsibility',
-    excerpt: 'How brands are innovating with eco-friendly packaging solutions without sacrificing visual appeal.',
-    image: '/images/news/sustainable-packaging.jpg',
-    category: 'Design',
-    date: 'April 28, 2025',
-    author: 'Emily Namwamba',
-    featured: true
-  },
-  {
-    id: '6',
-    slug: 'ai-in-marketing',
-    title: 'How AI is Transforming Digital Marketing in 2025',
-    excerpt: 'Explore the latest applications of artificial intelligence in marketing and how they are changing the industry.',
-    image: '/images/news/ai-marketing.jpg',
-    category: 'Digital Marketing',
-    date: 'April 22, 2025',
-    author: 'David Kimani',
-    featured: false
-  },
+  // {
+  //   id: '3',
+  //   slug: 'psychology-of-color-design',
+  //   title: 'The Psychology of Color in Design: How to Choose the Right Colors for Your Brand',
+  //   excerpt: 'Explore how color affects customer perception and how to select the perfect color palette for your brand.',
+  //   image: '/images/news/color-psychology.jpg',
+  //   category: 'Design',
+  //   date: 'May 10, 2025',
+  //   author: 'Kelvin Musioma',
+  //   featured: false
+  // },
+  // {
+  //   id: '4',
+  //   slug: 'video-marketing-strategies',
+  //   title: 'Video Marketing Strategies That Drive Results',
+  //   excerpt: 'Discover proven video marketing tactics that can boost engagement, conversions, and brand awareness.',
+  //   image: '/images/news/video-marketing.jpg',
+  //   category: 'Digital Marketing',
+  //   date: 'May 5, 2025',
+  //   author: 'Kelvin Musioma',
+  //   featured: false
+  // },
+  // {
+  //   id: '5',
+  //   slug: 'sustainable-packaging-design',
+  //   title: 'Sustainable Packaging Design: Balancing Aesthetics and Environmental Responsibility',
+  //   excerpt: 'How brands are innovating with eco-friendly packaging solutions without sacrificing visual appeal.',
+  //   image: '/images/news/sustainable-packaging.jpg',
+  //   category: 'Design',
+  //   date: 'April 28, 2025',
+  //   author: 'Emily Namwamba',
+  //   featured: true
+  // },
+  // {
+  //   id: '6',
+  //   slug: 'ai-in-marketing',
+  //   title: 'How AI is Transforming Digital Marketing in 2025',
+  //   excerpt: 'Explore the latest applications of artificial intelligence in marketing and how they are changing the industry.',
+  //   image: '/images/news/ai-marketing.jpg',
+  //   category: 'Digital Marketing',
+  //   date: 'April 22, 2025',
+  //   author: 'David Kimani',
+  //   featured: false
+  // },
   {
     id: '7',
     slug: 'building-brand-loyalty',
