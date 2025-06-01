@@ -41,13 +41,13 @@ const services: Service[] = [
     icon: <FaCamera className="text-white text-3xl" />,
     link: '/solutions/photography',
   },
-  {
-    id: 'influencer-marketing',
-    title: 'Influencer Marketing',
-    description: 'Strategic influencer marketing guidance, including selection of suitable brand ambassadors, management of influencers, and measurement of engagement and ROI.',
-    icon: <FaUsers className="text-white text-3xl" />,
-    link: '/solutions/influencer-marketing',
-  },
+  // {
+  //   id: 'influencer-marketing',
+  //   title: 'Influencer Marketing',
+  //   description: 'Strategic influencer marketing guidance, including selection of suitable brand ambassadors, management of influencers, and measurement of engagement and ROI.',
+  //   icon: <FaUsers className="text-white text-3xl" />,
+  //   link: '/solutions/influencer-marketing',
+  // },
   {
     id: 'digital-marketing-consultation',
     title: 'Consultation',
@@ -55,13 +55,13 @@ const services: Service[] = [
     icon: <FaComments className="text-white text-3xl" />,
     link: '/solutions/consultation',
   },
-  {
-    id: 'website-design',
-    title: 'Website Design & Development',
-    description: 'Custom websites that work as hard as you do. Responsive, user-friendly designs that convert visitors into customers and drive business growth.',
-    icon: <FaGlobe className="text-white text-3xl" />,
-    link: '/solutions/digital-marketing',
-  },
+  // {
+  //   id: 'website-design',
+  //   title: 'Website Design & Development',
+  //   description: 'Custom websites that work as hard as you do. Responsive, user-friendly designs that convert visitors into customers and drive business growth.',
+  //   icon: <FaGlobe className="text-white text-3xl" />,
+  //   link: '/solutions/digital-marketing',
+  // },
   {
     id: 'training',
     title: 'Training & Workshops',
@@ -126,7 +126,8 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> */}
           {services.map((service, index) => (
             <div
               key={service.id}
