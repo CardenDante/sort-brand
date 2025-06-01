@@ -277,6 +277,7 @@ export default function PhotographyPage() {
                   alt="Video Production Services"
                   fill
                   style={{ objectFit: 'cover' }}
+                  objectPosition='top 50% '
                   className="transition-transform duration-700 hover:scale-105"
                 />
               </div>

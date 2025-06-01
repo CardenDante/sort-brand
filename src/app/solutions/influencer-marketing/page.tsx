@@ -314,6 +314,7 @@ export default function InfluencerMarketingPage() {
                   alt="Influencer Marketing Services"
                   fill
                   style={{ objectFit: 'cover' }}
+                  objectPosition='top 10% left 50%'
                   className="transition-transform duration-700 hover:scale-105"
                 />
               </div>
