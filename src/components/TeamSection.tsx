@@ -22,7 +22,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 'kelvin-mosioma',
     name: 'Kelvin Mosioma',
-    role: 'Chairman',
+    role: 'Executive Chairman',
     image: '/images/team/EddieVoke254.jpg',
     bio: 'Visionary leader with extensive experience in branding and marketing strategy. Kelvin drives our company vision and ensures we deliver exceptional value to every client.'
   },
@@ -30,7 +30,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 'evans-mutiga',
     name: 'Evans Mutiga',
-    role: 'Business Development Officer',
+    role: 'Chief Operations Officer(COO)',
     image: '/images/team/Evans.png',
     bio: 'Driving growth and fostering key partnerships, Evans excels at identifying opportunities and creating tailored solutions that exceed client expectations.'
   }

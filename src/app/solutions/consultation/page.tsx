@@ -90,7 +90,7 @@ export default function ConsultationPage() {
             <div className="relative">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/solutions/consultation.jpg"
+                  src="/images/solutions/Strategic Digital Marketing Guidance.jpg"
                   alt="Consultation"
                   fill
                   style={{ objectFit: 'cover' }}
