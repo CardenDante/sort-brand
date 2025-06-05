@@ -85,24 +85,24 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <Link 
               href="/" 
-              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActive('/') ? 'text-[#D4AF34]' : ''}`}
+              className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base ${isActive('/') ? 'text-[#D4AF34]' : ''}`}
             >
               Home
             </Link>
             
             <Link 
               href="/about" 
-              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActive('/about') ? 'text-[#D4AF34]' : ''}`}
+              className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base ${isActive('/about') ? 'text-[#D4AF34]' : ''}`}
             >
               About
             </Link>
             
             <Link 
               href="/case-studies" 
-              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActive('/case-studies') ? 'text-[#D4AF34]' : ''}`}
+              className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base ${isActive('/case-studies') ? 'text-[#D4AF34]' : ''}`}
             >
               Case Studies
             </Link>
@@ -111,14 +111,14 @@ const Header = () => {
               <div className="flex items-center cursor-pointer" onClick={() => toggleDropdown('solutions')}>
                 <Link 
                   href="/solutions" 
-                  className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActiveSolution() ? 'text-[#D4AF34]' : ''}`}
+                  className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base ${isActiveSolution() ? 'text-[#D4AF34]' : ''}`}
                   onClick={(e) => {
                     e.stopPropagation();
                   }}
                 >
                   Solutions
                 </Link>
-                <ChevronDown className={`h-3 w-3 ml-1 transition-transform duration-300 ${activeDropdown === 'solutions' ? 'transform rotate-180' : ''} ${isActiveSolution() ? 'text-[#D4AF34]' : 'text-gray-900'}`} />
+                <ChevronDown className={`h-4 w-4 ml-1 transition-transform duration-300 ${activeDropdown === 'solutions' ? 'transform rotate-180' : ''} ${isActiveSolution() ? 'text-[#D4AF34]' : 'text-gray-900'}`} />
               </div>
               
               {activeDropdown === 'solutions' && (
@@ -171,17 +171,17 @@ const Header = () => {
             
             <Link 
               href="/news" 
-              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActive('/news') ? 'text-[#D4AF34]' : ''}`}
+              className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base ${isActive('/news') ? 'text-[#D4AF34]' : ''}`}
             >
               News & Insights
             </Link>
             
             <div className="relative" ref={opportunitiesDropdownRef}>
               <div className="flex items-center cursor-pointer" onClick={() => toggleDropdown('opportunities')}>
-                <span className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActiveOpportunity() ? 'text-[#D4AF34]' : ''}`}>
+                <span className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base ${isActiveOpportunity() ? 'text-[#D4AF34]' : ''}`}>
                   Opportunities
                 </span>
-                <ChevronDown className={`h-3 w-3 ml-1 transition-transform duration-300 ${activeDropdown === 'opportunities' ? 'transform rotate-180' : ''} ${isActiveOpportunity() ? 'text-[#D4AF34]' : 'text-gray-900'}`} />
+                <ChevronDown className={`h-4 w-4 ml-1 transition-transform duration-300 ${activeDropdown === 'opportunities' ? 'transform rotate-180' : ''} ${isActiveOpportunity() ? 'text-[#D4AF34]' : 'text-gray-900'}`} />
               </div>
               
               {activeDropdown === 'opportunities' && (
@@ -214,7 +214,7 @@ const Header = () => {
             
             <Link 
               href="/contacts" 
-              className={`text-gray-900 font-medium hover:text-[#D4AF34] transition-colors duration-300 text-sm ${isActive('/contacts') ? 'text-[#D4AF34]' : ''}`}
+              className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base ${isActive('/contacts') ? 'text-[#D4AF34]' : ''}`}
             >
               Contacts
             </Link>
@@ -271,7 +271,7 @@ const Header = () => {
           <div className="px-4 py-4 space-y-4 border-t">
             <Link 
               href="/"
-              className={`block font-medium hover:text-[#D4AF34] ${isActive('/') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+              className={`block font-bold hover:text-[#D4AF34] text-lg ${isActive('/') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
@@ -279,7 +279,7 @@ const Header = () => {
             
             <Link 
               href="/about"
-              className={`block font-medium hover:text-[#D4AF34] ${isActive('/about') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+              className={`block font-bold hover:text-[#D4AF34] text-lg ${isActive('/about') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
@@ -287,7 +287,7 @@ const Header = () => {
             
             <Link 
               href="/case-studies"
-              className={`block font-medium hover:text-[#D4AF34] ${isActive('/case-studies') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+              className={`block font-bold hover:text-[#D4AF34] text-lg ${isActive('/case-studies') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Case Studies
@@ -297,7 +297,7 @@ const Header = () => {
               <div className="flex items-center justify-between">
                 <Link
                   href="/solutions"
-                  className={`font-medium hover:text-[#D4AF34] ${isActiveSolution() ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+                  className={`font-bold hover:text-[#D4AF34] text-lg ${isActiveSolution() ? 'text-[#D4AF34]' : 'text-gray-900'}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Solutions
@@ -362,7 +362,7 @@ const Header = () => {
             
             <Link 
               href="/news"
-              className={`block font-medium hover:text-[#D4AF34] ${isActive('/news') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+              className={`block font-bold hover:text-[#D4AF34] text-lg ${isActive('/news') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               News & Insights
@@ -372,7 +372,7 @@ const Header = () => {
               <div className="flex items-center justify-between">
                 <button
                   onClick={() => toggleDropdown('mobile-opportunities')}
-                  className={`font-medium hover:text-[#D4AF34] focus:outline-none text-left ${isActiveOpportunity() ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+                  className={`font-bold hover:text-[#D4AF34] focus:outline-none text-left text-lg ${isActiveOpportunity() ? 'text-[#D4AF34]' : 'text-gray-900'}`}
                 >
                   Opportunities
                 </button>
@@ -418,7 +418,7 @@ const Header = () => {
             
             <Link 
               href="/contacts"
-              className={`block font-medium hover:text-[#D4AF34] ${isActive('/contacts') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
+              className={`block font-bold hover:text-[#D4AF34] text-lg ${isActive('/contacts') ? 'text-[#D4AF34]' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contacts
