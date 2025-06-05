@@ -12,7 +12,6 @@ interface CaseStudy {
   id: string;
   title: string;
   clientName: string;
-  clientLogo: string;
   image: string;
   category: string;
   industry: string;
@@ -28,7 +27,6 @@ const allCaseStudies: CaseStudy[] = [
     id: 'boomplay-music',
     title: 'Streaming App User Engagement Campaign',
     clientName: 'Boomplay Music',
-    clientLogo: '/images/logo/Boomplay.jpg',
     image: '/images/case-studies/boomplay-case-study.jpeg',
     category: 'digital-marketing',
     industry: 'entertainment',
@@ -41,7 +39,6 @@ const allCaseStudies: CaseStudy[] = [
     id: 'mahanaim-school',
     title: 'Educational Institution Rebrand',
     clientName: 'Mahanaim International School',
-    clientLogo: '/images/logo/MIHS.jpg',
     image: '/images/case-studies/mahanaim-case-study1.jpeg',
     category: 'branding',
     industry: 'education',
@@ -54,7 +51,6 @@ const allCaseStudies: CaseStudy[] = [
     id: 'mwananchi-credit',
     title: 'Financial Services Digital Transformation',
     clientName: 'Mwananchi Credit Limited',
-    clientLogo: '/images/logo/mcl.jpg',
     image: '/images/case-studies/ssr1.jpg',
     category: 'web-development',
     industry: 'finance',
@@ -67,7 +63,6 @@ const allCaseStudies: CaseStudy[] = [
     id: 'youth-affairs',
     title: 'Government Youth Program Campaign',
     clientName: 'Ministry of Youth Affairs',
-    clientLogo: '/images/logo/MinistryofYouth.jpg',
     image: '/images/case-studies/youth-affairs-case-study.jpg',
     category: 'social-media',
     industry: 'government',
@@ -80,7 +75,6 @@ const allCaseStudies: CaseStudy[] = [
     id: 'zinco-mabati',
     title: 'Manufacturing Brand Identity',
     clientName: 'Zinco Mabati Factory Limited',
-    clientLogo: '/images/logo/ZINCO.jpg',
     image: '/images/case-studies/zinco-case-study1.jpg',
     category: 'branding',
     industry: 'manufacturing',
@@ -93,7 +87,6 @@ const allCaseStudies: CaseStudy[] = [
     id: 'international-youth-fellowship',
     title: 'Global Non-Profit Event Campaign',
     clientName: 'International Youth Fellowship',
-    clientLogo: '/images/logo/IYFKenya.jpg',
     image: '/images/case-studies/iyf-case-study1.jpg',
     category: 'design',
     industry: 'nonprofit',
@@ -106,7 +99,6 @@ const allCaseStudies: CaseStudy[] = [
     id: 'corporate-training-event',
     title: 'Corporate Training & Development Program',
     clientName: 'TechCorp Solutions',
-    clientLogo: '/images/logo/KaziCloud.jpg',
     image: '/images/case-studies/corporate-training-case-study.jpg',
     category: 'training',
     industry: 'corporate',
@@ -208,18 +200,6 @@ const CaseStudiesGrid = ({ activeCategory = 'all', activeIndustry = 'all' }: Cas
               style={{ objectFit: 'cover' }}
               className="transition-transform duration-500 hover:scale-105"
             />
-            <div className="absolute top-0 left-0 m-4">
-              <div className="bg-white/90 backdrop-blur-sm p-2 rounded-md shadow-md">
-                <div className="relative h-10 w-24">
-                  <Image
-                    src={study.clientLogo}
-                    alt={study.clientName}
-                    fill
-                    style={{ objectFit: 'contain' }}
-                  />
-                </div>
-              </div>
-            </div>
             <div className="absolute top-0 right-0 m-4">
               <span className="inline-block bg-[#D4AF34] text-black text-xs font-semibold px-3 py-1 rounded-full">
                 {study.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}

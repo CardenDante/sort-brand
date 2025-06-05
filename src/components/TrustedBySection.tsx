@@ -18,6 +18,9 @@ const clientLogos = [
   { id: 11, name: 'BNI', src: '/images/logo/Tetnaz.jpg' },
   { id: 12, name: 'BNI', src: '/images/logo/Weekend-Academy.jpg' },
   { id: 13, name: 'BNI', src: '/images/logo/ZINCO.jpg' },
+  { id: 14, name: 'Phoenix Capital Limited', src: '/images/logo/Phoenix Capital Limited.jpg' },
+  { id: 15, name: 'Pepsi', src: '/images/logo/Pepsi_2023.png' },
+  { id: 16, name: 'Sistar', src: '/images/logo/Sistar Logo.webp' },
 ];
 
 // Phrases to animate in typewriter effect

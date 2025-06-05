@@ -19,6 +19,10 @@ const clients: Client[] = [
   { id: 10, name: 'Kazicloud Careers', logo: '/images/clients/kazicloud-logo.png' },
   { id: 11, name: 'Derine Marketing', logo: '/images/clients/derine-logo.png' },
   { id: 12, name: 'Catholic University', logo: '/images/clients/catholic-logo.png' },
+  { id: 14, name: 'Phoenix Capital Limited', logo: '/images/logo/Phoenix Capital Limited.jpg' },
+  { id: 15, name: 'Pepsi', logo: '/images/logo/Pepsi_2023.png' },
+  { id: 16, name: 'Sistar', logo: '/images/logo/Sistar Logo.webp' },
+
 ];
 
 const individualBrands: Client[] = [

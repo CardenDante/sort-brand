@@ -14,6 +14,7 @@ import {
   FaChevronDown,
   FaChevronUp,
 } from 'react-icons/fa';
+import { FaX } from 'react-icons/fa6';
 
 const FooterAccordion = ({ title, children }: { title: string; children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -138,11 +139,11 @@ const MobileOptimizedFooter = () => {
                 <div className="text-2xl font-bold text-[#D4AF34]">Sortbrands</div>
               </div>
               <div className="flex justify-center gap-4 mb-6">
-                {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
+                {[FaFacebookF, FaX, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
                   <a
                     key={idx}
                     href="https://www.linkedin.com/company/Sortbrands-group/about/?viewAsMember=true"
-                    className="w-9 h-9 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all"
+                    className="w-20 h-20 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all"
                   >
                     <Icon />
                   </a>
