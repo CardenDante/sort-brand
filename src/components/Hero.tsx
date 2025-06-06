@@ -11,7 +11,7 @@ interface HeroProps {
 }
 
 const Hero = ({
-  title = "We sort businesses of every size to thrive globally.",
+  title = "Sorting businesses to thrive globally.",
   subtitle = "We are the world’s best digital creative agency, dedicated to sorting brands grow, adapt, and lead in the modern market through innovative marketing solutions.",
   buttonText = "Our Solutions",
   buttonLink = "/solutions",
@@ -38,9 +38,9 @@ const Hero = ({
         <div className="w-full max-w-4xl">
           {/* Responsive title with proper line breaks */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight">
-            <span className="block sm:inline">We sort businesses of</span>
+            <span className="block sm:inline">Sorting businesses</span>
             <br className="hidden sm:block" />
-            <span className="block sm:inline"> every size to thrive globally.</span>
+            <span className="block sm:inline"> to thrive globally.</span>
           </h1>
           
           {/* Responsive gold underline accent */}
