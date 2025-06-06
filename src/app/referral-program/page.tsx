@@ -13,7 +13,7 @@ export default function ReferralProgramPage() {
   return (
     <main>
       {/* Hero Banner */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[47vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
