@@ -51,7 +51,7 @@ const IntroSection = () => {
         {/* Heading with proper wrapping */}
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mx-auto max-w-4xl">
-            Sortbrands is World's top marketing agency.
+            Sortbrands is world's best marketing agency.
           </h2>
         </div>
 

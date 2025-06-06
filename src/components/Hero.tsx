@@ -38,9 +38,9 @@ const Hero = ({
         <div className="w-full max-w-4xl">
           {/* Responsive title with proper line breaks */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight">
-            <span className="block sm:inline">Sorting businesses</span>
+            <span className="block sm:inline">Sorting your </span>
             <br className="hidden sm:block" />
-            <span className="block sm:inline"> to thrive globally.</span>
+            <span className="block sm:inline">business to thrive globally.</span>
           </h1>
           
           {/* Responsive gold underline accent */}
