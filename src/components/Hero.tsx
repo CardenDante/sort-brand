@@ -40,7 +40,7 @@ const Hero = ({
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight">
             <span className="block sm:inline">Sorting your </span>
             <br className="hidden sm:block" />
-            <span className="block sm:inline">business to thrive globally.</span>
+            <span className="block sm:inline">business to <span className="text-[#D4AF34]">thrive globally.</span></span>
           </h1>
           
           {/* Responsive gold underline accent */}
