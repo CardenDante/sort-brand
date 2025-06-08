@@ -82,7 +82,7 @@ const MobileOptimizedFooter = () => {
               {/* About */}
               <div className="col-span-4">
                 <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-6 md:mb-0">
-              We Are <span className="text-[#D4AF34]">Social.</span>
+              We are <span className="text-[#D4AF34]">social.</span>
             </h2>
                 <div className="flex gap-3 pt-4">
                   {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (

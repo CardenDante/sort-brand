@@ -52,7 +52,7 @@ const WhoWeWorkWith = () => {
       <div className="container mx-auto px-4">
         {/* Section title */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">Who We Work With</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">Who we work with</h2>
           <div className="w-16 h-1 bg-[#D4AF34] mx-auto"></div>
         </div>
         

@@ -51,7 +51,7 @@ const MissionVisionSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF34] mb-3">Our Purpose</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF34] mb-3">Our purpose</h2>
           <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-4"></div>
           <p className="text-white/70 max-w-2xl mx-auto">
             We are dedicated to helping businesses achieve their goals through strategic marketing and branding solutions.
@@ -70,7 +70,7 @@ const MissionVisionSection = () => {
           >
             <div className="h-2 bg-[#D4AF34]"></div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3">Our Mission</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Our mission</h3>
               <p className="text-white/70 mb-4 text-sm md:text-base">
                 To sort business needs by delivering high-quality advertising, marketing, and branding services to both local and international markets. We're committed to helping businesses stand out and achieve their goals through innovative and effective solutions.
               </p>
@@ -93,7 +93,7 @@ const MissionVisionSection = () => {
           >
             <div className="h-2 bg-[#D4AF34]"></div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3">Our Vision</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Our vision</h3>
               <p className="text-white/70 mb-4 text-sm md:text-base">
                 To mentor business owners and entrepreneurs, helping them develop the mindset to succeed not only in business but also in the spiritual realm, creating a holistic approach to growth and success that extends beyond simply profits.
               </p>
