@@ -7,7 +7,8 @@ import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
-  FaLinkedinIn
+  FaLinkedinIn,
+  FaWhatsapp
 } from 'react-icons/fa';
 
 const ContactInfo = () => {
@@ -50,6 +51,26 @@ const ContactInfo = () => {
             </div>
           </div>
           
+          {/* WhatsApp */}
+          <div className="flex items-start">
+            <div className="mt-1 mr-4 text-[#D4AF34]">
+              <FaWhatsapp size={20} />
+            </div>
+            <div>
+              <h3 className="font-bold text-white mb-1">WhatsApp</h3>
+              <p className="text-white/70">
+                <a 
+                  href="https://wa.me/254742906505" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#D4AF34] transition-colors"
+                >
+                  +254 742 906 505
+                </a>
+              </p>
+            </div>
+          </div>
+          
           {/* Email */}
           <div className="flex items-start">
             <div className="mt-1 mr-4 text-[#D4AF34]">
@@ -74,7 +95,7 @@ const ContactInfo = () => {
               <h3 className="font-bold text-white mb-1">Office Hours</h3>
               <p className="text-white/70">
                 Monday - Friday: 8:00 AM - 4:00 PM<br />
-                Saturday:Closed <br />
+                Saturday: Closed <br />
                 Sunday: Closed
               </p>
             </div>
@@ -86,7 +107,9 @@ const ContactInfo = () => {
           <h3 className="font-bold text-white mb-3">Follow Us</h3>
           <div className="flex space-x-3">
             <a 
-              href="#" 
+              href="https://www.facebook.com/Sortbrands/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
               aria-label="Facebook"
             >
@@ -100,18 +123,31 @@ const ContactInfo = () => {
               <FaTwitter />
             </a>
             <a 
-              href="#" 
+              href="https://www.instagram.com/Sortbrandsgroup/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
               aria-label="Instagram"
             >
               <FaInstagram />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/company/Sortbrands-group/about/?viewAsMember=true" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
               aria-label="LinkedIn"
             >
               <FaLinkedinIn />
+            </a>
+            <a 
+              href="https://wa.me/+254742906505" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
             </a>
           </div>
         </div>

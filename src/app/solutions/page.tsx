@@ -92,15 +92,15 @@ export default function SolutionsPage() {
                 className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:border-[#D4AF34]/20 transition-all duration-300 transform hover:-translate-y-1"
               >
                 {/* Solution Image */}
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-52 overflow-hidden bg-gray-50">
                   <Image
                     src={solution.image}
                     alt={solution.title}
                     fill
                     style={{ objectFit: 'cover' }}
-                    className="transition-transform duration-700 hover:scale-105"
+                    className="transition-transform duration-700 hover:scale-105 p-2"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
                 </div>
                 
                 {/* Content */}

@@ -43,6 +43,20 @@ const digitalMarketingServices: ServiceItem[] = [
     ]
   },
   {
+    id: 'affiliate-marketing',
+    title: 'Affiliate Marketing',
+    description: 'We help businesses establish and manage comprehensive affiliate marketing programs that expand their reach through strategic partnerships. Our affiliate marketing services include recruiting high-quality affiliates, setting up tracking systems, creating compelling promotional materials, and managing commission structures. We identify and connect you with relevant influencers, bloggers, and content creators who align with your brand values and target audience. Our team handles the entire affiliate recruitment process, provides ongoing support to affiliates, monitors performance metrics, and ensures compliance with industry standards. This performance-based marketing approach allows you to scale your business through trusted partners who promote your products or services to their audiences.',
+    image: '/images/solutions/aInfluencer Marketing Background  - Sortbrands Group.jpeg',
+    benefits: [
+      'Performance-Based: Pay only for actual results and conversions',
+      'Extended Reach: Access new audiences through affiliate networks',
+      'Cost-Effective: Lower acquisition costs compared to traditional advertising',
+      'Brand Credibility: Leverage affiliate trust and authority',
+      'Scalable Growth: Expand market presence without direct investment',
+      'Risk Mitigation: Reduced marketing risk with pay-per-performance model'
+    ]
+  },
+  {
     id: 'web-development',
     title: 'Web Development',
     description: 'We create eye-catching, interactive, responsive, and fast websites, along with online portfolios for individuals, small businesses, and large organizations. Our designs are crafted to engage your audience, provide an exceptional user experience, and are fully optimized for search engine visibility.',

@@ -2,7 +2,7 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { FaBullhorn, FaNewspaper, FaCalendarAlt, FaCamera, FaComments, FaWifi, FaGlobe, FaPencilAlt, FaChartLine, FaPalette, FaCrown, FaUsers, FaGraduationCap } from 'react-icons/fa';
+import { FaBullhorn, FaNewspaper, FaCalendarAlt, FaCamera, FaComments, FaWifi, FaGlobe, FaPencilAlt, FaChartLine, FaPalette, FaPrint, FaUsers, FaGraduationCap } from 'react-icons/fa';
 
 interface Service {
   id: string;
@@ -28,11 +28,11 @@ const services: Service[] = [
     link: '/solutions/graphic-design',
   },
   {
-    id: 'branding',
-    title: 'Branding',
-    description: 'Comprehensive branding services to help businesses create a strong identity, boost customer loyalty, differentiate in the market, and clearly communicate values and purpose.',
-    icon: <FaCrown className="text-white text-3xl" />,
-    link: '/solutions/branding',
+    id: 'printing-outdoor-advertising',
+    title: 'Printing & Outdoor Advertising',
+    description: 'Professional printing and outdoor advertising solutions including billboards, business cards, banners, vehicle wrapping, and large format printing services.',
+    icon: <FaPrint className="text-white text-3xl" />,
+    link: '/solutions/printing-outdoor-advertising',
   },
   {
     id: 'photography-videography',

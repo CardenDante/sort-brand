@@ -63,7 +63,7 @@ export default function ReferralProgramPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Why Join Our <span className="text-[#D4AF34]">Referral Program</span>?
+              Why join our <span className="text-[#D4AF34]">referral program</span>?
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Our referral program is designed to reward you generously for connecting us with 
@@ -116,7 +116,7 @@ export default function ReferralProgramPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              How Our <span className="text-[#D4AF34]">Referral Program</span> Works
+              How our <span className="text-[#D4AF34]">referral program</span> works
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Getting started is simple. Follow these easy steps to start earning commissions today.
@@ -188,7 +188,7 @@ export default function ReferralProgramPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Ready to Start <span className="text-[#D4AF34]">Earning</span>?
+              Ready to start <span className="text-[#D4AF34]">earning</span>?
             </h2>
             <p className="text-lg text-gray-700 mb-8">
               Join our referral program today and start earning commissions by connecting us with businesses 
@@ -235,7 +235,7 @@ export default function ReferralProgramPage() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Frequently Asked <span className="text-[#D4AF34]">Questions</span>
+                Frequently asked <span className="text-[#D4AF34]">questions</span>
               </h2>
             </div>
 

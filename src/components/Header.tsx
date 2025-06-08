@@ -165,6 +165,13 @@ const Header = () => {
                   >
                     Consultation
                   </Link>
+                  <Link
+                    href="/solutions/printing-outdoor-advertising"
+                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/solutions/consultation') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                   Printing & Outdoor Advertising
+                  </Link>
                 </div>
               )}
             </div>
@@ -355,6 +362,13 @@ const Header = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Consultation
+                  </Link>
+                  <Link
+                    href="/solutions/printing-outdoor-advertising"
+                    className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/consultation') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Printing & Outdoor Advertising
                   </Link>
                 </div>
               )}

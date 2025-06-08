@@ -45,16 +45,16 @@ const MobileOptimizedFooter = () => {
 
   // Social media links
   const socialLinks = [
-    { Icon: FaFacebookF, href: "#", label: "Facebook" },
+    { Icon: FaFacebookF, href: "https://www.facebook.com/Sortbrands/", label: "Facebook" },
     { Icon: FaTwitter, href: "#", label: "Twitter" },
-    { Icon: FaInstagram, href: "#", label: "Instagram" },
+    { Icon: FaInstagram, href: "https://www.instagram.com/Sortbrandsgroup/", label: "Instagram" },
     { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/Sortbrands-group/about/?viewAsMember=true", label: "LinkedIn" },
   ];
 
   const mobileSocialLinks = [
-    { Icon: FaFacebookF, href: "#", label: "Facebook" },
+    { Icon: FaFacebookF, href: "https://www.facebook.com/Sortbrands/", label: "Facebook" },
     { Icon: FaX, href: "#", label: "X (Twitter)" },
-    { Icon: FaInstagram, href: "#", label: "Instagram" },
+    { Icon: FaInstagram, href: "https://www.instagram.com/Sortbrandsgroup/", label: "Instagram" },
     { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/Sortbrands-group/about/?viewAsMember=true", label: "LinkedIn" },
   ];
 
