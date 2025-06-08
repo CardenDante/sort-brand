@@ -77,7 +77,7 @@ export default function SolutionsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-              Driving Growth Through <span className="text-[#D4AF34]">Strategic Solutions</span>
+              Driving growth through <span className="text-[#D4AF34]">strategic solutions</span>
             </h2>
             <p className="text-gray-700 text-lg">
               At Sortbrands, we offer a comprehensive suite of services designed not only to boost your brand's visibility, engage your audience, and drive measurable results, but also to generate quality leads and conversions — ultimately contributing to your business growth. Our team of experts combines creativity with strategic thinking to deliver tailored solutions for businesses of all sizes.
@@ -154,7 +154,7 @@ export default function SolutionsPage() {
         <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-6"></div>
         
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Ready to Take Your Brand to the <span className="text-[#D4AF34]">Next Level?</span>
+          Ready to take your brand to the <span className="text-[#D4AF34]">next level?</span>
         </h2>
         
         <p className="text-gray-600 text-lg mb-8">

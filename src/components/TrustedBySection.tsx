@@ -127,7 +127,7 @@ const TrustedBySection = () => {
     >
       {/* Client Portfolio Title */}
       <div className="text-center mb-8">
-        <h3 className="text-xl font-bold text-black">Client Portfolio</h3>
+        <h3 className="text-xl font-bold text-black">Client portfolio</h3>
         <div className="w-12 h-0.5 bg-black mx-auto mt-1"></div>
       </div>
       

@@ -94,7 +94,7 @@ const FAQSection = () => {
               </div>
               
               <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
-                Frequently <span className="text-[#D4AF34]">Asked</span> Questions
+                Frequently <span className="text-[#D4AF34]">asked</span> questions
               </h2>
               
               <p className="text-white/70 text-lg mb-8 leading-relaxed max-w-md">
