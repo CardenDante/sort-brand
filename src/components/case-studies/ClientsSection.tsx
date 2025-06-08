@@ -73,7 +73,7 @@ const ClientsSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF34] mb-3">Our Clients</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF34] mb-3">Our clients</h2>
           <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-4"></div>
           <p className="text-white/70 max-w-2xl mx-auto">
             We've had the privilege of working with these amazing organizations to help them achieve their marketing and branding goals.

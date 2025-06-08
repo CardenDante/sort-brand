@@ -60,7 +60,7 @@ const CaseStudiesFilter = ({ onFilterChange }: CaseStudiesFilterProps) => {
   return (
     <div className="mb-8">
       <div className="text-center mb-6">
-        <h2 className="text-3xl font-bold text-black mb-2">Explore Our Work</h2>
+        <h2 className="text-3xl font-bold text-black mb-2">Explore our work</h2>
         <div className="w-16 h-1 bg-[#D4AF34] mx-auto mb-3"></div>
         <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
           Filter through our case studies to see how we've helped clients across different industries.
