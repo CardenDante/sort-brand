@@ -33,7 +33,7 @@ const TopBanner = () => {
 
         {/* Row 2: Appointment Link (centered on mobile, center on desktop) */}
         <div className="text-center md:flex-grow md:text-center">
-          <Link href="/contacts" className="font-medium hover:text-[#D4AF34] transition-colors duration-300">
+          <Link href="/booking" className="font-medium hover:text-[#D4AF34] transition-colors duration-300">
             Book An Appointment
           </Link>
         </div>
