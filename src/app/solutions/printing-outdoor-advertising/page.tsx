@@ -18,7 +18,7 @@ const printingServices: ServiceItem[] = [
     id: 'billboard-advertising',
     title: 'Billboard Advertising',
     description: 'We design and manage high-impact billboard campaigns that capture attention and drive brand awareness. Our billboard advertising services include strategic location analysis, eye-catching design creation, permit handling, and installation coordination. We work with premium billboard locations across key areas to ensure maximum visibility for your brand. Our team handles everything from concept development to final installation, ensuring your message reaches your target audience effectively. We also provide ongoing campaign monitoring and performance analysis to maximize your outdoor advertising investment.',
-    image: '/images/solutions/billboard-advertising.jpg',
+    image: '/images/solutions/billboard-advertising..jpg',
     benefits: [
       'High Visibility: Reach thousands of potential customers daily',
       'Brand Awareness: Build strong brand recognition in target areas',
@@ -32,7 +32,7 @@ const printingServices: ServiceItem[] = [
     id: 'business-cards-printing',
     title: 'Business Cards & Stationery',
     description: 'We create professional business cards, letterheads, envelopes, and complete stationery packages that reflect your brand identity. Our printing services use high-quality materials and finishes including matte, gloss, embossed, and specialty papers. We ensure your business cards make a lasting first impression with creative designs, premium printing quality, and attention to detail. From concept to delivery, we handle the entire process including design consultation, material selection, proofing, and timely delivery of your printed materials.',
-    image: '/images/solutions/business-cards-printing.jpg',
+    image: '/images/solutions/business-cards-and stationary....jpg',
     benefits: [
       'Professional Image: Create lasting first impressions',
       'Brand Consistency: Maintain uniform brand identity across materials',
@@ -60,7 +60,7 @@ const printingServices: ServiceItem[] = [
     id: 'vehicle-wrapping',
     title: 'Vehicle Wrapping & Graphics',
     description: 'We transform vehicles into moving billboards with professional vehicle wrapping and graphic services. Our vehicle branding solutions include full wraps, partial wraps, and custom decals for cars, trucks, vans, and commercial fleets. We use premium vinyl materials that protect your vehicle\'s original paint while delivering stunning visual impact. Our experienced team ensures precise installation and professional finish. Vehicle wrapping is a cost-effective way to advertise your business everywhere you go, turning your fleet into a powerful marketing tool.',
-    image: '/images/solutions/vehicle-wrapping.jpg',
+    image: '/images/solutions/vehicle-wrapping 1.jpg',
     benefits: [
       'Mobile Advertising: Reach customers wherever you drive',
       'Cost-Effective: One-time investment with long-term exposure',
@@ -88,7 +88,7 @@ const printingServices: ServiceItem[] = [
     id: 'large-format-printing',
     title: 'Large Format Printing',
     description: 'We specialize in large format printing for oversized marketing materials, architectural plans, trade show graphics, and wall murals. Our large format printing capabilities include posters, canvas prints, fabric displays, and architectural drawings. Using state-of-the-art printing technology, we deliver sharp, vibrant prints that maintain quality even at massive scales. Whether you need exhibition graphics, retail displays, or decorative wall prints, our large format printing services provide the impact and quality your project demands.',
-    image: '/images/solutions/large-format-printing.jpg',
+    image: '/images/solutions/large-format-printing (1).jpg',
     benefits: [
       'Massive Scale: Print materials up to any required size',
       'Superior Quality: Sharp detail and vibrant colors at large sizes',
@@ -147,7 +147,7 @@ export default function PrintingOutdoorAdvertisingPage() {
                     src={service.image}
                     alt={service.title}
                     fill
-                    style={{ objectFit: 'contain' }}
+                    style={{ objectFit: 'cover' }}
                     className="transition-transform duration-700 hover:scale-105 p-4"
                   />
                 </div>
