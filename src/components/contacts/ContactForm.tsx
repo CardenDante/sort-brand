@@ -126,13 +126,17 @@ const ContactForm = () => {
                 Subject <span className="text-red-500">*</span>
               </label>
               <select
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF34] focus:border-transparent"
-              >
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF34] focus:border-transparent text-black bg-white hover:bg-white"
+                  style={{
+                    color: formData.subject ? '#000' : '#6B7280',
+                    accentColor: '#D4AF34', // for some browsers
+                  }}
+                >
                 <option value="">Select a subject</option>
                 <option value="General Inquiry">General Inquiry</option>
                 <option value="Digital Marketing">Digital Marketing</option>
@@ -141,6 +145,7 @@ const ContactForm = () => {
                 <option value="Web Development">Volunteer</option>
                 <option value="Partnership">Partnership</option>
                 <option value="Consultation">Consultation</option>
+                <option value="Training & Workshops">Training & Workshops</option>
                 <option value="Printing & Outdoor Advertising ">Printing & Outdoor Advertising</option>
                 <option value="Other">Other</option>
               </select>
