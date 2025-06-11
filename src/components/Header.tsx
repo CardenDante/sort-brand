@@ -138,26 +138,13 @@ const Header = () => {
                     Graphic Design
                   </Link>
                   <Link
-                    href="/solutions/branding"
-                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/solutions/branding') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    Branding
-                  </Link>
-                  <Link
                     href="/solutions/photography"
                     className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/solutions/photography') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
                     onClick={() => setActiveDropdown(null)}
                   >
                     Photography & Videography
                   </Link>
-                  <Link
-                    href="/solutions/influencer-marketing"
-                    className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/solutions/influencer-marketing') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    Influencer Marketing
-                  </Link>
+
                   <Link
                     href="/solutions/consultation"
                     className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#D4AF34] text-sm ${isActive('/solutions/consultation') ? 'text-[#D4AF34] bg-gray-50' : ''}`}
@@ -342,13 +329,13 @@ const Header = () => {
                   >
                     Graphic Design
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/solutions/branding"
                     className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/branding') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Branding
-                  </Link>
+                  </Link> */}
                   <Link
                     href="/solutions/photography"
                     className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/photography') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
@@ -356,13 +343,13 @@ const Header = () => {
                   >
                     Photography & Videography
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/solutions/influencer-marketing"
                     className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/influencer-marketing') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Influencer Marketing
-                  </Link>
+                  </Link> */}
                   <Link
                     href="/solutions/consultation"
                     className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/consultation') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
