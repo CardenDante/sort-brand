@@ -91,7 +91,7 @@ const MobileOptimizedFooter = () => {
                       target={href.startsWith('http') ? '_blank' : '_self'}
                       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       aria-label={label}
-                      className="w-16 h-16 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all text-xl"
+                      className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all text-lg md:text-xl"
                     >
                       <Icon />
                     </a>
@@ -168,7 +168,7 @@ const MobileOptimizedFooter = () => {
                     target={href.startsWith('http') ? '_blank' : '_self'}
                     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     aria-label={label}
-                    className="w-20 h-20 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all text-2xl"
+                    className="w-10 h-10 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all text-2xl"
                   >
                     <Icon />
                   </a>
