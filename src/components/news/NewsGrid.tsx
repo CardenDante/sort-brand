@@ -119,17 +119,17 @@ const allArticles: Article[] = [
     author: 'Priscilla Auma',
     featured: false
   },
-  {
-    id: '10',
-    slug: 'rebranding-success-stories',
-    title: 'Inspiring Rebranding Success Stories from African Companies',
-    excerpt: 'Case studies of successful rebranding initiatives that transformed business fortunes across Africa.',
-    image: '/images/news/rebranding-success.jpg',
-    category: 'Branding',
-    date: 'April 3, 2025',
-    author: 'John Mwangi',
-    featured: true
-  }
+  // {
+  //   id: '10',
+  //   slug: 'rebranding-success-stories',
+  //   title: 'Inspiring Rebranding Success Stories from African Companies',
+  //   excerpt: 'Case studies of successful rebranding initiatives that transformed business fortunes across Africa.',
+  //   image: '/images/news/rebranding-success.jpg',
+  //   category: 'Branding',
+  //   date: 'April 3, 2025',
+  //   author: 'John Mwangi',
+  //   featured: true
+  // }
 ];
 
 // Available categories
