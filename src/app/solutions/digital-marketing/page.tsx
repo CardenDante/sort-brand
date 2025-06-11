@@ -49,7 +49,7 @@ const digitalMarketingServices: ServiceItem[] = [
     id: 'affiliate-marketing',
     title: 'Affiliate Marketing',
     description: 'We help businesses establish and manage comprehensive affiliate marketing programs that expand their reach through strategic partnerships. Our affiliate marketing services include recruiting high-quality affiliates, setting up tracking systems, creating compelling promotional materials, and managing commission structures. We identify and connect you with relevant influencers, bloggers, and content creators who align with your brand values and target audience. Our team handles the entire affiliate recruitment process, provides ongoing support to affiliates, monitors performance metrics, and ensures compliance with industry standards. This performance-based marketing approach allows you to scale your business through trusted partners who promote your products or services to their audiences.',
-    image: '/images/solutions/Affiliate-Marketing - Sortbrands.webp',
+    image: '/images/solutions/Affliate Marketing.jpg',
     benefits: [
       'Performance-Based: Pay only for actual results and conversions',
       'Extended Reach: Access new audiences through affiliate networks',
@@ -77,7 +77,7 @@ const digitalMarketingServices: ServiceItem[] = [
       id: 'seo-services',
       title: 'Search Engine Optimization (SEO)',
       description: 'We help businesses improve their visibility on search engines like Google by implementing proven SEO strategies. Our services include keyword research, on-page optimization, technical SEO audits, content optimization, backlink building, and performance tracking. Whether you need to rank higher locally or compete on a global scale, we tailor your SEO plan to ensure long-term growth and measurable results.',
-      image: '/images/solutions/social-media-marketing.jpeg', 
+      image: '/images/solutions/Search Engine Optimization.jpg', 
       benefits: [
         'Higher Search Rankings: Improve your position on Google search results',
         'Increased Website Traffic: Drive more organic visitors to your site',

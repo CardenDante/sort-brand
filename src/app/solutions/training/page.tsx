@@ -59,7 +59,7 @@ export default function TrainingPage() {
             {/* Image */}
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/solutions/team-building.jpg"
+                src="/images/solutions/Why Choose Our Workshops.jpg"
                 alt="Training session"
                 fill
                 style={{ objectFit: 'cover' }}

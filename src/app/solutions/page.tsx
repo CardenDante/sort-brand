@@ -18,7 +18,7 @@ const solutions: SolutionCard[] = [
     id: 'digital-marketing',
     title: 'Digital Marketing',
     description: 'Tailored digital marketing campaigns that enhance brand awareness, drive traffic, generate leads, and increase conversions for a higher ROI.',
-    image: '/images/solutions/Digital Marketing  - Sortbrands Group.jpeg',
+    image: '/images/solutions/Digital Marketing  - Sortbrands Group1.jpg',
     link: '/solutions/digital-marketing'
   },
   {
