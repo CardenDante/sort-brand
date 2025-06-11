@@ -130,34 +130,37 @@ const ServicesSection = () => {
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> */}
           {services.map((service, index) => (
             <div
-              key={service.id}
-              className={`
-                bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-6 
-                transform transition-all duration-700 hover:scale-105 hover:bg-black/40
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
-              `}
-              style={{
-                transitionDelay: `${100 * index}ms`,
-                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-              }}
-            >
-              <div className="w-12 h-12 rounded-full bg-[#D4AF34] flex items-center justify-center mb-4">
-                {service.icon}
-              </div>
-              
-              <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-              
-              <p className="text-white/80 mb-4 min-h-[60px]">
-                {service.description}
-              </p>
-              
-              <Link 
-                href={service.link}
-                className="inline-block text-[#D4AF34] hover:text-white transition-colors duration-300"
-              >
-                Learn More
-              </Link>
-            </div>
+  key={service.id}
+  className={`
+    group relative overflow-hidden bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-6 
+    transform transition-all duration-500 ease-in-out
+    hover:-translate-y-2 hover:scale-110 hover:bg-black/40 hover:shadow-2xl
+    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
+  `}
+  style={{
+    transitionDelay: `${100 * index}ms`,
+    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+  }}
+>
+  {/* Top sliding gold bar */}
+  <div className="absolute top-0 left-0 h-1 w-full bg-[#D4AF34] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></div>
+
+  <div className="w-12 h-12 rounded-full bg-[#D4AF34] flex items-center justify-center mb-4 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+    {service.icon}
+  </div>
+
+  <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+
+  <p className="text-white/80 mb-4 min-h-[60px]">{service.description}</p>
+
+  <Link
+    href={service.link}
+    className="inline-block text-[#D4AF34] group-hover:text-white transition-colors duration-300"
+  >
+    Learn More
+  </Link>
+</div>
+
           ))}
         </div>
       </div>
