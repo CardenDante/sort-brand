@@ -22,6 +22,7 @@ export default function ReferralProgramPage() {
             fill
             priority
             style={{ objectFit: "cover" }}
+            objectPosition="45% 25%"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
         </div>
