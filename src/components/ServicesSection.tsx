@@ -67,7 +67,7 @@ const services: Service[] = [
     title: 'Training & Workshops',
     description: 'Professional training programs and workshops to upskill your team in digital marketing, branding strategies, and modern business practices.',
     icon: <FaGraduationCap className="text-white text-3xl" />,
-    link: '/solutions/consultation',
+    link: '/solutions/training',
   },
 ];
 

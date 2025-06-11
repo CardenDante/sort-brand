@@ -11,6 +11,9 @@ interface ServiceItem {
   description: string;
   image: string;
   benefits: string[];
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
 }
 
 const digitalMarketingServices: ServiceItem[] = [
@@ -70,6 +73,24 @@ const digitalMarketingServices: ServiceItem[] = [
       'Mobile Compatibility: Reach customers on any device'
     ]
   },
+      {
+      id: 'seo-services',
+      title: 'Search Engine Optimization (SEO)',
+      description: 'We help businesses improve their visibility on search engines like Google by implementing proven SEO strategies. Our services include keyword research, on-page optimization, technical SEO audits, content optimization, backlink building, and performance tracking. Whether you need to rank higher locally or compete on a global scale, we tailor your SEO plan to ensure long-term growth and measurable results.',
+      image: '/images/solutions/social-media-marketing.jpeg', 
+      benefits: [
+        'Higher Search Rankings: Improve your position on Google search results',
+        'Increased Website Traffic: Drive more organic visitors to your site',
+        'Improved User Experience: Optimize site structure, speed, and usability',
+        'Targeted Keyword Optimization: Reach your ideal customers',
+        'Local SEO: Boost visibility for location-based searches',
+        'Measurable Results: Monitor rankings, traffic, and conversions over time'
+      ],
+      seoTitle: 'Professional SEO Services | Sortbrands Group',
+      seoDescription: 'Boost your visibility on Google with Sortbrands Group SEO services. From keyword research to backlinks and local SEO, we help you rank higher and attract more clients.',
+      seoKeywords: ['SEO services', 'search engine optimization', 'Google ranking', 'on-page SEO', 'local SEO']
+    },
+
   {
     id: 'email-marketing',
     title: 'Email Marketing',
