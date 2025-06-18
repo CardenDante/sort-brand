@@ -13,20 +13,12 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    id: 'yohan-kim',
-    name: 'Yohan Kim',
-    role: 'Chief Advisor',
-    image: '/images/team/placeholder.png',
-    bio: 'With a rich international background, Yohan brings global perspective and strategic insight to our operations, helping clients navigate complex marketing challenges.'
-  },
-  {
     id: 'kelvin-mosioma',
     name: 'Kelvin Mosioma',
     role: 'Executive Chairman',
     image: '/images/team/EddieVoke254.jpg',
     bio: 'Visionary leader with extensive experience in branding and marketing strategy. Kelvin drives our company vision and ensures we deliver exceptional value to every client.'
   },
-
   {
     id: 'evans-mutiga',
     name: 'Evans Mutiga',
@@ -93,9 +85,9 @@ const TeamSection = () => {
           </p>
         </div>
 
-        {/* Team Grid - with improved layout and image handling */}
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {/* Team Grid - Optimized for 2 members */}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {teamMembers.map((member, index) => (
               <div
                 key={member.id}
@@ -105,15 +97,15 @@ const TeamSection = () => {
                 `}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                {/* Card with better proportions - similar styling to FAQ */}
-                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col border border-gray-100">
+                {/* Card with better proportions for 2-column layout */}
+                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col border border-gray-100 max-w-sm mx-auto">
                   {/* Image Container with fixed aspect ratio and better handling */}
                   <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
                     <Image
                       src={member.image}
                       alt={`${member.name} - ${member.role}`}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       priority={index === 0}
                       style={{ 
                         objectFit: 'cover', 
