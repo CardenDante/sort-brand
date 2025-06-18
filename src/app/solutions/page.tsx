@@ -43,13 +43,6 @@ const solutions: SolutionCard[] = [
     link: '/solutions/photography'
   },
   {
-    id: 'influencer-marketing',
-    title: 'Influencer Marketing',
-    description: 'Strategic influencer marketing guidance, including selection of suitable brand ambassadors, management of influencers, and measurement of engagement and ROI.',
-    image: '/images/solutions/Influencer Marketing - Sortbrands Group  - Sortbrands Group.jpg',
-    link: '/solutions/influencer-marketing'
-  },
-  {
     id: 'consultation',
     title: 'Consultation',
     description: 'Comprehensive consultation services for businesses of all sizes, helping leverage available tools to generate high-quality leads and achieve strong ROI.',
@@ -84,9 +77,43 @@ export default function SolutionsPage() {
             </p>
           </div>
           
-          {/* Solutions Grid */}
+          {/* Solutions Grid - Balanced layout for 5 cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {solutions.map((solution) => (
+            {solutions.slice(0, 3).map((solution) => (
+              <div 
+                key={solution.id}
+                className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:border-[#D4AF34]/20 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                {/* Solution Image */}
+                <div className="relative h-52 overflow-hidden bg-gray-50">
+                  <Image
+                    src={solution.image}
+                    alt={solution.title}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    className="transition-transform duration-700 hover:scale-105 p-2"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-black mb-3">{solution.title}</h3>
+                  <p className="text-gray-700 mb-6">{solution.description}</p>
+                  <Link 
+                    href={solution.link}
+                    className="inline-flex items-center text-[#D4AF34] font-medium hover:underline transition-colors"
+                  >
+                    Learn More <FaArrowRight className="ml-2 text-sm" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Second row - centered for remaining 2 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
+            {solutions.slice(3).map((solution) => (
               <div 
                 key={solution.id}
                 className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:border-[#D4AF34]/20 transition-all duration-300 transform hover:-translate-y-1"

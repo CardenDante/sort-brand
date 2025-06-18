@@ -80,10 +80,15 @@ const MobileOptimizedFooter = () => {
             <div className="hidden md:grid grid-cols-12 gap-8">
               {/* About */}
               <div className="col-span-3">
-                <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-6 md:mb-0">
+                <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-4 md:mb-0">
                   We are <span className="text-[#D4AF34]">social.</span>
                 </h2>
-                <div className="flex gap-4 pt-4">
+                <p className="text-lg text-white/80 mb-4 font-medium">
+                  <span className="text-[#D4AF34]">Sort.</span>{' '}
+                  <span className="text-[#D4AF34]">Grow.</span>{' '}
+                  <span className="text-[#D4AF34]">Lead.</span>
+                </p>
+                <div className="flex gap-4 pt-2">
                   {socialLinks.map(({ Icon, href, label }, idx) => (
                     <a
                       key={idx}
@@ -157,8 +162,15 @@ const MobileOptimizedFooter = () => {
             {/* Mobile Accordion View */}
             <div className="md:hidden">
               {/* Logo and Socials */}
-              <div className="flex justify-center mb-6">
+              <div className="flex justify-center mb-2">
                 <div className="text-2xl font-bold text-[#D4AF34]">Sortbrands</div>
+              </div>
+              <div className="text-center mb-6">
+                <p className="text-base text-white/80 font-medium">
+                  <span className="text-[#D4AF34]">Sort.</span>{' '}
+                  <span className="text-[#D4AF34]">Grow.</span>{' '}
+                  <span className="text-[#D4AF34]">Lead.</span>
+                </p>
               </div>
               <div className="flex justify-center gap-6 mb-6">
                 {mobileSocialLinks.map(({ Icon, href, label }, idx) => (

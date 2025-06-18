@@ -46,6 +46,20 @@ const digitalMarketingServices: ServiceItem[] = [
     ]
   },
   {
+    id: 'influencer-marketing',
+    title: 'Influencer Marketing',
+    description: 'Strategic influencer marketing guidance, including selection of suitable brand ambassadors, management of influencers, and measurement of engagement and ROI. We connect your brand with the right influencers who align with your values and target audience, creating authentic partnerships that drive meaningful engagement and conversions. Our comprehensive approach includes influencer identification, campaign strategy development, content collaboration, performance tracking, and relationship management to ensure maximum impact for your marketing investment.',
+    image: '/images/solutions/Influencer Marketing - Sortbrands Group  - Sortbrands Group.jpg',
+    benefits: [
+      'Authentic Reach: Leverage trusted voices to reach new audiences',
+      'Targeted Engagement: Connect with specific demographics through niche influencers',
+      'Content Creation: Access high-quality, authentic content for your brand',
+      'Increased Credibility: Build trust through third-party endorsements',
+      'Measurable ROI: Track engagement, conversions, and campaign performance',
+      'Cost-Effective: Often more affordable than traditional advertising channels'
+    ]
+  },
+  {
     id: 'affiliate-marketing',
     title: 'Affiliate Marketing',
     description: 'We help businesses establish and manage comprehensive affiliate marketing programs that expand their reach through strategic partnerships. Our affiliate marketing services include recruiting high-quality affiliates, setting up tracking systems, creating compelling promotional materials, and managing commission structures. We identify and connect you with relevant influencers, bloggers, and content creators who align with your brand values and target audience. Our team handles the entire affiliate recruitment process, provides ongoing support to affiliates, monitors performance metrics, and ensures compliance with industry standards. This performance-based marketing approach allows you to scale your business through trusted partners who promote your products or services to their audiences.',
@@ -73,24 +87,23 @@ const digitalMarketingServices: ServiceItem[] = [
       'Mobile Compatibility: Reach customers on any device'
     ]
   },
-      {
-      id: 'seo-services',
-      title: 'Search Engine Optimization (SEO)',
-      description: 'We help businesses improve their visibility on search engines like Google by implementing proven SEO strategies. Our services include keyword research, on-page optimization, technical SEO audits, content optimization, backlink building, and performance tracking. Whether you need to rank higher locally or compete on a global scale, we tailor your SEO plan to ensure long-term growth and measurable results.',
-      image: '/images/solutions/Search Engine Optimization.jpg', 
-      benefits: [
-        'Higher Search Rankings: Improve your position on Google search results',
-        'Increased Website Traffic: Drive more organic visitors to your site',
-        'Improved User Experience: Optimize site structure, speed, and usability',
-        'Targeted Keyword Optimization: Reach your ideal customers',
-        'Local SEO: Boost visibility for location-based searches',
-        'Measurable Results: Monitor rankings, traffic, and conversions over time'
-      ],
-      seoTitle: 'Professional SEO Services | Sortbrands Group',
-      seoDescription: 'Boost your visibility on Google with Sortbrands Group SEO services. From keyword research to backlinks and local SEO, we help you rank higher and attract more clients.',
-      seoKeywords: ['SEO services', 'search engine optimization', 'Google ranking', 'on-page SEO', 'local SEO']
-    },
-
+  {
+    id: 'seo-services',
+    title: 'Search Engine Optimization (SEO)',
+    description: 'We help businesses improve their visibility on search engines like Google by implementing proven SEO strategies. Our services include keyword research, on-page optimization, technical SEO audits, content optimization, backlink building, and performance tracking. Whether you need to rank higher locally or compete on a global scale, we tailor your SEO plan to ensure long-term growth and measurable results.',
+    image: '/images/solutions/Search Engine Optimization.jpg', 
+    benefits: [
+      'Higher Search Rankings: Improve your position on Google search results',
+      'Increased Website Traffic: Drive more organic visitors to your site',
+      'Improved User Experience: Optimize site structure, speed, and usability',
+      'Targeted Keyword Optimization: Reach your ideal customers',
+      'Local SEO: Boost visibility for location-based searches',
+      'Measurable Results: Monitor rankings, traffic, and conversions over time'
+    ],
+    seoTitle: 'Professional SEO Services | Sortbrands Group',
+    seoDescription: 'Boost your visibility on Google with Sortbrands Group SEO services. From keyword research to backlinks and local SEO, we help you rank higher and attract more clients.',
+    seoKeywords: ['SEO services', 'search engine optimization', 'Google ranking', 'on-page SEO', 'local SEO']
+  },
   {
     id: 'email-marketing',
     title: 'Email Marketing',
