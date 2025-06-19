@@ -23,7 +23,7 @@ const teamMembers: TeamMember[] = [
     id: 'evans-mutiga',
     name: 'Evans Mutiga',
     role: 'Chief Operations Officer(COO)',
-    image: '/images/team/Evans.png',
+    image: '/images/team/Evans1.png',
     bio: 'Driving growth and fostering key partnerships, Evans excels at identifying opportunities and creating tailored solutions that exceed client expectations.'
   }
 ];
