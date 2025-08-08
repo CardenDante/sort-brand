@@ -293,22 +293,22 @@ export default function AdminDashboard() {
 
         {/* Stats */}
         <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-3 gap-2 sm:gap-6">
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-[#D4AF34]">{pagination.total}</div>
-              <div className="text-gray-600 text-sm sm:text-base">Total Contacts</div>
+              <div className="text-lg sm:text-2xl font-bold text-[#D4AF34]">{pagination.total}</div>
+              <div className="text-gray-600 text-xs sm:text-base">Total Contacts</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-green-600">
+              <div className="text-lg sm:text-2xl font-bold text-green-600">
                 {contacts.filter(c => c.read_status).length}
               </div>
-              <div className="text-gray-600 text-sm sm:text-base">Read</div>
+              <div className="text-gray-600 text-xs sm:text-base">Read</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-orange-600">
+              <div className="text-lg sm:text-2xl font-bold text-orange-600">
                 {contacts.filter(c => !c.read_status).length}
               </div>
-              <div className="text-gray-600 text-sm sm:text-base">Unread</div>
+              <div className="text-gray-600 text-xs sm:text-base">Unread</div>
             </div>
           </div>
         </div>
