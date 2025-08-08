@@ -238,7 +238,7 @@ export default function AdminDashboard() {
             <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Contact Management</h1>
             <button
               onClick={handleLogout}
-              className="flex items-center justify-center sm:justify-start px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center justify-end sm:justify-start px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors self-end sm:self-auto"
             >
               <FaSignOutAlt className="mr-2" />
               Logout
