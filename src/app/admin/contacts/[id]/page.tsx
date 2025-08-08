@@ -124,10 +124,10 @@ export default function ContactDetailPage({ params }: ContactDetailPageProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF34]"></div>
-          <p className="mt-4 text-gray-600">Loading contact...</p>
+          <div className="inline-block animate-spin rounded-full h-8 sm:h-12 w-8 sm:w-12 border-b-2 border-[#D4AF34]"></div>
+          <p className="mt-4 text-gray-600 text-sm sm:text-base">Loading contact...</p>
         </div>
       </div>
     );
@@ -135,12 +135,12 @@ export default function ContactDetailPage({ params }: ContactDetailPageProps) {
 
   if (error || !contact) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
         <div className="text-center">
-          <div className="text-red-600 text-xl mb-4">{error || 'Contact not found'}</div>
+          <div className="text-red-600 text-lg sm:text-xl mb-4">{error || 'Contact not found'}</div>
           <button
             onClick={() => router.push('/admin')}
-            className="bg-[#D4AF34] hover:bg-[#c9a52f] text-black px-6 py-2 rounded-lg font-medium transition-colors"
+            className="bg-[#D4AF34] hover:bg-[#c9a52f] text-black px-4 sm:px-6 py-2 rounded-lg font-medium transition-colors text-sm sm:text-base"
           >
             Back to Dashboard
           </button>
@@ -154,21 +154,21 @@ export default function ContactDetailPage({ params }: ContactDetailPageProps) {
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-4">
-            <div className="flex items-center space-x-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-4 space-y-4 sm:space-y-0">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
               <button
                 onClick={() => router.push('/admin')}
-                className="flex items-center text-[#D4AF34] hover:text-[#c9a52f] transition-colors"
+                className="flex items-center text-[#D4AF34] hover:text-[#c9a52f] transition-colors self-start"
               >
                 <FaArrowLeft className="mr-2" />
-                Back to Dashboard
+                <span className="text-sm sm:text-base">Back to Dashboard</span>
               </button>
-              <div className="h-6 w-px bg-gray-300"></div>
-              <h1 className="text-2xl font-bold text-gray-900">Contact Details</h1>
+              <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+              <h1 className="text-lg sm:text-2xl font-bold text-gray-900 mt-2 sm:mt-0">Contact Details</h1>
             </div>
             
-            <div className="flex items-center space-x-3">
-              <span className={`inline-flex px-3 py-1 text-sm font-semibold rounded-full ${
+            <div className="flex justify-center sm:justify-end">
+              <span className={`inline-flex px-3 py-1 text-xs sm:text-sm font-semibold rounded-full ${
                 contact.read_status 
                   ? 'bg-green-100 text-green-800' 
                   : 'bg-orange-100 text-orange-800'
@@ -182,31 +182,33 @@ export default function ContactDetailPage({ params }: ContactDetailPageProps) {
 
       {/* Error Message */}
       {error && (
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-          <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
+          <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4 text-sm sm:text-base">
             {error}
           </div>
         </div>
       )}
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         <div className="bg-white rounded-lg shadow-sm overflow-hidden">
           {/* Contact Info Header */}
-          <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="text-xl font-bold text-gray-900">{contact.name}</h2>
+          <div className="bg-gray-50 px-4 sm:px-6 py-4 border-b border-gray-200">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
+              <div className="text-center lg:text-left">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900">{contact.name}</h2>
                 <p className="text-gray-600 text-sm mt-1">
                   <FaCalendar className="inline mr-2" />
                   {formatKenyanDate(contact.created_at)}
                 </p>
               </div>
-              <div className="flex space-x-3">
+              
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <button
                   onClick={() => updateReadStatus(!contact.read_status)}
                   disabled={actionLoading}
-                  className="flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors disabled:opacity-50"
+                  className="flex items-center justify-center px-3 sm:px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors disabled:opacity-50 text-sm sm:text-base"
                 >
                   {contact.read_status ? <FaEyeSlash className="mr-2" /> : <FaEye className="mr-2" />}
                   Mark as {contact.read_status ? 'Unread' : 'Read'}
@@ -214,7 +216,7 @@ export default function ContactDetailPage({ params }: ContactDetailPageProps) {
                 <button
                   onClick={deleteContact}
                   disabled={actionLoading}
-                  className="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors disabled:opacity-50"
+                  className="flex items-center justify-center px-3 sm:px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors disabled:opacity-50 text-sm sm:text-base"
                 >
                   <FaTrash className="mr-2" />
                   Delete
@@ -224,15 +226,15 @@ export default function ContactDetailPage({ params }: ContactDetailPageProps) {
           </div>
 
           {/* Contact Details */}
-          <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="p-4 sm:p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {/* Email */}
               <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                 <div className="flex items-center mb-2">
                   <FaEnvelope className="text-[#D4AF34] mr-2" />
                   <label className="text-sm font-medium text-gray-700">Email Address</label>
                 </div>
-                <p className="text-gray-900 text-lg">{contact.email}</p>
+                <p className="text-gray-900 text-sm sm:text-lg break-words">{contact.email}</p>
               </div>
 
               {/* Phone */}
@@ -241,7 +243,7 @@ export default function ContactDetailPage({ params }: ContactDetailPageProps) {
                   <FaPhone className="text-[#D4AF34] mr-2" />
                   <label className="text-sm font-medium text-gray-700">Phone Number</label>
                 </div>
-                <p className="text-gray-900 text-lg">{contact.phone || 'Not provided'}</p>
+                <p className="text-gray-900 text-sm sm:text-lg">{contact.phone || 'Not provided'}</p>
               </div>
 
               {/* Subject */}
@@ -250,37 +252,37 @@ export default function ContactDetailPage({ params }: ContactDetailPageProps) {
                   <FaTag className="text-[#D4AF34] mr-2" />
                   <label className="text-sm font-medium text-gray-700">Subject</label>
                 </div>
-                <p className="text-gray-900 text-lg">{contact.subject}</p>
+                <p className="text-gray-900 text-sm sm:text-lg">{contact.subject}</p>
               </div>
             </div>
 
             {/* Message */}
-            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+            <div className="bg-gray-50 rounded-lg p-4 sm:p-6 border border-gray-200">
               <div className="flex items-center mb-4">
                 <div className="w-2 h-2 bg-[#D4AF34] rounded-full mr-3"></div>
-                <label className="text-lg font-medium text-gray-700">Message</label>
+                <label className="text-base sm:text-lg font-medium text-gray-700">Message</label>
               </div>
-              <div className="bg-white rounded-lg p-4 border border-gray-300">
-                <p className="text-gray-900 whitespace-pre-wrap leading-relaxed">{contact.message}</p>
+              <div className="bg-white rounded-lg p-3 sm:p-4 border border-gray-300">
+                <p className="text-gray-900 whitespace-pre-wrap leading-relaxed text-sm sm:text-base">{contact.message}</p>
               </div>
             </div>
 
             {/* Metadata */}
-            <div className="mt-8 pt-6 border-t border-gray-200">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div>
+            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 text-sm">
+                <div className="text-center sm:text-left">
                   <span className="text-gray-500">Contact ID:</span>
                   <span className="text-gray-900 ml-2 font-medium">#{contact.id}</span>
                 </div>
-                <div>
+                <div className="text-center sm:text-left">
                   <span className="text-gray-500">Status:</span>
                   <span className={`ml-2 font-medium ${contact.read_status ? 'text-green-600' : 'text-orange-600'}`}>
                     {contact.read_status ? 'Read' : 'Unread'}
                   </span>
                 </div>
-                <div>
+                <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
                   <span className="text-gray-500">Received:</span>
-                  <span className="text-gray-900 ml-2 font-medium">{formatKenyanDate(contact.created_at)}</span>
+                  <span className="text-gray-900 ml-2 font-medium break-words">{formatKenyanDate(contact.created_at)}</span>
                 </div>
               </div>
             </div>

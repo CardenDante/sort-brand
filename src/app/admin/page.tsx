@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ContactSubmission } from '@/types/contact';
 import { formatKenyanDate } from '@/lib/utils';
-import { FaEye, FaEyeSlash, FaTrash, FaSearch, FaFilter, FaSignOutAlt, FaEnvelope, FaPhone, FaCalendar } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaTrash, FaSearch, FaFilter, FaSignOutAlt, FaEnvelope, FaPhone, FaCalendar, FaInfoCircle } from 'react-icons/fa';
 
 export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -173,10 +173,10 @@ export default function AdminDashboard() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-        <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
+        <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 w-full max-w-md">
           <div className="text-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
-            <p className="text-gray-600 mt-2">Access the contact management dashboard</p>
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Admin Login</h1>
+            <p className="text-gray-600 mt-2 text-sm sm:text-base">Access the contact management dashboard</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
@@ -234,11 +234,11 @@ export default function AdminDashboard() {
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <h1 className="text-2xl font-bold text-gray-900">Contact Management</h1>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-4 space-y-4 sm:space-y-0">
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Contact Management</h1>
             <button
               onClick={handleLogout}
-              className="flex items-center px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center justify-center sm:justify-start px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <FaSignOutAlt className="mr-2" />
               Logout
@@ -247,10 +247,10 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Search and Filter */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4">
+        <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
+          <form onSubmit={handleSearch} className="space-y-4">
             <div className="flex-1">
               <div className="relative">
                 <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -263,7 +263,7 @@ export default function AdminDashboard() {
                 />
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <label className="flex items-center">
                 <input
                   type="checkbox"
@@ -272,11 +272,11 @@ export default function AdminDashboard() {
                   className="mr-2"
                 />
                 <FaFilter className="mr-1" />
-                Unread only
+                <span className="text-sm sm:text-base">Unread only</span>
               </label>
               <button
                 type="submit"
-                className="bg-[#D4AF34] hover:bg-[#c9a52f] text-black px-4 py-2 rounded-lg font-medium transition-colors"
+                className="bg-[#D4AF34] hover:bg-[#c9a52f] text-black px-4 py-2 rounded-lg font-medium transition-colors w-full sm:w-auto"
               >
                 Search
               </button>
@@ -286,29 +286,29 @@ export default function AdminDashboard() {
 
         {/* Error Message */}
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4 mb-6">
+          <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4 mb-4 sm:mb-6 text-sm sm:text-base">
             {error}
           </div>
         )}
 
         {/* Stats */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             <div className="text-center">
-              <div className="text-2xl font-bold text-[#D4AF34]">{pagination.total}</div>
-              <div className="text-gray-600">Total Contacts</div>
+              <div className="text-xl sm:text-2xl font-bold text-[#D4AF34]">{pagination.total}</div>
+              <div className="text-gray-600 text-sm sm:text-base">Total Contacts</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">
+              <div className="text-xl sm:text-2xl font-bold text-green-600">
                 {contacts.filter(c => c.read_status).length}
               </div>
-              <div className="text-gray-600">Read</div>
+              <div className="text-gray-600 text-sm sm:text-base">Read</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600">
+              <div className="text-xl sm:text-2xl font-bold text-orange-600">
                 {contacts.filter(c => !c.read_status).length}
               </div>
-              <div className="text-gray-600">Unread</div>
+              <div className="text-gray-600 text-sm sm:text-base">Unread</div>
             </div>
           </div>
         </div>
@@ -326,7 +326,8 @@ export default function AdminDashboard() {
             </div>
           ) : (
             <>
-              <div className="overflow-x-auto">
+              {/* Desktop Table View */}
+              <div className="hidden lg:block overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-gray-50">
                     <tr>
@@ -351,8 +352,7 @@ export default function AdminDashboard() {
                     {contacts.map((contact) => (
                       <tr 
                         key={contact.id}
-                        className={`hover:bg-gray-50 cursor-pointer ${!contact.read_status ? 'bg-blue-50' : ''}`}
-                        onClick={() => viewContactDetails(contact.id)}
+                        className={`hover:bg-gray-50 ${!contact.read_status ? 'bg-blue-50' : ''}`}
                       >
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div>
@@ -390,20 +390,21 @@ export default function AdminDashboard() {
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                           <div className="flex items-center space-x-2">
                             <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                updateReadStatus(contact.id, !contact.read_status);
-                              }}
+                              onClick={() => viewContactDetails(contact.id)}
+                              className="text-[#D4AF34] hover:text-[#c9a52f]"
+                              title="View details"
+                            >
+                              <FaInfoCircle />
+                            </button>
+                            <button
+                              onClick={() => updateReadStatus(contact.id, !contact.read_status)}
                               className="text-blue-600 hover:text-blue-900"
                               title={contact.read_status ? 'Mark as unread' : 'Mark as read'}
                             >
                               {contact.read_status ? <FaEyeSlash /> : <FaEye />}
                             </button>
                             <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                deleteContact(contact.id);
-                              }}
+                              onClick={() => deleteContact(contact.id)}
                               className="text-red-600 hover:text-red-900"
                               title="Delete contact"
                             >
@@ -417,14 +418,79 @@ export default function AdminDashboard() {
                 </table>
               </div>
 
+              {/* Mobile Card View */}
+              <div className="lg:hidden">
+                {contacts.map((contact) => (
+                  <div 
+                    key={contact.id}
+                    className={`p-4 border-b border-gray-200 ${!contact.read_status ? 'bg-blue-50' : ''}`}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <div className="flex-1">
+                        <h3 className="font-medium text-gray-900">{contact.name}</h3>
+                        <p className="text-sm text-gray-500 flex items-center mt-1">
+                          <FaEnvelope className="mr-1" />
+                          {contact.email}
+                        </p>
+                        {contact.phone && (
+                          <p className="text-sm text-gray-500 flex items-center mt-1">
+                            <FaPhone className="mr-1" />
+                            {contact.phone}
+                          </p>
+                        )}
+                      </div>
+                      <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                        contact.read_status 
+                          ? 'bg-green-100 text-green-800' 
+                          : 'bg-orange-100 text-orange-800'
+                      }`}>
+                        {contact.read_status ? 'Read' : 'Unread'}
+                      </span>
+                    </div>
+                    
+                    <div className="mb-3">
+                      <p className="text-sm text-gray-900 font-medium">Subject: {contact.subject}</p>
+                      <p className="text-xs text-gray-500 flex items-center mt-1">
+                        <FaCalendar className="mr-1" />
+                        {formatKenyanDate(contact.created_at)}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        onClick={() => viewContactDetails(contact.id)}
+                        className="bg-[#D4AF34] hover:bg-[#c9a52f] text-black px-3 py-1 rounded text-xs font-medium transition-colors flex items-center"
+                      >
+                        <FaInfoCircle className="mr-1" />
+                        View
+                      </button>
+                      <button
+                        onClick={() => updateReadStatus(contact.id, !contact.read_status)}
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs font-medium transition-colors flex items-center"
+                      >
+                        {contact.read_status ? <FaEyeSlash className="mr-1" /> : <FaEye className="mr-1" />}
+                        {contact.read_status ? 'Unread' : 'Read'}
+                      </button>
+                      <button
+                        onClick={() => deleteContact(contact.id)}
+                        className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs font-medium transition-colors flex items-center"
+                      >
+                        <FaTrash className="mr-1" />
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               {/* Pagination */}
-              <div className="px-6 py-3 bg-gray-50 border-t border-gray-200 flex items-center justify-between">
-                <div className="text-sm text-gray-700">
+              <div className="px-4 sm:px-6 py-3 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
+                <div className="text-sm text-gray-700 text-center sm:text-left">
                   Showing {((pagination.page - 1) * pagination.limit) + 1} to{' '}
                   {Math.min(pagination.page * pagination.limit, pagination.total)} of{' '}
                   {pagination.total} results
                 </div>
-                <div className="flex space-x-2">
+                <div className="flex justify-center space-x-2">
                   <button
                     onClick={() => fetchContacts(pagination.page - 1)}
                     disabled={!pagination.hasPrev}
