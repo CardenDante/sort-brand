@@ -1,4 +1,4 @@
-// src/app/api/contact/route.ts
+// Update src/app/api/contact/route.ts - Fix timezone storage
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 
@@ -24,11 +24,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Insert into database
+    // Create UTC timestamp explicitly
+    const utcTimestamp = new Date().toISOString();
+    console.log('Storing UTC timestamp:', utcTimestamp);
+
+    // Insert into database with explicit UTC timestamp
     const result = await db.execute({
-      sql: `INSERT INTO contacts (name, email, phone, subject, message) 
-            VALUES (?, ?, ?, ?, ?)`,
-      args: [name, email, phone || '', subject, message]
+      sql: `INSERT INTO contacts (name, email, phone, subject, message, created_at) 
+            VALUES (?, ?, ?, ?, ?, ?)`,
+      args: [name, email, phone || '', subject, message, utcTimestamp]
     });
 
     return NextResponse.json(

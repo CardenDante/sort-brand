@@ -157,9 +157,9 @@ const ContactForm = () => {
                 <option value="">Select a subject</option>
                 <option value="General Inquiry">General Inquiry</option>
                 <option value="Digital Marketing">Digital Marketing</option>
-                <option value="Brand Development">Internship</option>
+                <option value="Internship">Internship</option>
                 <option value="Graphic Design">Graphic Design</option>
-                <option value="Web Development">Volunteer</option>
+                <option value="Volunteer">Volunteer</option>
                 <option value="Partnership">Partnership</option>
                 <option value="Consultation">Consultation</option>
                 <option value="Training & Workshops">Training & Workshops</option>

@@ -1,6 +1,14 @@
 // lib/utils.ts
 export function formatKenyanDate(dateString: string): string {
-  return new Date(dateString).toLocaleString('en-KE', {
+  // Parse the date and explicitly convert to Nairobi time
+  const date = new Date(dateString);
+  
+  // Debug: log the original date
+  console.log('Original date:', dateString);
+  console.log('Parsed date UTC:', date.toISOString());
+  
+  // Format in Nairobi timezone
+  const formatted = date.toLocaleString('en-KE', {
     timeZone: 'Africa/Nairobi',
     year: 'numeric',
     month: '2-digit',
@@ -10,10 +18,14 @@ export function formatKenyanDate(dateString: string): string {
     second: '2-digit',
     hour12: true
   });
+  
+  console.log('Formatted Nairobi time:', formatted);
+  return formatted;
 }
 
 export function formatKenyanDateShort(dateString: string): string {
-  return new Date(dateString).toLocaleString('en-KE', {
+  const date = new Date(dateString);
+  return date.toLocaleString('en-KE', {
     timeZone: 'Africa/Nairobi',
     year: 'numeric',
     month: 'short',
