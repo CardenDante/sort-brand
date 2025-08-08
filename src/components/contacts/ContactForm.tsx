@@ -29,10 +29,21 @@ const ContactForm = () => {
     setIsSubmitting(true);
     setError('');
 
-    // Simulate form submission
     try {
-      // In production, replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit form');
+      }
+
       setSubmitted(true);
       setFormData({
         name: '',
@@ -42,7 +53,7 @@ const ContactForm = () => {
         message: '',
       });
     } catch (err) {
-      setError('There was an error submitting your message. Please try again.');
+      setError(err instanceof Error ? err.message : 'There was an error submitting your message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -62,6 +73,12 @@ const ContactForm = () => {
         <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 mb-6">
           <h3 className="font-bold text-lg mb-2">Thank You!</h3>
           <p>Your message has been sent successfully. We'll get back to you shortly.</p>
+          <button
+            onClick={() => setSubmitted(false)}
+            className="mt-3 text-sm text-green-600 hover:text-green-800 underline"
+          >
+            Send another message
+          </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -134,7 +151,7 @@ const ContactForm = () => {
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF34] focus:border-transparent text-black bg-white hover:bg-white"
                   style={{
                     color: formData.subject ? '#000' : '#6B7280',
-                    accentColor: '#D4AF34', // for some browsers
+                    accentColor: '#D4AF34',
                   }}
                 >
                 <option value="">Select a subject</option>
@@ -146,7 +163,7 @@ const ContactForm = () => {
                 <option value="Partnership">Partnership</option>
                 <option value="Consultation">Consultation</option>
                 <option value="Training & Workshops">Training & Workshops</option>
-                <option value="Printing & Outdoor Advertising ">Printing & Outdoor Advertising</option>
+                <option value="Printing & Outdoor Advertising">Printing & Outdoor Advertising</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -171,7 +188,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-[#D4AF34] hover:bg-[#c9a52f] text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg flex items-center justify-center"
+            className="bg-[#D4AF34] hover:bg-[#c9a52f] text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <>
