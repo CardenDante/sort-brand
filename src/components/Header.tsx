@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone, ChevronDown } from 'lucide-react';
+import { Phone, ChevronDown, HeartHandshake } from 'lucide-react'; // Added HeartHandshake
 import { usePathname } from 'next/navigation';
 
 const Header = () => {
@@ -30,10 +30,11 @@ const Header = () => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
       
-      // Check if click is outside both dropdowns
+      // Check if click is outside all relevant refs
       const clickedOutsideSolutions = solutionsDropdownRef.current && !solutionsDropdownRef.current.contains(target);
       const clickedOutsideOpportunities = opportunitiesDropdownRef.current && !opportunitiesDropdownRef.current.contains(target);
       
+      // Only close if the click is outside all active dropdowns/refs
       if (clickedOutsideSolutions && clickedOutsideOpportunities) {
         setActiveDropdown(null);
       }
@@ -59,6 +60,11 @@ const Header = () => {
 
   const isActiveSolution = () => {
     return pathname.startsWith('/solutions');
+  };
+  
+  // NEW: Check if the current path is within the /foundation route
+  const isActiveFoundation = () => {
+    return pathname.startsWith('/foundation');
   };
 
   const isActiveOpportunity = () => {
@@ -177,6 +183,16 @@ const Header = () => {
               News & Insights
             </Link>
             
+            {/* NEW: Foundation Link */}
+            <Link 
+              href="/foundation" 
+              className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base relative flex items-center ${isActiveFoundation() ? 'text-[#D4AF34] after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : ''}`}
+            >
+              <HeartHandshake className={`w-4 h-4 mr-1 ${isActiveFoundation() ? 'text-[#D4AF34]' : 'text-gray-600'}`} />
+              Foundation
+            </Link>
+            {/* END NEW: Foundation Link */}
+
             <div className="relative" ref={opportunitiesDropdownRef}>
               <div className="flex items-center cursor-pointer" onClick={() => toggleDropdown('opportunities')}>
                 <span className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base relative ${isActiveOpportunity() ? 'text-[#D4AF34] after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : ''}`}>
@@ -329,13 +345,6 @@ const Header = () => {
                   >
                     Graphic Design
                   </Link>
-                  {/* <Link
-                    href="/solutions/branding"
-                    className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/branding') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Branding
-                  </Link> */}
                   <Link
                     href="/solutions/photography"
                     className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/photography') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
@@ -343,13 +352,6 @@ const Header = () => {
                   >
                     Photography & Videography
                   </Link>
-                  {/* <Link
-                    href="/solutions/influencer-marketing"
-                    className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/influencer-marketing') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Influencer Marketing
-                  </Link> */}
                   <Link
                     href="/solutions/consultation"
                     className={`block hover:text-[#D4AF34] relative ${isActive('/solutions/consultation') ? 'text-[#D4AF34] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
@@ -383,6 +385,17 @@ const Header = () => {
               News & Insights
             </Link>
             
+            {/* NEW: Mobile Foundation Link */}
+            <Link 
+              href="/foundation"
+              className={`block font-bold hover:text-[#D4AF34] text-lg relative flex items-center ${isActiveFoundation() ? 'text-[#D4AF34] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <HeartHandshake className={`w-5 h-5 mr-2 ${isActiveFoundation() ? 'text-[#D4AF34]' : 'text-gray-600'}`} />
+              Foundation
+            </Link>
+            {/* END NEW: Mobile Foundation Link */}
+
             <div>
               <div className="flex items-center justify-between">
                 <button

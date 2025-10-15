@@ -7,8 +7,9 @@ const db = createClient({
   authToken: process.env.DATABASE_AUTH_TOKEN,
 });
 
-async function createContactsTable() {
+async function initDatabase() {
   try {
+    // CONTACTS TABLE
     await db.execute(`
       CREATE TABLE IF NOT EXISTS contacts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -19,12 +20,40 @@ async function createContactsTable() {
         message TEXT NOT NULL,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         read_status BOOLEAN DEFAULT FALSE
-      )
+      );
     `);
-    console.log('✅ Database table created successfully!');
+
+    // DONATIONS TABLE
+    await db.execute(`
+      CREATE TABLE IF NOT EXISTS donations (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        phone TEXT NOT NULL,
+        amount REAL NOT NULL,
+        message TEXT,
+        status TEXT DEFAULT 'pending',
+        mpesa_checkout_id TEXT,
+        mpesa_receipt TEXT,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    // JOIN REQUESTS TABLE
+    await db.execute(`
+      CREATE TABLE IF NOT EXISTS join_requests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        join_type TEXT NOT NULL,
+        message TEXT,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    console.log('✅ All database tables created or verified successfully!');
   } catch (error) {
-    console.error('❌ Error creating database table:', error);
+    console.error('❌ Error initializing database:', error);
   }
 }
 
-createContactsTable();
+initDatabase();

@@ -190,3 +190,90 @@ h1, h2, h3, h4, h5, h6 {
 .logos-slide:hover {
   animation-play-state: running;
 }
+/* src/app/globals.css */
+/* ... existing code ... */
+
+:root {
+  --brand-black: #000000;
+  --brand-gold: #D4AF34;
+  /* --- SortBloom Child Foundation Colors --- */
+  --sortbloom-green: #4CAF50;
+  --sortbloom-gold: #FFC107;
+  --sortbloom-blue: #1977D2;
+}
+
+body {
+/* ... existing code ... */
+}
+
+/* ... existing typography classes ... */
+
+/* Custom color classes */
+.text-brand-gold {
+  color: var(--brand-gold);
+}
+
+/* ... other existing color classes ... */
+
+/* --- SortBloom Child Foundation Colors --- */
+.text-sortbloom-green {
+  color: var(--sortbloom-green);
+}
+
+.text-sortbloom-gold {
+  color: var(--sortbloom-gold);
+}
+
+.text-sortbloom-blue {
+  color: var(--sortbloom-blue);
+}
+
+.bg-sortbloom-green {
+  background-color: var(--sortbloom-green);
+}
+
+.bg-sortbloom-gold {
+  background-color: var(--sortbloom-gold);
+}
+
+.bg-sortbloom-blue {
+  background-color: var(--sortbloom-blue);
+}
+
+.border-sortbloom-green {
+  border-color: var(--sortbloom-green);
+}
+
+.border-sortbloom-gold {
+  border-color: var(--sortbloom-gold);
+}
+
+.border-sortbloom-blue {
+  border-color: var(--sortbloom-blue);
+}
+
+.hover\:bg-sortbloom-green:hover {
+  background-color: var(--sortbloom-green);
+}
+
+.hover\:bg-sortbloom-gold:hover {
+  background-color: var(--sortbloom-gold);
+}
+
+.hover\:bg-sortbloom-blue:hover {
+  background-color: var(--sortbloom-blue);
+}
+
+.hover\:text-sortbloom-green:hover {
+  color: var(--sortbloom-green);
+}
+
+.hover\:text-sortbloom-gold:hover {
+  color: var(--sortbloom-gold);
+}
+
+.hover\:text-sortbloom-blue:hover {
+  color: var(--sortbloom-blue);
+}
+
+/* ... existing animation classes ... */
