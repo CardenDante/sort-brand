@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Facebook, Twitter, Mail, Phone, HeartHandshake } from "lucide-react";
+import {
+  Menu,
+  X,
+  Facebook,
+  Twitter,
+  Mail,
+  Phone,
+  HeartHandshake,
+} from "lucide-react";
 
 export default function SortBloomHeader() {
   const [open, setOpen] = useState(false);
@@ -39,11 +47,14 @@ export default function SortBloomHeader() {
       {/* === Main Navbar === */}
       <nav className="bg-white shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-4">
-          {/* Logo */}
-          <Link href="/foundation" className="flex items-center text-black text-2xl font-extrabold tracking-tight mb-4">
-                <HeartHandshake className="w-8 h-8 mr-2 text-sortbloom-gold"/>
-                SortBloom
-            </Link>
+          {/* Logo (fixed alignment) */}
+          <Link
+            href="/foundation"
+            className="flex items-center text-black text-2xl font-extrabold tracking-tight"
+          >
+            <HeartHandshake className="w-8 h-8 mr-2 text-sortbloom-gold" />
+            <span>SortBloom</span>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
@@ -68,7 +79,7 @@ export default function SortBloomHeader() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden text-gray-700 focus:outline-none"
