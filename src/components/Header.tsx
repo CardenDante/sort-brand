@@ -184,13 +184,13 @@ const Header = () => {
             </Link>
             
             {/* NEW: Foundation Link */}
-            <Link 
+            {/* <Link 
               href="/foundation" 
               className={`text-gray-900 font-bold hover:text-[#D4AF34] transition-colors duration-300 text-base relative flex items-center ${isActiveFoundation() ? 'text-[#D4AF34] after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : ''}`}
             >
               <HeartHandshake className={`w-4 h-4 mr-1 ${isActiveFoundation() ? 'text-[#D4AF34]' : 'text-gray-600'}`} />
               Foundation
-            </Link>
+            </Link> */}
             {/* END NEW: Foundation Link */}
 
             <div className="relative" ref={opportunitiesDropdownRef}>
@@ -386,14 +386,14 @@ const Header = () => {
             </Link>
             
             {/* NEW: Mobile Foundation Link */}
-            <Link 
+            {/* <Link 
               href="/foundation"
               className={`block font-bold hover:text-[#D4AF34] text-lg relative flex items-center ${isActiveFoundation() ? 'text-[#D4AF34] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-[#D4AF34] after:rounded-full' : 'text-gray-900'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <HeartHandshake className={`w-5 h-5 mr-2 ${isActiveFoundation() ? 'text-[#D4AF34]' : 'text-gray-600'}`} />
               Foundation
-            </Link>
+            </Link> */}
             {/* END NEW: Mobile Foundation Link */}
 
             <div>
