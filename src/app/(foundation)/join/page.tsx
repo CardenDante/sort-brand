@@ -2,14 +2,23 @@
 
 import Image from "next/image";
 import { HandHeart, Users, Gift, HelpingHand } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function JoinUsPage() {
+  const [selectedType, setSelectedType] = useState("");
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const scrollToForm = (type: string) => {
+    setSelectedType(type);
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <main className="overflow-hidden">
       <Hero />
-      <JoinOptions />
-      <JoinForm />
+      <JoinOptions scrollToForm={scrollToForm} />
+      <JoinForm formRef={formRef} selectedType={selectedType} setSelectedType={setSelectedType} />
+      <CTA />
     </main>
   );
 }
@@ -17,7 +26,7 @@ export default function JoinUsPage() {
 /* -------------------- HERO -------------------- */
 function Hero() {
   return (
-    <section className="relative py-28 md:py-36 text-center bg-gradient-to-b from-[#FFF5C3] via-[#FFFDF5] to-white overflow-hidden">
+    <section className="relative py-16 md:py-20 text-center bg-gradient-to-b from-[#FFF5C3] via-[#FFFDF5] to-white overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[#FDD353]/10" />
       <div className="max-w-4xl mx-auto px-6">
         <h1
@@ -28,12 +37,8 @@ function Hero() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Join Us
+          Become part of sortbloom foundation today
         </h1>
-        <p className="mt-6 text-gray-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Together, we can shape a brighter future for vulnerable children.  
-          Become part of our mission — sponsor, partner, donate, or volunteer.
-        </p>
       </div>
 
       {/* Curve divider */}
@@ -55,11 +60,11 @@ function Hero() {
 }
 
 /* -------------------- JOIN OPTIONS -------------------- */
-function JoinOptions() {
+function JoinOptions({ scrollToForm }: { scrollToForm: (type: string) => void }) {
   const roles = [
     {
       title: "Sponsor",
-      desc: "Provide direct support to a child’s education, mentorship, or nutrition program. Every contribution changes a story.",
+      desc: "Provide direct support to a child's education, mentorship, or nutrition program. Every contribution changes a story.",
       color: "#4CAF50",
       icon: <HandHeart className="w-10 h-10 text-[#4CAF50]" />,
     },
@@ -71,13 +76,13 @@ function JoinOptions() {
     },
     {
       title: "Donor",
-      desc: "Contribute to SortBloom’s general fund to help sustain and expand our impact initiatives across Kenya and beyond.",
+      desc: "Contribute to SortBloom's general fund to help sustain and expand our impact initiatives across Kenya and beyond.",
       color: "#FFC107",
       icon: <Gift className="w-10 h-10 text-[#FFC107]" />,
     },
     {
       title: "Volunteer",
-      desc: "Join our field teams, mentors, or event organizers. Your skills and time can help transform children’s lives.",
+      desc: "Join our field teams, mentors, or event organizers. Your skills and time can help transform children's lives.",
       color: "#4CAF50",
       icon: <HelpingHand className="w-10 h-10 text-[#4CAF50]" />,
     },
@@ -92,9 +97,10 @@ function JoinOptions() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {roles.map((role) => (
-            <div
+            <button
               key={role.title}
-              className="group bg-[#FFFDF5] rounded-2xl shadow-md hover:shadow-lg border border-gray-100 p-8 transition"
+              onClick={() => scrollToForm(role.title)}
+              className="group bg-[#FFFDF5] rounded-2xl shadow-md hover:shadow-lg border border-gray-100 p-8 transition cursor-pointer text-center"
             >
               <div className="flex flex-col items-center justify-center mb-4">
                 <div className="mb-3">{role.icon}</div>
@@ -105,10 +111,13 @@ function JoinOptions() {
                   {role.title}
                 </h3>
               </div>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-gray-700 text-sm leading-relaxed mb-4">
                 {role.desc}
               </p>
-            </div>
+              <span className="inline-block text-sm font-semibold text-sortbloom-blue group-hover:text-sortbloom-green transition">
+                Join as {role.title} →
+              </span>
+            </button>
           ))}
         </div>
       </div>
@@ -117,7 +126,15 @@ function JoinOptions() {
 }
 
 /* -------------------- JOIN FORM -------------------- */
-function JoinForm() {
+function JoinForm({ 
+  formRef, 
+  selectedType, 
+  setSelectedType 
+}: { 
+  formRef: React.RefObject<HTMLDivElement>;
+  selectedType: string;
+  setSelectedType: (type: string) => void;
+}) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -125,6 +142,13 @@ function JoinForm() {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+
+  // Update form when selectedType changes
+  useState(() => {
+    if (selectedType) {
+      setForm(prev => ({ ...prev, join_type: selectedType }));
+    }
+  });
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -142,6 +166,7 @@ function JoinForm() {
       if (res.ok) {
         alert("✅ Thank you for joining SortBloom! We'll contact you soon.");
         setForm({ name: "", email: "", join_type: "", message: "" });
+        setSelectedType("");
       } else {
         alert(`⚠️ ${data.error || "Something went wrong. Try again."}`);
       }
@@ -152,8 +177,13 @@ function JoinForm() {
     }
   }
 
+  // Sync selectedType with form
+  if (selectedType && form.join_type !== selectedType) {
+    setForm(prev => ({ ...prev, join_type: selectedType }));
+  }
+
   return (
-    <section className="py-24 bg-[#FFFDF5]">
+    <section ref={formRef} className="py-24 bg-[#FFFDF5] scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Form Side */}
         <div className="bg-white shadow-lg rounded-2xl p-10 border border-gray-100">
@@ -200,7 +230,10 @@ function JoinForm() {
               </label>
               <select
                 value={form.join_type}
-                onChange={(e) => setForm({ ...form, join_type: e.target.value })}
+                onChange={(e) => {
+                  setForm({ ...form, join_type: e.target.value });
+                  setSelectedType(e.target.value);
+                }}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-sortbloom-blue"
               >
@@ -253,3 +286,26 @@ function JoinForm() {
   );
 }
 
+/* -------------------- CTA SECTION -------------------- */
+function CTA() {
+  return (
+    <section className="py-20 bg-white text-center">
+      <div className="max-w-3xl mx-auto px-4 bg-[#FFFDF5] shadow-lg rounded-2xl py-12 border border-gray-100">
+        <h2 className="text-3xl font-extrabold text-sortbloom-green mb-4">
+          Join Us in Making a Difference
+        </h2>
+        <p className="text-gray-700 mb-6 max-w-xl mx-auto">
+          Every act of kindness helps a child bloom. Support SortBloom
+          Foundation by volunteering, partnering, or donating to create lasting
+          impact.
+        </p>
+        <a
+          href="/donate"
+          className="inline-block bg-sortbloom-blue hover:bg-sortbloom-green text-white font-semibold py-3 px-8 rounded-full transition"
+        >
+          Donate Now
+        </a>
+      </div>
+    </section>
+  );
+}

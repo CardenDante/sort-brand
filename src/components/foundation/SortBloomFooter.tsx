@@ -14,7 +14,6 @@ const SortBloomFooter = () => {
               href="/foundation"
               className="flex items-center text-white text-2xl font-extrabold tracking-tight mb-4"
             >
-              <HeartHandshake className="w-8 h-8 mr-2 text-sortbloom-gold" />
               SortBloom
             </Link>
             <p className="text-sm text-gray-200">

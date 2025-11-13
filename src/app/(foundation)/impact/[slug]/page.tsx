@@ -23,7 +23,7 @@ const IMPACT_DETAILS: Record<
     description:
       "We shape positive and resilient thinking that inspires growth and transformation.",
     longText: `We help children develop strong and visionary mindsets — the foundation of progress. 
-    Inspired by real-world examples like South Korea’s transformation through collective mindset change, 
+    Inspired by real-world examples like South Korea's transformation through collective mindset change, 
     we train children to think creatively, take initiative, and face challenges with courage.`,
   },
   "education-empowerment": {
@@ -59,7 +59,7 @@ const IMPACT_DETAILS: Record<
     color: "#FFC107",
     description:
       "We unite communities through impactful, purpose-driven marathons.",
-    longText: `Our marathons are more than races — they’re community movements that raise funds, 
+    longText: `Our marathons are more than races — they're community movements that raise funds, 
     promote unity, and inspire health. Each step supports education, nutrition, and mental wellness 
     programs for children in need.`,
   },
@@ -86,28 +86,6 @@ export default function ImpactDetailPage() {
 
   return (
     <main className="overflow-hidden">
-      {/* Hero Section */}
-      <section
-        className="relative py-20 md:py-24 text-center"
-        style={{ backgroundColor: "#FFFDF5" }}
-      >
-        <div className="max-w-3xl mx-auto px-4">
-          <h1
-            className="text-4xl md:text-6xl font-extrabold leading-tight"
-            style={{
-              background: `linear-gradient(90deg, ${impact.color} 0%, #FFC107 100%)`,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            {impact.title}
-          </h1>
-          <p className="mt-4 text-base md:text-lg text-gray-800 max-w-2xl mx-auto leading-relaxed">
-            {impact.description}
-          </p>
-        </div>
-      </section>
-
       {/* Image + Description */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
@@ -142,7 +120,7 @@ export default function ImpactDetailPage() {
             impact more children through mentorship, support, and education.
           </p>
           <a
-            href="/foundation/donate"
+            href="/donate"
             className="inline-block bg-sortbloom-blue hover:bg-sortbloom-green text-white font-semibold py-3 px-8 rounded-full transition"
           >
             Donate Now

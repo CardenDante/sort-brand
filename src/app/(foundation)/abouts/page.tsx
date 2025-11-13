@@ -6,39 +6,12 @@ import { HandHeart, Users, Smile, Sun } from "lucide-react";
 export default function AboutUsPage() {
   return (
     <main className="overflow-hidden">
-      <Hero />
       <WhoWeAre />
       <MissionVision />
       <CoreValues />
       <Approach />
       <CTA />
     </main>
-  );
-}
-
-/* -------------------- HERO -------------------- */
-function Hero() {
-  return (
-    <section className="relative py-20 md:py-24 text-center bg-[#FFFDF5]">
-      <div className="max-w-3xl mx-auto px-4">
-        <h1
-          className="text-4xl md:text-6xl font-extrabold leading-tight"
-          style={{
-            background: "linear-gradient(90deg, #1976D2 0%, #FFC107 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          About SortBloom Child Foundation
-        </h1>
-
-        <p className="mt-4 text-base md:text-lg text-gray-800 max-w-2xl mx-auto leading-relaxed">
-          Sorting Needs. Blooming Futures. <br />
-          Nurturing children to reach their full potential through compassion,
-          mentorship, and empowerment.
-        </p>
-      </div>
-    </section>
   );
 }
 
@@ -65,9 +38,9 @@ function WhoWeAre() {
             underserved children across Kenya and beyond.
           </p>
           <p className="mt-4 text-gray-700 leading-relaxed">
-            We believe that every child is a seed of potential. “Sort” represents
-            our mission to assess and understand each child’s unique needs, while
-            “Bloom” symbolizes the growth that follows when those needs are met
+            We believe that every child is a seed of potential. "Sort" represents
+            our mission to assess and understand each child's unique needs, while
+            "Bloom" symbolizes the growth that follows when those needs are met
             with care, compassion, and opportunity.
           </p>
         </div>
@@ -115,7 +88,7 @@ function MissionVision() {
 /* -------------------- CORE VALUES -------------------- */
 function CoreValues() {
   const values = [
-    { title: "Compassion", desc: "We lead with empathy and care for every child’s story." },
+    { title: "Compassion", desc: "We lead with empathy and care for every child's story." },
     { title: "Dignity", desc: "We respect the worth of every individual, regardless of background." },
     { title: "Integrity", desc: "We are transparent, accountable, and driven by purpose." },
     { title: "Community", desc: "We believe real change happens when we work together." },

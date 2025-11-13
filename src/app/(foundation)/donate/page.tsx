@@ -7,68 +7,17 @@ import {
   HeartHandshake,
   Users,
   HandHeart,
+  Package,
+  MapPin,
 } from "lucide-react";
 
 export default function DonatePage() {
   return (
     <main className="overflow-hidden">
-      <Hero />
       <DonationImpactAreas />
       <DonationForm />
+      <TangibleDonations />
     </main>
-  );
-}
-
-/* -------------------- HERO -------------------- */
-function Hero() {
-  return (
-    <section className="relative py-28 md:py-36 text-center bg-[#FFFDF5] overflow-hidden">
-      {/* Map background */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/map-bg.png"
-          alt="Background Map"
-          fill
-          className="object-cover opacity-20"
-        />
-      </div>
-
-      {/* Light overlay */}
-      <div className="absolute inset-0 bg-white/70 -z-0" />
-
-      <div className="relative max-w-4xl mx-auto px-6">
-        <h1
-          className="text-4xl md:text-6xl font-extrabold leading-tight"
-          style={{
-            background: "linear-gradient(90deg, #1976D2 0%, #FFC107 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          Donate to Support a Child’s Future
-        </h1>
-        <p className="mt-6 text-gray-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Your donation helps provide education, mentorship, and care for
-          vulnerable children — empowering them to bloom into confident,
-          capable individuals.
-        </p>
-      </div>
-
-      {/* Curve divider */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full text-white"
-        >
-          <path
-            fill="currentColor"
-            d="M0,64L48,58.7C96,53,192,43,288,64C384,85,480,139,576,144C672,149,768,107,864,96C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96V120H0Z"
-          />
-        </svg>
-      </div>
-    </section>
   );
 }
 
@@ -127,8 +76,6 @@ function DonationImpactAreas() {
 }
 
 /* -------------------- DONATION FORM -------------------- */
-
-
 export function DonationForm() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", amount: "", message: "" });
   const [loading, setLoading] = useState(false);
@@ -172,7 +119,7 @@ export function DonationForm() {
         {/* Form Side */}
         <div className="bg-white shadow-lg rounded-2xl p-10 border border-gray-100">
           <h2 className="text-3xl font-extrabold text-sortbloom-green mb-4 text-center">
-            Make a Donation
+            Make a Monetary Donation
           </h2>
           <p className="text-gray-700 mb-8 text-center">
             Every contribution makes a difference. Fill in your details below to support our mission.
@@ -215,3 +162,82 @@ export function DonationForm() {
   );
 }
 
+/* -------------------- TANGIBLE DONATIONS -------------------- */
+function TangibleDonations() {
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <Package className="w-12 h-12 text-sortbloom-green" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-sortbloom-green mb-4">
+            Donate Tangible Items
+          </h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            You can also make a difference by donating physical items like clothes, 
+            school supplies, books, toys, food, and other resources that directly 
+            benefit the children in our programs.
+          </p>
+        </div>
+
+        <div className="max-w-2xl mx-auto">
+          {/* Drop-off Location Map */}
+          <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
+            <div className="bg-sortbloom-green text-white p-6">
+              <div className="flex items-center gap-3 mb-2">
+                <MapPin className="w-6 h-6" />
+                <h3 className="text-xl font-bold">Drop-off Location</h3>
+              </div>
+              <p className="text-sm opacity-90">
+                Visit us to drop off your tangible donations
+              </p>
+            </div>
+            
+            {/* Google Maps Iframe */}
+            <div className="relative w-full h-80">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8196449886685!2d36.82194631475395!3d-1.2864472359960636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6f0b3e3c3%3A0x6f4a8a7a7e5a5a5a!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0"
+              />
+            </div>
+
+            <div className="p-6 bg-gray-50">
+              <p className="text-sm text-gray-700 mb-2">
+                <strong>Address:</strong> SortBloom Foundation Office, Nairobi, Kenya
+              </p>
+              <p className="text-sm text-gray-700 mb-2">
+                <strong>Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM
+              </p>
+              <p className="text-sm text-gray-700">
+                <strong>Contact:</strong> +254 742 906 505
+              </p>
+              <p className="text-sm text-gray-700 mt-2">
+                <strong>Email:</strong> info@sortbloom.org
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 text-center bg-[#FFFDF5] rounded-2xl p-8 border border-gray-100">
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            Can't drop off in person? Contact us to arrange for pickup of large donations 
+            or to discuss other ways you can contribute tangible items to our programs.
+          </p>
+          <a
+            href="mailto:info@sortbloom.org"
+            className="inline-block mt-4 text-sortbloom-blue hover:text-sortbloom-green font-semibold transition"
+          >
+            Contact Us for Pickup →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

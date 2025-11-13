@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Menu,
   X,
@@ -9,7 +10,6 @@ import {
   Twitter,
   Mail,
   Phone,
-  HeartHandshake,
 } from "lucide-react";
 
 export default function SortBloomHeader() {
@@ -19,6 +19,7 @@ export default function SortBloomHeader() {
     { name: "Home", href: "/foundation" },
     { name: "About Us", href: "/abouts" },
     { name: "Areas of Impact", href: "/impact" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Join Us", href: "/join" },
   ];
 
@@ -47,13 +48,19 @@ export default function SortBloomHeader() {
       {/* === Main Navbar === */}
       <nav className="bg-white shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-4">
-          {/* Logo (fixed alignment) */}
+          {/* Logo */}
           <Link
             href="/foundation"
-            className="flex items-center text-black text-2xl font-extrabold tracking-tight"
+            className="flex items-center"
           >
-            <HeartHandshake className="w-8 h-8 mr-2 text-sortbloom-gold" />
-            <span>SortBloom</span>
+            <Image
+              src="/images/logo/Sortbloom-Logo.png"
+              alt="SortBloom Foundation"
+              width={380}
+              height={90}
+              className="h-14 md:h-16 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Menu */}
