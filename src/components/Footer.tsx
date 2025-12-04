@@ -235,34 +235,13 @@ const MobileOptimizedFooter = () => {
 
         {/* === Bottom Bar === */}
         <div className="border-t border-[#D4AF34]/20 py-4">
-          <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left text-sm text-white/70">
-            <p className="mb-2 md:mb-0">
-              © {currentYear} Sortbrands Group. All Rights Reserved.
-            </p>
-
-            {/* Powered by Chacha Technologies */}
-            <div className="flex items-center bg-[#D4AF34]/10 border border-[#D4AF34]/30 rounded-md px-3 py-1.5">
-              <span className="text-gray-300 mr-2">Powered by</span>
-              <a
-                href="https://www.chach-a.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="https://www.chach-a.com/logoMark.svg"
-                  alt="Chacha Technologies"
-                  width={18}
-                  height={18}
-                  className="mr-1"
-                />
-                <span className="text-[#D4AF34] font-semibold">
-                  Chacha Technologies
-                </span>
-              </a>
-            </div>
-          </div>
+        <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center text-sm text-white/70">
+          <p>
+            © {currentYear} Sortbrands Group. All Rights Reserved.
+          </p>
         </div>
+      </div>
+
       </div>
     </footer>
   );
