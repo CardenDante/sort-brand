@@ -25,6 +25,13 @@ const teamMembers: TeamMember[] = [
     role: 'Chief Operations Officer(COO)',
     image: '/images/team/Evans1.jpg',
     bio: 'Driving growth and fostering key partnerships, Evans excels at identifying opportunities and creating tailored solutions that exceed client expectations.'
+  },
+  {
+    id: 'esther-kanja',
+    name: 'Esther Kanja',
+    role: 'Head of Marketing',
+    image: '/images/team/kanja.png',
+    bio: ' A driven and results-oriented professional who plays a key role at SortBrands. She is passionate about building strong client relationships, identifying growth opportunities, and delivering value-driven solutions that align with our clients’ needs.'
   }
 ];
 

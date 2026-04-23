@@ -22,6 +22,10 @@ const clients: Client[] = [
   { id: 14, name: 'Phoenix Capital Limited', logo: '/images/logo/Phoenix Capital Limited.jpg' },
   { id: 15, name: 'Pepsi', logo: '/images/logo/Pepsi_2023.png' },
   { id: 16, name: 'Sistar', logo: '/images/logo/Sistar Logo.webp' },
+  { id: 16, name: 'ADNC', logo: '/images/logo/ADNC.png' },
+  { id: 16, name: 'Queenville', logo: '/images/logo/Queenville.png' },
+  { id: 16, name: 'Moran', logo: '/images/logo/Moran.jpg' },
+  { id: 16, name: 'HRV-Living', logo: '/images/logo/HRV-Living-Logo-approved.png' },
 
 ];
 
