@@ -29,8 +29,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'esther-kanja',
     name: 'Esther Kanja',
-    role: 'Head of Marketing',
-    image: '/images/team/kanja.png',
+    role: 'Business Development Officer',
+    image: '/images/team/Esther Kanjakk.png',
     bio: ' A driven and results-oriented professional who plays a key role at SortBrands. She is passionate about building strong client relationships, identifying growth opportunities, and delivering value-driven solutions that align with our clients’ needs.'
   }
 ];
@@ -105,7 +105,7 @@ const TeamSection = () => {
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 {/* Card with better proportions for 2-column layout */}
-                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col border border-gray-100 max-w-sm mx-auto">
+                <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col border border-gray-100 max-w-5xl mx-auto">
                   {/* Image Container with fixed aspect ratio and better handling */}
                   <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
                     <Image
