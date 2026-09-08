@@ -1,15 +1,11 @@
 // src/components/ContactInfo.tsx
 import { 
   FaMapMarkerAlt, 
-  FaPhone, 
   FaEnvelope, 
   FaClock,
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
   FaWhatsapp
 } from 'react-icons/fa';
+import { SOCIAL_LINKS, WHATSAPP_LINK } from '@/lib/social';
 
 const ContactInfo = () => {
   return (
@@ -107,50 +103,19 @@ const ContactInfo = () => {
         {/* Social Media */}
         <div className="mt-8">
           <h3 className="font-bold text-white mb-3">Follow Us</h3>
-          <div className="flex space-x-3">
-            <a 
-              href="https://www.facebook.com/Sortbrands/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
-            <a 
-              href="#" 
-              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
-              aria-label="Twitter"
-            >
-              <FaTwitter />
-            </a>
-            <a 
-              href="https://www.instagram.com/Sortbrandsgroup/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
-            <a 
-              href="https://www.linkedin.com/company/Sortbrands-group/about/?viewAsMember=true" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a 
-              href="https://wa.me/+254742906505" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
-              aria-label="WhatsApp"
-            >
-              <FaWhatsapp />
-            </a>
+          <div className="flex flex-wrap gap-3">
+            {[...SOCIAL_LINKS, WHATSAPP_LINK].map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#D4AF34]/20 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all duration-300"
+                aria-label={label}
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </div>
       </div>

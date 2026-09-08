@@ -1,20 +1,14 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
   FaPaperPlane,
   FaMapMarkerAlt,
-  FaPhone,
   FaEnvelope,
   FaChevronDown,
   FaChevronUp,
 } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 const FooterAccordion = ({
   title,
@@ -49,43 +43,7 @@ const FooterAccordion = ({
 const MobileOptimizedFooter = () => {
   const currentYear = new Date().getFullYear();
 
-  const socialLinks = [
-    {
-      Icon: FaFacebookF,
-      href: "https://www.facebook.com/Sortbrands/",
-      label: "Facebook",
-    },
-    { Icon: FaTwitter, href: "#", label: "Twitter" },
-    {
-      Icon: FaInstagram,
-      href: "https://www.instagram.com/Sortbrandsgroup/",
-      label: "Instagram",
-    },
-    {
-      Icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/company/Sortbrands-group/about/?viewAsMember=true",
-      label: "LinkedIn",
-    },
-  ];
-
-  const mobileSocialLinks = [
-    {
-      Icon: FaFacebookF,
-      href: "https://www.facebook.com/Sortbrands/",
-      label: "Facebook",
-    },
-    { Icon: FaX, href: "#", label: "X (Twitter)" },
-    {
-      Icon: FaInstagram,
-      href: "https://www.instagram.com/Sortbrandsgroup/",
-      label: "Instagram",
-    },
-    {
-      Icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/company/Sortbrands-group/about/?viewAsMember=true",
-      label: "LinkedIn",
-    },
-  ];
+  const socialLinks = SOCIAL_LINKS;
 
   return (
     <footer
@@ -122,7 +80,7 @@ const MobileOptimizedFooter = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-6 md:mb-0">
                   We are <span className="text-[#D4AF34]">social.</span>
                 </h2>
-                <div className="flex gap-4 pt-4">
+                <div className="flex flex-wrap gap-3 pt-4">
                   {socialLinks.map(({ Icon, href, label }, idx) => (
                     <a
                       key={idx}
@@ -130,7 +88,7 @@ const MobileOptimizedFooter = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all text-lg md:text-xl"
+                      className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#D4AF34]/10 flex items-center justify-center text-[#D4AF34] hover:bg-[#D4AF34] hover:text-black transition-all text-lg md:text-xl"
                     >
                       <Icon />
                     </a>

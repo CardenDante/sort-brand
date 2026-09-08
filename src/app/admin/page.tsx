@@ -1,10 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import {
-  FaEye,
-  FaEyeSlash,
   FaTrash,
   FaSearch,
   FaFilter,
@@ -13,46 +11,121 @@ import {
   FaPhone,
   FaCalendar,
   FaInfoCircle,
-  FaUserFriends,
-  FaDonate,
   FaAddressBook,
+  FaSyncAlt,
 } from "react-icons/fa";
 import { formatKenyanDate } from "@/lib/utils";
 
+type Contact = {
+  id: number;
+  name: string;
+  email: string;
+  phone?: string | null;
+  subject: string;
+  message: string;
+  created_at: string;
+  read_status: number | boolean;
+};
+
+const EMPTY_PAGINATION = {
+  page: 1,
+  limit: 10,
+  total: 0,
+  totalPages: 0,
+  hasNext: false,
+  hasPrev: false,
+};
+
+const EMPTY_STATS = { total: 0, read: 0, unread: 0 };
+
 export default function AdminDashboard() {
   const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [activeTab, setActiveTab] = useState<"contacts" | "join" | "donations">(
-    "contacts"
-  );
+
+  // `null` = not yet read from localStorage, "" = definitely logged out.
+  const [token, setToken] = useState<string | null>(null);
   const [loginData, setLoginData] = useState({ email: "", password: "" });
-  const [records, setRecords] = useState<any[]>([]);
-  const [pagination, setPagination] = useState({
-    page: 1,
-    limit: 10,
-    total: 0,
-    totalPages: 0,
-    hasNext: false,
-    hasPrev: false,
-  });
+  const [records, setRecords] = useState<Contact[]>([]);
+  const [pagination, setPagination] = useState(EMPTY_PAGINATION);
+  const [stats, setStats] = useState(EMPTY_STATS);
   const [search, setSearch] = useState("");
   const [unreadOnly, setUnreadOnly] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loginLoading, setLoginLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const token =
-    typeof window !== "undefined" ? localStorage.getItem("adminToken") : null;
+  // Only the newest request is allowed to write to state, so a slow/failed
+  // response can never overwrite fresher data with zeros.
+  const requestId = useRef(0);
 
   useEffect(() => {
-    if (token) {
-      setIsAuthenticated(true);
-      fetchData();
-    }
-  }, [token, activeTab]);
+    setToken(localStorage.getItem("adminToken") || "");
+  }, []);
+
+  const logout = useCallback(() => {
+    localStorage.removeItem("adminToken");
+    requestId.current += 1;
+    setToken("");
+    setRecords([]);
+    setPagination(EMPTY_PAGINATION);
+    setStats(EMPTY_STATS);
+  }, []);
+
+  const fetchData = useCallback(
+    async (page = 1) => {
+      if (!token) return;
+
+      const id = ++requestId.current;
+      setLoading(true);
+      setError("");
+
+      try {
+        const params = new URLSearchParams({
+          page: page.toString(),
+          limit: EMPTY_PAGINATION.limit.toString(),
+          ...(search && { search }),
+          ...(unreadOnly && { unread: "true" }),
+        });
+
+        const res = await fetch(`/api/admin/contacts?${params}`, {
+          headers: { Authorization: `Bearer ${token}` },
+          cache: "no-store",
+        });
+
+        const data = await res.json().catch(() => ({}));
+        if (id !== requestId.current) return; // a newer request already won
+
+        if (res.status === 401) {
+          logout();
+          setError("Your session expired. Please log in again.");
+          return;
+        }
+        if (!res.ok) throw new Error(data.error || "Failed to fetch data");
+
+        setRecords(Array.isArray(data.contacts) ? data.contacts : []);
+        setPagination({ ...EMPTY_PAGINATION, ...(data.pagination || {}), limit: EMPTY_PAGINATION.limit });
+        setStats({ ...EMPTY_STATS, ...(data.stats || {}) });
+      } catch (err) {
+        if (id !== requestId.current) return;
+        // Keep whatever is already on screen; surface the failure instead of
+        // silently rendering an empty table.
+        setError(
+          err instanceof Error ? err.message : "Failed to load contacts"
+        );
+      } finally {
+        if (id === requestId.current) setLoading(false);
+      }
+    },
+    [token, search, unreadOnly, logout]
+  );
+
+  useEffect(() => {
+    if (token) fetchData(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token, unreadOnly]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setLoginLoading(true);
     setError("");
     try {
       const res = await fetch("/api/admin/login", {
@@ -63,48 +136,13 @@ export default function AdminDashboard() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Login failed");
       localStorage.setItem("adminToken", data.token);
-      setIsAuthenticated(true);
-      fetchData();
+      // Setting the token triggers the effect above, which fetches with the
+      // real token instead of the stale `null` captured before login.
+      setToken(data.token);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed");
     } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("adminToken");
-    setIsAuthenticated(false);
-  };
-
-  const fetchData = async (page = 1) => {
-    setLoading(true);
-    setError("");
-
-    let endpoint = "/api/admin/contacts";
-    if (activeTab === "join") endpoint = "/api/admin/join";
-    if (activeTab === "donations") endpoint = "/api/admin/donations";
-
-    try {
-      const params = new URLSearchParams({
-        page: page.toString(),
-        limit: pagination.limit.toString(),
-        ...(search && { search }),
-        ...(unreadOnly && { unread: "true" }),
-      });
-      const res = await fetch(`${endpoint}?${params}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to fetch data");
-      setRecords(
-        data.contacts || data.joinRequests || data.donations || data.records || []
-      );
-      setPagination(data.pagination);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to fetch");
-    } finally {
-      setLoading(false);
+      setLoginLoading(false);
     }
   };
 
@@ -116,18 +154,26 @@ export default function AdminDashboard() {
   const deleteRecord = async (id: number) => {
     if (!confirm("Are you sure you want to delete this record?")) return;
     try {
-      const res = await fetch(`/api/admin/${activeTab}/${id}`, {
+      const res = await fetch(`/api/admin/contacts/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to delete record");
-      setRecords((prev) => prev.filter((r) => r.id !== id));
+      fetchData(pagination.page);
     } catch (err) {
       alert(err instanceof Error ? err.message : "Failed to delete");
     }
   };
 
-  if (!isAuthenticated)
+  if (token === null) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    );
+  }
+
+  if (!token)
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md">
@@ -162,9 +208,10 @@ export default function AdminDashboard() {
             />
             <button
               type="submit"
-              className="w-full bg-[#D4AF34] hover:bg-[#c9a52f] py-2 rounded-lg font-medium"
+              disabled={loginLoading}
+              className="w-full bg-[#D4AF34] hover:bg-[#c9a52f] py-2 rounded-lg font-medium disabled:opacity-60"
             >
-              {loading ? "Logging in..." : "Login"}
+              {loginLoading ? "Logging in..." : "Login"}
             </button>
           </form>
         </div>
@@ -177,63 +224,49 @@ export default function AdminDashboard() {
       <div className="bg-white border-b shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            {activeTab === "contacts" && (
-              <>
-                <FaAddressBook /> Contacts
-              </>
-            )}
-            {activeTab === "join" && (
-              <>
-                <FaUserFriends /> Join Requests
-              </>
-            )}
-            {activeTab === "donations" && (
-              <>
-                <FaDonate /> Donations
-              </>
-            )}
+            <FaAddressBook /> Contacts
           </h1>
-          <button
-            onClick={handleLogout}
-            className="flex items-center text-gray-600 hover:text-black"
-          >
-            <FaSignOutAlt className="mr-2" /> Logout
-          </button>
-        </div>
-
-        {/* Tabs */}
-        <div className="border-t bg-gray-50">
-          <div className="max-w-7xl mx-auto flex">
-            {["contacts", "join", "donations"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab as any)}
-                className={`flex-1 py-3 text-center font-semibold border-b-2 ${
-                  activeTab === tab
-                    ? "border-[#D4AF34] text-[#D4AF34]"
-                    : "border-transparent text-gray-500 hover:text-gray-700"
-                }`}
-              >
-                {tab === "contacts"
-                  ? "Contacts"
-                  : tab === "join"
-                  ? "Join Requests"
-                  : "Donations"}
-              </button>
-            ))}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => fetchData(pagination.page)}
+              disabled={loading}
+              className="flex items-center text-gray-600 hover:text-black disabled:opacity-50"
+              title="Refresh"
+            >
+              <FaSyncAlt className={`mr-2 ${loading ? "animate-spin" : ""}`} />
+              Refresh
+            </button>
+            <button
+              onClick={logout}
+              className="flex items-center text-gray-600 hover:text-black"
+            >
+              <FaSignOutAlt className="mr-2" /> Logout
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Search / Filter */}
       <div className="max-w-7xl mx-auto px-4 py-6">
+        {error && (
+          <div className="bg-red-50 text-red-700 border border-red-200 rounded-lg p-4 mb-6 flex items-center justify-between gap-4">
+            <span>{error}</span>
+            <button
+              onClick={() => fetchData(pagination.page)}
+              className="shrink-0 underline font-medium"
+            >
+              Retry
+            </button>
+          </div>
+        )}
+
+        {/* Search / Filter */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4">
             <div className="relative flex-1">
               <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
-                placeholder={`Search ${activeTab}...`}
+                placeholder="Search contacts..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#D4AF34]"
@@ -256,24 +289,24 @@ export default function AdminDashboard() {
           </form>
         </div>
 
-        {/* Stats */}
+        {/* Stats — totals across the whole table, not just this page */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
           <div className="grid grid-cols-3 text-center">
             <div>
               <div className="text-2xl font-bold text-[#D4AF34]">
-                {pagination.total}
+                {stats.total}
               </div>
               <p className="text-gray-600 text-sm">Total</p>
             </div>
             <div>
               <div className="text-2xl font-bold text-green-600">
-                {records.filter((r) => r.read_status).length}
+                {stats.read}
               </div>
               <p className="text-gray-600 text-sm">Read</p>
             </div>
             <div>
               <div className="text-2xl font-bold text-orange-600">
-                {records.filter((r) => !r.read_status).length}
+                {stats.unread}
               </div>
               <p className="text-gray-600 text-sm">Unread</p>
             </div>
@@ -282,23 +315,21 @@ export default function AdminDashboard() {
 
         {/* Data Table */}
         <div className="bg-white rounded-lg shadow-sm overflow-x-auto">
-          {loading ? (
+          {loading && records.length === 0 ? (
             <p className="text-center py-8 text-gray-500">Loading...</p>
           ) : records.length === 0 ? (
-            <p className="text-center py-8 text-gray-500">No data found</p>
+            <p className="text-center py-8 text-gray-500">
+              {error ? "Could not load contacts." : "No data found"}
+            </p>
           ) : (
             <table className="w-full">
               <thead className="bg-gray-50">
                 <tr>
                   <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    {activeTab === "donations" ? "Donor" : "Name"}
+                    Name
                   </th>
                   <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    {activeTab === "donations"
-                      ? "Amount"
-                      : activeTab === "join"
-                      ? "Type"
-                      : "Subject"}
+                    Subject
                   </th>
                   <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Date
@@ -310,7 +341,12 @@ export default function AdminDashboard() {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {records.map((r) => (
-                  <tr key={r.id} className="hover:bg-gray-50">
+                  <tr
+                    key={r.id}
+                    className={`hover:bg-gray-50 ${
+                      r.read_status ? "" : "bg-yellow-50/40"
+                    }`}
+                  >
                     <td className="px-6 py-4">
                       <div className="font-medium text-gray-900">{r.name}</div>
                       {r.email && (
@@ -325,11 +361,7 @@ export default function AdminDashboard() {
                       )}
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-700">
-                      {activeTab === "donations"
-                        ? `KSh ${r.amount}`
-                        : activeTab === "join"
-                        ? r.role || r.type
-                        : r.subject}
+                      {r.subject}
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500">
                       <FaCalendar className="inline mr-1" />
@@ -338,9 +370,7 @@ export default function AdminDashboard() {
                     <td className="px-6 py-4 text-sm">
                       <div className="flex gap-3">
                         <button
-                          onClick={() =>
-                            router.push(`/admin/${activeTab}/${r.id}`)
-                          }
+                          onClick={() => router.push(`/admin/contacts/${r.id}`)}
                           className="text-[#D4AF34] hover:text-[#c9a52f]"
                         >
                           <FaInfoCircle />
@@ -363,20 +393,23 @@ export default function AdminDashboard() {
         {/* Pagination */}
         <div className="flex justify-between items-center bg-gray-50 mt-4 px-6 py-3 border-t">
           <p className="text-sm text-gray-700">
-            Showing {(pagination.page - 1) * pagination.limit + 1}–
-            {Math.min(pagination.page * pagination.limit, pagination.total)} of{" "}
-            {pagination.total}
+            {pagination.total === 0
+              ? "Showing 0 of 0"
+              : `Showing ${(pagination.page - 1) * pagination.limit + 1}–${Math.min(
+                  pagination.page * pagination.limit,
+                  pagination.total
+                )} of ${pagination.total}`}
           </p>
           <div className="flex gap-2">
             <button
-              disabled={!pagination.hasPrev}
+              disabled={!pagination.hasPrev || loading}
               onClick={() => fetchData(pagination.page - 1)}
               className="px-3 py-1 border rounded disabled:opacity-50"
             >
               Prev
             </button>
             <button
-              disabled={!pagination.hasNext}
+              disabled={!pagination.hasNext || loading}
               onClick={() => fetchData(pagination.page + 1)}
               className="px-3 py-1 border rounded disabled:opacity-50"
             >
